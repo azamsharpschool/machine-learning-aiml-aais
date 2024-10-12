@@ -1,0 +1,17 @@
+Age,Gender,Blood Pressure,Blood Sugar Level,Cholesterol,Cancer Diagnosis
+45,Male,130,120,210,0
+55,Female,140,110,220,1
+62,Male,150,130,250,1
+38,Female,120,125,200,1
+70,Male,160,140,280,0
+59,Female,135,115,230,1
+49,Male,125,128,190,0
+42,Female,128,122,205,0
+57,Male,145,132,240,1
+65,Female,155,128,260,1
+51,Male,135,118,215,0
+47,Female,125,115,195,0
+60,Male,140,130,225,1
+53,Female,130,125,235,1
+44,Male,138,127,212,0
+48,Female,127,121,198,0

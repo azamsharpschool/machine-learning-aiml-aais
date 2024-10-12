@@ -1,0 +1,12 @@
+
+Make,Model,Year,Mileage (in km),Condition,Price
+Toyota,Corolla,2018,30000,Good,15000
+Toyota,Camry,2019,25000,Excellent,22000
+Honda,Civic,2017,40000,Fair,14000
+Honda,Accord,2016,60000,Good,18000
+Ford,Fusion,2018,35000,Excellent,19000
+Ford,F-150,2019,20000,Good,30000
+Chevrolet,Malibu,2017,45000,Fair,16000
+Chevrolet,Impala,2016,55000,Good,17000
+Nissan,Altima,2018,32000,Excellent,20000
+Nissan,Maxima,2019,28000,Good,25000

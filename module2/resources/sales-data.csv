@@ -1,0 +1,21 @@
+Date,Region,Product,Quantity,Price
+2023-01-01,East,Widget A,100,10.50
+2023-01-02,West,Widget B,75,15.25
+2023-01-03,North,Widget A,50,12.00
+2023-01-04,South,Widget C,120,8.75
+2023-01-05,East,Widget B,90,14.00
+2023-01-06,West,Widget A,110,11.50
+2023-01-07,North,Widget C,65,9.25
+2023-01-08,South,Widget A,80,10.00
+2023-01-09,East,Widget C,95,8.50
+2023-01-10,West,Widget B,70,13.75
+2023-01-11,North,Widget A,55,11.00
+2023-01-12,South,Widget B,85,12.50
+2023-01-13,East,Widget A,105,9.75
+2023-01-14,West,Widget C,60,10.25
+2023-01-15,North,Widget B,65,11.50
+2023-01-16,South,Widget A,75,9.25
+2023-01-17,East,Widget B,80,13.00
+2023-01-18,West,Widget A,115,10.50
+2023-01-19,North,Widget C,70,8.75
+2023-01-20,South,Widget B,95,12.00

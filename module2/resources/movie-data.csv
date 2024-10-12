@@ -1,0 +1,17 @@
+age_range,gender,occupation,marital_status,income_level,movie_preference
+18-25,Male,Student,Single,Low,Action
+26-35,Female,Engineer,Married,High,Comedy
+36-45,Male,Manager,Married,High,Drama
+46-55,Female,Teacher,Single,Medium,Romance
+18-25,Female,Student,Single,Low,Action
+26-35,Male,Doctor,Married,High,Comedy
+36-45,Female,Manager,Married,High,Drama
+46-55,Male,Engineer,Single,Medium,Romance
+18-25,Female,Student,Single,Low,Action
+26-35,Male,Artist,Married,Medium,Comedy
+36-45,Female,Manager,Married,High,Drama
+46-55,Male,Teacher,Single,Medium,Romance
+18-25,Female,Student,Single,Low,Action
+26-35,Male,Engineer,Married,High,Comedy
+36-45,Female,Manager,Married,High,Drama
+46-55,Male,Artist,Single,Medium,Romance

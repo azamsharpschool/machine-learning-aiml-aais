@@ -1,0 +1,31 @@
+applicant_id,experience_level,education_level,years_of_experience,salary_expectation,relocation_desire,accepted_offer
+1,Entry Level,Bachelor's Degree,1,30000,No,No
+2,Mid Level,Master's Degree,5,60000,Yes,Yes
+3,Senior Level,PhD,10,90000,Yes,Yes
+4,Entry Level,High School Diploma,2,35000,Yes,No
+5,Mid Level,Bachelor's Degree,6,65000,Yes,Yes
+6,Mid Level,Bachelor's Degree,4,55000,No,Yes
+7,Senior Level,Master's Degree,12,100000,Yes,Yes
+8,Entry Level,Associate's Degree,1,28000,No,No
+9,Mid Level,Bachelor's Degree,7,70000,No,Yes
+10,Senior Level,PhD,15,120000,Yes,Yes
+11,Entry Level,High School Diploma,1,32000,Yes,No
+12,Senior Level,Master's Degree,11,95000,No,Yes
+13,Mid Level,PhD,8,80000,Yes,Yes
+14,Entry Level,Associate's Degree,2,33000,No,No
+15,Senior Level,Master's Degree,14,110000,Yes,Yes
+16,Entry Level,Bachelor's Degree,2,32000,Yes,No
+17,Mid Level,Master's Degree,6,68000,Yes,Yes
+18,Mid Level,Bachelor's Degree,5,60000,No,Yes
+19,Senior Level,PhD,13,105000,Yes,Yes
+20,Entry Level,High School Diploma,1,31000,No,No
+21,Senior Level,Master's Degree,10,90000,Yes,Yes
+22,Mid Level,PhD,7,75000,Yes,Yes
+23,Entry Level,Associate's Degree,2,33000,No,No
+24,Mid Level,Bachelor's Degree,5,62000,Yes,Yes
+25,Senior Level,Master's Degree,12,98000,No,Yes
+26,Entry Level,High School Diploma,1,30000,Yes,No
+27,Mid Level,Bachelor's Degree,4,57000,No,Yes
+28,Senior Level,PhD,9,85000,Yes,Yes
+29,Entry Level,Associate's Degree,3,34000,No,No
+30,Mid Level,Master's Degree,6,69000,Yes,Yes

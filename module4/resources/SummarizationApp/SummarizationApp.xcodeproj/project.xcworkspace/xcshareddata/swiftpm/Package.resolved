@@ -1,0 +1,15 @@
+{
+  "originHash" : "479c33a4ba0c8c23ac3321fc39ef5659b1f98592ed7237bd8b94dbf6a5165973",
+  "pins" : [
+    {
+      "identity" : "swiftsummarize",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/StefKors/SwiftSummarize",
+      "state" : {
+        "revision" : "f01a2953c3f8ed6fe136890b26f5b301074c0c44",
+        "version" : "1.0.2"
+      }
+    }
+  ],
+  "version" : 3
+}

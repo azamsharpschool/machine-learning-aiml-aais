@@ -1,0 +1,22 @@
+
+customer_id,contract,internet_service,monthly_charges,total_charges,churn
+1,month-to-month,fiber optic,70,120,1
+2,two year,dsl,50,1500,0
+3,month-to-month,fiber optic,90,300,1
+4,two year,dsl,60,1800,0
+5,month-to-month,dsl,50,400,1
+6,one year,fiber optic,80,2400,0
+7,two year,fiber optic,85,3600,0
+8,one year,dsl,55,2200,0
+9,month-to-month,fiber optic,95,450,1
+10,one year,dsl,65,1300,0
+11,month-to-month,fiber optic,75,650,1
+12,two year,dsl,70,1950,0
+13,month-to-month,fiber optic,85,550,1
+14,two year,dsl,55,2050,0
+15,month-to-month,dsl,60,800,1
+16,one year,fiber optic,90,3200,0
+17,two year,fiber optic,95,3800,0
+18,one year,dsl,60,2300,0
+19,month-to-month,fiber optic,100,500,1
+20,one year,dsl,70,1400,0
