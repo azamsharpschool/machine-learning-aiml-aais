@@ -39,7 +39,14 @@
 - [Sets Activity](/module1/resources/sets-activity.md)
 
 ## Classes and Objects 
----
+
+- [Day 1 - Understanding Object Oriented Programming](../Slides/python-intro-oop.key)
+- [Day 2 - Understanding Class Attributes and Methods](../Slides/python-understanding-class-attributes-methods.key)
+- [Day 3 - Inheritance and Method Overriding](../Slides/python-inheritience-and-method-overriding.key)
+- [Day 4 - Encapsulation, Polymorphism, and Special Methods](../Slides/python-encapsulation-polymorphism-and-special-methods.key) 
+- [Resource - Understanding Classes and Objects](https://www.dummies.com/programming/java/understanding-classes-and-objects/)]
+
+<!-- 
 - [Activity - Table Class](/module1/resources/table.md)
 - [Activity 1 - User and Address](/module1/resources/user-and-address.md)
 - [Activity 2 - Bank Account](/module1/resources/bank-account.md)
@@ -47,7 +54,7 @@
 - [Class Code](https://gist.github.com/azamsharp/ae761b3066295d03a1184a1074a6ebd8)
 - [Object Oriented Programming Exercises](resources/oop-exercises.md)
 - [Library Management Exercise](resources/library.md)
-
+-->
 
 <!-- 
 ## Unit Testing 
