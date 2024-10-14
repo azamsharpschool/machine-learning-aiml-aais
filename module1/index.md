@@ -46,6 +46,13 @@
 - [Day 4 - Encapsulation, Polymorphism, and Special Methods](../Slides/python-encapsulation-polymorphism-and-special-methods.key) 
 - [Resource - Understanding Classes and Objects](https://www.dummies.com/programming/java/understanding-classes-and-objects/)]
 
+## Python and Artificial Intelligence 
+
+- [Day 1 - Introduction to AI in Python](../Slides/Introduction%20to%20AI%20in%20Python.key)
+- [Day 2 - Exploring Machine Learning Libraries in Python](../Slides/python-Exploring%20Machine%20Learning%20Libraries%20in%20Python.key)
+- [Day 3 - Introduction to Neural Networks and Deep Learning](../Slides/python-Introduction%20to%20Neural%20Networks%20and%20Deep%20Learning.key)
+- [Day 4 - AI Use Cases and Real-World Applications](../Slides/python-AI%20Use%20Cases%20and%20Real-World%20Applications.key)
+
 <!-- 
 - [Activity - Table Class](/module1/resources/table.md)
 - [Activity 1 - User and Address](/module1/resources/user-and-address.md)
@@ -102,8 +109,6 @@
 
 
 ## Extra 
-
----
 
 - [Python Modules](https://www.geeksforgeeks.org/python-modules/)
 - [Git Book](https://git-scm.com/book/en/v2)
