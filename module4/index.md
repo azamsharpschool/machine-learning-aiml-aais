@@ -50,8 +50,8 @@ https://www.youtube.com/playlist?list=PLDMXqpbtInQjc5-xa5B40Y1wZbIsxCIOk
 - [Day 4 - Object Detection Using YOLO](resources/object-detection.ipynb)
 
 ### Module 5 - Solving Video Analysis Challenges: Strategies and Optimizations 
-
+  
 - [Day 1 - Introduction to Real-World Video Analysis Challenges](../Slides/day1-real-world-video-challenges.key)
 - [Day 2 - Algorithm Optimizations for Video Analysis](../Slides/day2-algo-optimizations.key)
 - [Day 3 - Real-Time Processing and AI Integration](../Slides/day3-realtime-processing.key)
-- [Day 4] - TODO 
+- [Day 4 - Proposing and Developing Optimized Solutions](../slides/AAIS-322-Module5-Lecture4.key)  
