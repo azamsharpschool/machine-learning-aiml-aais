@@ -38,7 +38,9 @@ https://www.youtube.com/watch?v=0MNVhXEX9to&list=PLMrJAkhIeNNQe1JXNvaFvURxGY4gE9
 ### Module 3 Customizing Training Environments for Targeted Decision-Making Tasks
 
 - [Day 1 - What are Training Environments in Reinforcement Learning?](../Slides/rl-training-environments.key)
-- [Day 2 - Crafting Dynamic Learning Grounds for AI Agents]() 
+- [Day 2 - Crafting Dynamic Learning Grounds for AI Agents](../Slides/Crafting%20Domain-Specific%20Training%20Environments.key) 
+- [Day 3 - Applying Entropy Methods and Exploring Multiple Policies](../Slides/%20Applying%20Entropy%20Methods%20and%20Exploring%20Multiple%20Policies.key)
+- [Day 4 - Evaluating and Optimizing Training Environments in Reinforcement Learning](../Slides/Evaluating%20and%20Optimizing%20Training%20Environments%20in%20Reinforcement%20Learning.key)
 
 ### Module 4 
 
