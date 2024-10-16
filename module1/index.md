@@ -1,5 +1,8 @@
 # Module 1 - Introduction to Python Programming
 
+## Resources 
+- [Repl](https://replit.com/~)
+
 ## Conditionals and Working with Strings 
 
 - [Activity 1 - String Interpolation](/module1/resources/string-interop.md)
