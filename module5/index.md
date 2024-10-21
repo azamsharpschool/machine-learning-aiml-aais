@@ -44,6 +44,10 @@ https://www.youtube.com/watch?v=0MNVhXEX9to&list=PLMrJAkhIeNNQe1JXNvaFvURxGY4gE9
 
 ### Module 4 
 
+- [Day 1 - Introduction to Reinforcement Learning Frameworks](../Slides/module4-Introduction%20to%20Reinforcement%20Learning%20Frameworks%20and%20OpenAI%20Gym.key)
+- [Day 2 - Exploring OpenAI Gym for Agent Training](../Slides/module5Exploring%20OpenAI%20Gym%20for%20Agent%20Training.key)
+- [Day 3 - Leveraging Ray Rllib for Scalable RL Solutions](../Slides/module5-%20Leveraging%20Ray%20Rllib%20for%20Scalable%20RL%20Solutions.key)
+- [Day 4 - Real-World Applications and Optimization Techniques](../Slides/module5-Real-World%20Applications%20and%20Optimization%20Techniques.key)
 
 ### Module 5 
 
