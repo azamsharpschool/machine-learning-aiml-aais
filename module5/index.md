@@ -52,4 +52,5 @@ https://www.youtube.com/watch?v=0MNVhXEX9to&list=PLMrJAkhIeNNQe1JXNvaFvURxGY4gE9
 ### Module 5 
 
 - [Day 1 - Introduction to Deep Reinforcement Learning](../slides/module5-%20Introduction%20to%20Deep%20Reinforcement%20Learning%20(DRL).key)
+- [Day 2 - Deep Q-Networks (DQNs)](../slides/Deep%20Q-Networks%20(DQNs).key)
 
