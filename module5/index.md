@@ -53,6 +53,5 @@ https://www.youtube.com/watch?v=0MNVhXEX9to&list=PLMrJAkhIeNNQe1JXNvaFvURxGY4gE9
 
 - [Day 1 - Introduction to Deep Reinforcement Learning](../slides/module5-%20Introduction%20to%20Deep%20Reinforcement%20Learning%20(DRL).key)
 - [Day 2 - Deep Q-Networks (DQNs)](../slides/Deep%20Q-Networks%20(DQNs).key)
-- [Day 3 - Policy Gradient Methods and Continuous Action Spaces]()
-- [Day 4 - Advanced DRL Techniques and Real-World Applications]() 
-
+- [Day 3 - Policy Gradient Methods](../Slides/Policy%20Gradient%20Methods%20in%20Reinforcement%20Learning.key)
+- [Day 4 - Advanced Topics and Real-World Applications](../Slides/Advanced%20DRL%20Techniques%20and%20Real-World%20Applications.key)
