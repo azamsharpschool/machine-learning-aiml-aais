@@ -10,6 +10,11 @@
 
 ### Module 2 
 
+- [Day 1 - Introduction to AI System Reliability]
+- [Day 2 - Fault Tolerance in AI Systems]
+- [Day 3 - Designing Reliable and Fault-Tolerant AI Systems]
+- [Day 4 - Monitoring, Testing, and Improving Reliability]
+
 ### Module 3 
 
 ### Module 4 
