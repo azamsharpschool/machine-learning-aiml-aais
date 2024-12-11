@@ -25,7 +25,7 @@
 ### Module 4 
 
 - [Day 1 -  Introduction to AI Security Architectures](../Slides/402-Introduction%20to%20AI%20Security%20Architectures.key)
-- [Day 2 - Designing Secure AI Systems]
+- [Day 2 - Designing Secure AI Systems](../Slides/402-Designing%20Secure%20AI%20Systems.key)
 - [Day 3 - Implementing Secure AI Architectures]
 - [Day 4 - Evaluating and Enhancing AI System Security]
 
