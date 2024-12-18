@@ -26,6 +26,11 @@
 - [Day 1 -  Introduction to AI Security Architectures](../Slides/402-Introduction%20to%20AI%20Security%20Architectures.key)
 - [Day 2 - Designing Secure AI Systems](../Slides/402-Designing%20Secure%20AI%20Systems.key)
 - [Day 3 - Implementing Secure AI Architectures](../Slides/402-Implementing%20Secure%20AI%20Architectures.key)
-- [Day 4 - Evaluating and Enhancing AI System Security]
+- [Day 4 - Evaluating and Enhancing AI System Security](../Slides/402-Evaluating%20and%20Enhancing%20AI%20System%20Security.key)
 
 ### Module 5 
+
+- [Day 1 - Introduction to AI System Deployment](../slides/402-%20Introduction%20to%20AI%20System%20Deployment.key)
+- [Day 2 - Containerization and Virtualization](../slides/402-Containerization%20and%20Virtualization.key)
+- [Day 3 - Continuous Integration and Continuous Deployment](../slides/402-Continuous%20Integration%20and%20Continuous.key)
+- [Day 4 - Support, Maintenance, and Monitoring of AI Systems](../slides/402-Support,%20Maintenance,%20and%20Monitoring%20of%20AI%20Systems.key)
