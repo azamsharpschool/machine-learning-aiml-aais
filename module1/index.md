@@ -123,10 +123,7 @@
 - [Class Code 09-16-2022](https://gist.github.com/azamsharp/6f4b443afe263c0c30815c8e05661306)
 - [GitHub YouTube Videos](https://www.youtube.com/watch?v=Kc1L-TQjZZY&list=PLDMXqpbtInQiSpxYyd8AxmJCVE7equijT)
 
-### Python and Artificial Intelligence
-
-- [Slides - Introduction to AI and Machine Learning](../Slides/202-Module-5-Introduction-to-AI-and-ML.key)
-- [Download Mini Conda](https://docs.anaconda.com/free/miniconda/index.html)
+### Module 5 - Python and Artificial Intelligence
 
 ```
 conda create --prefix ./env pandas numpy matplotlib scikit-learn jupyter
@@ -134,6 +131,22 @@ conda env list
 conda activate [path to the environment]
 ```
 
+- [Day 1 - Introduction to AI in Python](../slides/202-%20Introduction%20to%20AI%20in%20Python.key)
+- [Day 2 - Exploring Machine Learning Libraries in Python](../slides/202-%20Exploring%20Machine%20Learning%20Libraries%20in%20Python.key)
+- [Day 2 - Activity 1: Build a Classification Model](resources/202-%20Exploring%20Machine%20Learning%20Libraries%20in%20Python%20-%20Activity%201.pdf)
+- [Day 2 - Activity 2: Visualize Data](resources/activity-2-visual-data.md)
+- [Day 3 - Building and Training Machine Learning Models](../slides/202-%20Building%20and%20Training%20Machine%20Learning%20Models.key)
+- [Day 3 - Hands-On - Linear Regression and Decision Trees](resources/Day%203%20-%20Hands-On%20-%20Linear%20Regression%20and%20Decision%20Trees.md)
+- [Day 3 - Hands-On: Decision Trees](resources/Day%203%20-%20Hands-On:%20Decision%20Trees.md)
+- [Day 3 - Hands-On: Neural Networks with TensorFlow](resources/Hands-On:%20Neural%20Networks%20with%20TensorFlow.md)
+- [Day 4 - AI Applications and Real-World Use Cases](../slides/202-AI%20Applications%20and%20Real-World%20Use%20Cases.key)
+- [Day 4 - Activity: Sentiment Analysis Program](resources/Activity:%20Sentiment%20Analysis%20Program.md)
+
+<!-- 
+- [Slides - Introduction to AI and Machine Learning](../Slides/202-Module-5-Introduction-to-AI-and-ML.key)
+- [Download Mini Conda](https://docs.anaconda.com/free/miniconda/index.html)
+
 - [Slides - Introduction to Numpy](../Slides/introduction-to-numpy.key)
 - [Code - Introduction to Numpy](resources/introduction-to-numpy.md)
 - [Numpy Exercises](resources/numpy-exercises.md)
+--> 

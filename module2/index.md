@@ -10,8 +10,10 @@ conda activate [path to the environment]
 
 ### Module 1 
 
-[Day 1 - Introduction to Python and Data Analysis Tools](../slides/302-%20Introduction%20to%20Python%20and%20Data%20Analysis%20Tools.key)
-[Day 2 - Getting Started with Pandas](../slides/302-%20Getting%20Started%20with%20Pandas.key)
+- [Day 1 - Introduction to Python and Data Analysis Tools](../slides/302-%20Introduction%20to%20Python%20and%20Data%20Analysis%20Tools.key)
+- [Day 2 - Getting Started with Pandas](../slides/302-%20Getting%20Started%20with%20Pandas.key)
+- [Day 3 - Data Manipulation with Pandas](../slides/302-%20Data%20Manipulation%20with%20Pandas.key)
+- [Day 4 - Advanced Data Analysis and Case Study]()
 
 <!-- 
 
