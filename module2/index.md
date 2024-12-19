@@ -1,14 +1,19 @@
 # Module 2: Artificial Intelligence, Machine Learning, and Data Science Programming with Python. 
 
-## Understanding Machine Learning 
-
-## Mini Conda and Jupyter Notebook 
+### Installation Mini Conda and Jupyter Notebook 
 - [Download Mini Conda](https://docs.anaconda.com/free/miniconda/index.html)
 ```
 conda create --prefix ./env pandas numpy matplotlib scikit-learn
 conda env list 
 conda activate [path to the environment]
 ```
+
+### Module 1 
+
+[Day 1 - Introduction to Python and Data Analysis Tools](../slides/302-%20Introduction%20to%20Python%20and%20Data%20Analysis%20Tools.key)
+[Day 2 - Getting Started with Pandas](../slides/302-%20Getting%20Started%20with%20Pandas.key)
+
+<!-- 
 
 ## Machine Learning  
 
@@ -50,6 +55,7 @@ conda activate [path to the environment]
 1KF9jFLm59cp_9ZNkFFuRXgsBYL5IVO6B?usp=sharing)
 --> 
 
+<!-- 
 - [Activity - One Hot Encoding](resources/one-hot-encoding.md)
 - [Activity - Student Scores](resources/student-scores-graph.md)
 - [Activity - Monthly Sales](resources/monthly-sales.md)
@@ -87,6 +93,6 @@ conda activate [path to the environment]
 - [Practice Exercise Module 5A](resources/exercise-module5A.md) 
 - [Practice Exercise Module 5B](resources/exercise-module5B.md) 
 
-
+--> 
 
 
