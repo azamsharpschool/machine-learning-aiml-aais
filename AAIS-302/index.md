@@ -15,6 +15,36 @@ conda activate [path to the environment]
 - [Day 3 - Data Manipulation with Pandas](../slides/302-%20Data%20Manipulation%20with%20Pandas.key)
 - [Day 4 - Advanced Data Analysis and Case Study](resources/Activity:%20E-Commerce%20Sales%20Analysis.md)
 
+Module 2: 
+
+- [Day 1 - Introduction to Data Cleaning and Loading Data](resources/module2-day1.md)
+- [Day 2 - Handling Missing Data](resources/module2.day2.md)
+- [Day 3 - Removing Duplicates and Cleaning Data Formats](resources/module2-day3.md)
+- [Day 4 - Combining and Reshaping Data](resources/module2-day4-md)
+
+### Module 3 
+
+- [Day 1 - Introduction to Data Visualization with Pandas](resources/module3-day1.md)
+- [Day 2 - Introduction to Matplotlib](resources/module3-day2.md)
+- [Day 3 - Advanced Visualizations with 
+Matplotlib](resources/module3-day3.md)
+- [Day 4 - Bringing It All Together](resources/module3-day4.md)
+
+### Module 4 
+
+- [Day 1 - Introduction to Supervised Learning and Classification](resources/module4-day1.md)
+- [Day 2 - Decision Trees for Classification](resources/module4-day2.md)
+- [Day 3 - Regression Techniques](resources/module4-day3.md)
+- [Day 4 - Combining Techniques and Debugging](resources/module4-day4.md)
+
+
+### Module 5 
+
+- [Day 1 - Introduction to Unsupervised Learning](resources/module5-day1.md)
+- [Day 2 - Clustering Techniques](resources/module5-day2.md)
+- [Day 3 - Outlier Detection](resources/module5-day3.md) 
+- [Day 4 -  Latent Variable Modeling and Real-World Application](resources/module5-day4.md)
+
 <!-- 
 
 ## Machine Learning  

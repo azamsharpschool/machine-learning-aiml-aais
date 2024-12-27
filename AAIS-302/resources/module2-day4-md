@@ -1,0 +1,168 @@
+### **Day 4: Combining and Reshaping Data Walkthrough**
+
+---
+
+### **Lecture Objectives**
+- **Learn to combine data from multiple sources** to create a unified dataset for analysis.
+- **Understand reshaping techniques** to transform data structures for better analysis and visualization.
+
+---
+
+### **Topics Covered**
+
+#### **1. Combining DataFrames**
+
+##### **1.1. Merging Datasets with `.merge()`**
+- **Concept**: Merging combines rows based on one or more common keys.
+- **Example**: Merging two datasets with a common key (`ID`).
+
+```python
+import pandas as pd
+
+# Create DataFrames
+df1 = pd.DataFrame({'ID': [1, 2], 'Name': ['Alice', 'Bob']})
+df2 = pd.DataFrame({'ID': [1, 2], 'Score': [95, 88]})
+
+# Merge DataFrames
+merged_df = pd.merge(df1, df2, on='ID')
+
+# Display the result
+print("Merged DataFrame:")
+print(merged_df)
+```
+
+**Expected Output**:
+```
+   ID   Name  Score
+0   1  Alice     95
+1   2    Bob     88
+```
+
+##### **1.2. Concatenating Datasets with `pd.concat()`**
+- **Concept**: Concatenation stacks DataFrames either vertically (rows) or horizontally (columns).
+- **Example**:
+
+```python
+# Create DataFrames
+df1 = pd.DataFrame({'Name': ['Alice', 'Bob']})
+df2 = pd.DataFrame({'Score': [95, 88]})
+
+# Concatenate DataFrames (column-wise)
+concat_df = pd.concat([df1, df2], axis=1)
+
+# Display the result
+print("Concatenated DataFrame:")
+print(concat_df)
+```
+
+**Expected Output**:
+```
+    Name  Score
+0  Alice     95
+1    Bob     88
+```
+
+---
+
+#### **2. Reshaping DataFrames**
+
+##### **2.1. Using `.pivot()` for Reshaping**
+- **Concept**: `.pivot()` rearranges data by setting one column as index, another as columns, and the values for the data.
+
+**Example**:
+```python
+# Sample DataFrame
+df = pd.DataFrame({
+    'species': ['dog', 'dog', 'cat', 'cat'],
+    'measurement': ['height', 'weight', 'height', 'weight'],
+    'value': [50, 20, 35, 10]
+})
+
+# Reshape using pivot
+pivot_df = df.pivot(index='species', columns='measurement', values='value')
+
+# Display the result
+print("Pivoted DataFrame:")
+print(pivot_df)
+```
+
+**Expected Output**:
+```
+measurement  height  weight
+species                    
+cat            35      10
+dog            50      20
+```
+
+##### **2.2. Using `.melt()` for Reshaping**
+- **Concept**: `.melt()` transforms wide-format data into long-format for easier analysis.
+
+**Example**:
+```python
+# Reshape using melt
+melt_df = pivot_df.reset_index().melt(id_vars='species', value_vars=['height', 'weight'])
+
+# Display the result
+print("Melted DataFrame:")
+print(melt_df)
+```
+
+**Expected Output**:
+```
+  species measurement  value
+0     cat      height     35
+1     dog      height     50
+2     cat      weight     10
+3     dog      weight     20
+```
+
+##### **2.3. Aggregating Data with `.groupby()`**
+- **Concept**: Aggregating groups rows based on specific criteria and applies a summary function.
+
+**Example**:
+```python
+# Aggregating data
+grouped_df = df.groupby('species').agg({'value': 'mean'})
+
+# Display the result
+print("Grouped and Aggregated DataFrame:")
+print(grouped_df)
+```
+
+**Expected Output**:
+```
+         value
+species       
+cat       22.5
+dog       35.0
+```
+
+---
+
+### **Hands-On Activities**
+
+1. **Merge Two Datasets on a Common Key**:
+   - Use the `df1` and `df2` example provided earlier.
+   - Try changing the `ID` values in one DataFrame and observe how the results change.
+
+2. **Reshape a Dataset with `.pivot()`**:
+   - Create a new DataFrame and try reshaping it with `.pivot()`.
+   - Experiment with different columns as `index`, `columns`, and `values`.
+
+3. **Use `.melt()` to Transform Data**:
+   - Take the output of `.pivot()` and use `.melt()` to convert it back to long format.
+
+4. **Group and Aggregate Data**:
+   - Try using `.groupby()` to find the sum, mean, or maximum values for specific groups.
+
+---
+
+### **Learning Outcomes**
+
+- **Combine data** from multiple sources using merging and concatenation.
+- **Reshape data** for specific analysis needs using pivoting and melting.
+- **Aggregate data** to summarize and gain insights efficiently.
+
+---
+
+This walkthrough provides practical steps for beginners to explore data combination and reshaping techniques with hands-on activities. Let me know if you'd like any additional examples!
