@@ -3,7 +3,7 @@
 
 - [AAIS-202: Introduction to Python Programming](/module1/index.md)
 
-- [AAIS-302: Artificial Intelligence, Machine Learning, and Data Science Programming with Python](module2/index.md)
+- [AAIS-302: Artificial Intelligence, Machine Learning, and Data Science Programming with Python](AAIS-302/index.md)
 
 - [AAIS-312: Deep Learning](module3/index.md)
 - [AAIS-322: Natural Language Processing and Computer Vision](module4/index.md)
