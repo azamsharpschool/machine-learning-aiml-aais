@@ -1,13 +1,13 @@
-### Getting Started with Pandas: Data Manipulation Walkthrough
+### Getting Started with Pandas: Data Manipulation Walkthrough - House Prices
 
-Welcome to the Pandas Data Manipulation walkthrough! In this exercise, you'll learn the basics of using Pandas for data manipulation, including loading data, exploring it, and performing key operations. Let's get started!
+Welcome to the Pandas Data Manipulation walkthrough! In this exercise, you’ll learn the basics of using Pandas for data manipulation with a focus on **House Prices**. You'll learn how to load data, explore it, and perform key operations such as selecting, transforming, and aggregating data. Let’s get started!
 
 ---
 
-### **Step 1: Importing Pandas**
+### Step 1: Importing Pandas
 First, make sure you have Pandas installed. Open your Python environment and run:
 
-```python
+```bash
 pip install pandas
 ```
 
@@ -19,222 +19,188 @@ import pandas as pd
 
 ---
 
-### **Step 2: Loading Data**
-Download a sample dataset (e.g., Titanic dataset) or use one provided below. Save the following CSV as `titanic.csv`:
+### Step 2: Loading Data
+Download a sample dataset (e.g., house prices data) or use one provided below. Save the following CSV as `house_prices.csv`:
 
 ```csv
-PassengerId,Survived,Pclass,Name,Sex,Age,Fare
-1,0,3,Braund, Mr. Owen Harris,male,22,7.25
-2,1,1,Cumings, Mrs. John Bradley,female,38,71.2833
-3,1,3,Heikkinen, Miss. Laina,female,26,7.925
-4,1,1,Futrelle, Mrs. Jacques Heath,female,35,53.1
-5,0,3,Allen, Mr. William Henry,male,35,8.05
+Id,Location,Size,Price
+1,New York,1000,300000
+2,Los Angeles,1500,450000
+3,Chicago,800,250000
+4,Miami,1200,360000
+5,Dallas,1400,420000
 ```
 
 Load it into a DataFrame:
 
 ```python
-df = pd.read_csv('titanic.csv')
+df = pd.read_csv('house_prices.csv')
 ```
 
 ---
 
-### **Step 3: Exploring the Data**
+### Step 3: Exploring the Data
 Inspect the dataset to understand its structure and content.
 
-- Display the first few rows:
-  ```python
-  print(df.head())
-  ```
+**Display the first few rows:**
 
-- Get a summary of the dataset:
-  ```python
-  print(df.info())
-  ```
+```python
+print(df.head())
+```
 
-- View basic statistics for numeric columns:
-  ```python
-  print(df.describe())
-  ```
+**Get a summary of the dataset:**
+
+```python
+print(df.info())
+```
+
+**View basic statistics for numeric columns:**
+
+```python
+print(df.describe())
+```
 
 ---
 
-### **Step 4: Data Selection and Filtering**
+### Step 4: Data Selection and Filtering
 Learn how to select specific rows and columns.
 
-- Select a single column (e.g., `Age`):
-  ```python
-  ages = df['Age']
-  print(ages.head())
-  ```
+**Select a single column (e.g., Price):**
 
-- Filter rows where passengers survived:
-  ```python
-  survived = df[df['Survived'] == 1]
-  print(survived.head())
-  ```
+```python
+prices = df['Price']
+print(prices.head())
+```
 
-- Filter rows where passengers paid a fare greater than 50:
-  ```python
-  high_fare = df[df['Fare'] > 50]
-  print(high_fare.head())
-  ```
+**Filter rows where the house price is greater than 400,000:**
+
+```python
+high_price_houses = df[df['Price'] > 400000]
+print(high_price_houses.head())
+```
+
+**Filter houses located in 'New York':**
+
+```python
+new_york_houses = df[df['Location'] == 'New York']
+print(new_york_houses.head())
+```
 
 ---
 
-### **Step 5: Data Transformation**
+### Step 5: Data Transformation
 Modify or add new columns.
 
-- Create a new column `AgeCategory` to categorize passengers as `Child` or `Adult`:
-  ```python
-  df['AgeCategory'] = df['Age'].apply(lambda x: 'Child' if x < 18 else 'Adult')
-  print(df[['Name', 'Age', 'AgeCategory']].head())
-  ```
+**Create a new column "PricePerSqFt" to calculate price per square foot:**
 
-- Calculate the mean fare for each passenger class (`Pclass`):
-  ```python
-  mean_fare = df.groupby('Pclass')['Fare'].mean()
-  print(mean_fare)
-  ```
+```python
+df['PricePerSqFt'] = df['Price'] / df['Size']
+print(df[['Location', 'Size', 'Price', 'PricePerSqFt']].head())
+```
+
+**Calculate the average house price for each location:**
+
+```python
+avg_price_by_location = df.groupby('Location')['Price'].mean()
+print(avg_price_by_location)
+```
 
 ---
 
-### **Step 6: Handling Missing Data**
+### Step 6: Handling Missing Data
 Learn how to deal with missing values.
 
-- Check for missing values:
-  ```python
-  print(df.isnull().sum())
-  ```
+**Check for missing values:**
 
-- Fill missing ages with the median age:
-  ```python
-  df['Age'] = df['Age'].fillna(df['Age'].median())
-  ```
+```python
+print(df.isnull().sum())
+```
+
+**Fill missing values in the "Size" column with the mean size:**
+
+```python
+df['Size'] = df['Size'].fillna(df['Size'].mean())
+```
 
 ---
 
-### **Step 7: Sorting and Aggregating Data**
+### Step 7: Sorting and Aggregating Data
 Sort and summarize your data.
 
-- Sort passengers by age:
-  ```python
-  sorted_df = df.sort_values('Age')
-  print(sorted_df.head())
-  ```
+**Sort houses by price:**
 
-- Aggregate the data to find the total fare paid by gender:
-  ```python
-  total_fare_by_gender = df.groupby('Sex')['Fare'].sum()
-  print(total_fare_by_gender)
-  ```
+```python
+sorted_df = df.sort_values('Price', ascending=False)
+print(sorted_df.head())
+```
+
+**Find the total price of houses by location:**
+
+```python
+total_price_by_location = df.groupby('Location')['Price'].sum()
+print(total_price_by_location)
+```
 
 ---
 
-### **Step 8: Saving the Modified Data**
+### Step 8: Saving the Modified Data
 Save your manipulated dataset to a new CSV file:
 
 ```python
-df.to_csv('titanic_modified.csv', index=False)
+df.to_csv('house_prices_modified.csv', index=False)
 ```
 
 ---
 
-### **Challenge Exercises**
-1. Add a new column called `Family` to indicate whether the passenger has a title (`Mr.`, `Mrs.`, etc.) in their name.
-2. Find the survival rate for each passenger class (`Pclass`).
-3. Identify the youngest and oldest passengers in the dataset.
+### Challenge Exercises
+Here are some exercises to deepen your understanding:
 
-
-### Solution 
-
-Here are the solutions for the **Challenge Exercises**:
+1. **Add a new column called "PriceCategory"** to categorize houses as "Affordable" (below $350,000) or "Expensive" (above $350,000).
+2. **Find the average house size for each price category** ("Affordable" vs. "Expensive").
+3. **Identify the most expensive house** in the dataset.
 
 ---
 
-### **1. Add a new column called `Family` to indicate whether the passenger has a title (`Mr.`, `Mrs.`, etc.) in their name.**
+### Solution
 
-We can extract titles from the `Name` column by looking for patterns like `Mr.`, `Mrs.`, etc., and then create a new column.
+Here are the solutions for the challenge exercises:
+
+1. **Add a new column called "PriceCategory"** to categorize houses as "Affordable" or "Expensive":
 
 ```python
-import re
-
-# Function to check if a title exists in the name
-def has_title(name):
-    if re.search(r'\b(Mr|Mrs|Miss|Master)\b', name):
-        return True
-    return False
-
-# Apply the function to create a new 'Family' column
-df['Family'] = df['Name'].apply(has_title)
-print(df[['Name', 'Family']].head())
+df['PriceCategory'] = df['Price'].apply(lambda x: 'Affordable' if x < 350000 else 'Expensive')
+print(df[['Location', 'Price', 'PriceCategory']].head())
 ```
 
----
-
-### **2. Find the survival rate for each passenger class (`Pclass`).**
-
-The survival rate is calculated as the ratio of survivors (`Survived == 1`) to the total number of passengers in each class.
+2. **Find the average house size for each price category**:
 
 ```python
-# Group by 'Pclass' and calculate survival rate
-survival_rate = df.groupby('Pclass')['Survived'].mean()
-print(survival_rate)
+avg_size_by_price_category = df.groupby('PriceCategory')['Size'].mean()
+print(avg_size_by_price_category)
 ```
 
-Output example:
-```
-Pclass
-1    0.80
-2    0.50
-3    0.25
-Name: Survived, dtype: float64
-```
-
----
-
-### **3. Identify the youngest and oldest passengers in the dataset.**
-
-To find the youngest and oldest passengers, we can use the `idxmin` and `idxmax` functions on the `Age` column.
+3. **Identify the most expensive house**:
 
 ```python
-# Find the youngest passenger
-youngest_passenger = df.loc[df['Age'].idxmin()]
-print("Youngest Passenger:")
-print(youngest_passenger)
-
-# Find the oldest passenger
-oldest_passenger = df.loc[df['Age'].idxmax()]
-print("\nOldest Passenger:")
-print(oldest_passenger)
+most_expensive_house = df.loc[df['Price'].idxmax()]
+print("Most Expensive House:")
+print(most_expensive_house)
 ```
 
-Output example:
-```
-Youngest Passenger:
-PassengerId                        1
-Survived                           0
-Pclass                             3
-Name         Braund, Mr. Owen Harris
-Sex                             male
-Age                               22
-Fare                            7.25
-Family                          True
-Name: 0, dtype: object
+**Output example:**
 
-Oldest Passenger:
-PassengerId                        2
-Survived                           1
-Pclass                             1
-Name      Cumings, Mrs. John Bradley
-Sex                           female
-Age                               38
-Fare                        71.2833
-Family                          True
+```python
+Most Expensive House:
+Id                          2
+Location               Los Angeles
+Size                     1500
+Price                   450000
+PricePerSqFt           300
+PriceCategory     Expensive
 Name: 1, dtype: object
 ```
 
 ---
 
-Feel free to adapt the solutions to your specific dataset or add enhancements for deeper analysis!
-
+### Conclusion:
+By following this walkthrough, you have learned how to manipulate house price data using Pandas. You can now load datasets, explore and analyze them, apply transformations, handle missing data, and save your results. Feel free to experiment with additional exercises to deepen your understanding and apply these techniques to your datasets!

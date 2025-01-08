@@ -15,7 +15,7 @@ conda activate [path to the environment]
 - [Day 2 - Getting Started Walkthrough: Pandas Basics](resources/getting-started-pandas.md) 
 - [Day 3 - Data Manipulation with Pandas](../slides/302-%20Data%20Manipulation%20with%20Pandas.key)
 - [Day 3 - Data Manipulation with Pandas Walkthrough](resources/data-manipulation-walkthrough.md)
-[Day 3 - Source Code - Normalization, LinearRegression and Prediction](https://gist.github.com/azamsharpschool/3b8f6d66964fe81f392dec07c310cbf4) 
+- [Day 3 - Source Code - Normalization, LinearRegression and Prediction](https://gist.github.com/azamsharpschool/3b8f6d66964fe81f392dec07c310cbf4) 
 - [Day 4 - Advanced Data Analysis and Case Study](resources/Activity:%20E-Commerce%20Sales%20Analysis.md)
 
 Module 2: 
