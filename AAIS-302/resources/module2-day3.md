@@ -1,42 +1,48 @@
-# Walkthrough for Day 3: Removing Duplicates and Cleaning Data Formats
+### **Scenario: Cleaning a Customer Database for a Marketing Campaign**
 
-This walkthrough will guide you step-by-step through the beginner-friendly activities outlined in the lecture. Follow along with the instructions and code snippets to practice detecting and removing duplicates and cleaning data formats.
+[Download the Dataset](realistic_customer_data_with_duplicates.csv) 
 
----
-
-## **Objective**  
-By the end of this session, you’ll be able to:
-1. Detect and remove duplicate rows in a dataset.
-2. Standardize and clean data formats in preparation for analysis.
+**Context**: You are a data analyst at a retail company preparing customer data for a targeted marketing campaign. The dataset contains 20,500 records, including duplicate customer names, inconsistent date formats, and non-standard text or numerical values. Cleaning this data is essential for accurate analysis and campaign targeting.
 
 ---
 
-## **Step 1: Handling Duplicates**
+### **Objective**:
+- Remove duplicate customer records to avoid redundant communications.
+- Standardize data formats (e.g., consistent text casing, correct data types for numerical values, and standardized date formats).
 
-### **1.1 Identifying Duplicate Rows**
-Duplicate rows can inflate data and skew analysis. Start by identifying them using the `.duplicated()` method.
+---
 
-#### **Code Example**:
+### **Steps**:
+
+#### **Step 1: Handling Duplicates**
+
+1.1 **Identifying Duplicate Rows**  
+The dataset contains duplicate records where the same customer may appear multiple times due to slight differences in formatting.
+
+Using `.duplicated()`:
+
 ```python
 # Check for duplicates
 print("Number of duplicate rows:", df.duplicated().sum())
 
 # Show duplicate rows
-duplicates = df[df.duplicated()]
-print("Duplicate rows:")
-print(duplicates)
+print("Duplicate rows:\n", df[df.duplicated()])
 ```
 
-#### **Explanation**:
-- `df.duplicated()` returns a boolean series indicating whether each row is a duplicate.
-- `df[df.duplicated()]` filters and displays only the duplicate rows.
+**Example Output** (for the new dataset):
+```
+Number of duplicate rows: 500
+Duplicate rows:
+              Name     Age    Signup_Date  Purchases
+2050     John Doe     30    2023-01-15    five
+5040     John Doe     30    2023-01-15    five
+15001  Jane Smith     25    March 12, 2023   ten
+```
 
 ---
 
-### **1.2 Removing Duplicates**
-Once duplicates are identified, remove them using `.drop_duplicates()`.
+1.2 **Removing Duplicates**
 
-#### **Code Example**:
 ```python
 # Remove duplicate rows
 df = df.drop_duplicates()
@@ -45,104 +51,114 @@ df = df.drop_duplicates()
 print("Number of duplicate rows after removal:", df.duplicated().sum())
 ```
 
-#### **Explanation**:
-- `df.drop_duplicates()` removes duplicate rows.
-- The updated `df` no longer contains duplicates.
-
----
-
-## **Step 2: Cleaning and Standardizing Data Formats**
-
-### **2.1 Standardizing Text Data**
-Text data often needs cleaning to ensure consistency. Use `.str.lower()` to convert text to lowercase and `.str.strip()` to remove leading and trailing whitespace.
-
-#### **Code Example**:
-```python
-# Standardize the 'name' column
-df['name'] = df['name'].str.strip().str.lower()
-
-# Display the cleaned column
-print(df[['name']].head())
+**Output**:
+```
+Number of duplicate rows after removal: 0
 ```
 
-#### **Explanation**:
-- `.str.strip()` removes extra spaces.
-- `.str.lower()` ensures all text is lowercase for consistency.
+---
+
+#### **Step 2: Cleaning and Standardizing Data Formats**
+
+2.1 **Standardizing Text Data**  
+Customer names have inconsistencies such as different capitalization, leading/trailing spaces, and variations in formatting.
+
+```python
+# Standardize the 'Name' column
+df['Name'] = df['Name'].str.strip().str.lower()
+
+# Check cleaned names
+print(df[['Name']].head())
+```
+
+**Example Cleaned Data**:
+```
+          Name
+0     john doe
+1   jane smith
+2  emily davis
+```
 
 ---
 
-### **2.2 Converting Data Types**
-Sometimes data is stored in the wrong format (e.g., numbers as strings). Use `.astype()` to convert columns to the appropriate data type.
+2.2 **Converting Data Types**  
+Columns such as `Age` and `Purchases` may have non-standard or inconsistent data types (e.g., "Thirty", "ten").
 
-#### **Code Example**:
 ```python
-# Convert 'age' column to integer
-df['age'] = df['age'].astype(int)
+# Convert 'Age' to integers, handling non-numeric values
+def clean_age(value):
+    try:
+        return int(value)
+    except ValueError:
+        if value.lower() == "thirty":
+            return 30
+        if value.lower() == "forty":
+            return 40
+    return None
 
-# Check the data type
+df['Age'] = df['Age'].apply(clean_age)
+
+# Convert 'Purchases' to integers
+def clean_purchases(value):
+    if isinstance(value, str):
+        if value.lower() == "five":
+            return 5
+        if value.lower() == "ten":
+            return 10
+    return int(value)
+
+df['Purchases'] = df['Purchases'].apply(clean_purchases)
+
+# Check data types
 print(df.dtypes)
 ```
 
-#### **Explanation**:
-- `.astype()` changes the data type of a column to the specified type.
-
----
-
-### **2.3 Handling Inconsistent Date Formats**
-Dates may have inconsistent formats. Use `pd.to_datetime()` to standardize them.
-
-#### **Code Example**:
-```python
-# Standardize the 'date' column
-df['date'] = pd.to_datetime(df['date'])
-
-# Display the cleaned column
-print(df[['date']].head())
+**Output**:
+```
+Name               object
+Age                 int64
+Signup_Date        object
+Purchases           int64
+dtype: object
 ```
 
-#### **Explanation**:
-- `pd.to_datetime()` parses various date formats into a consistent datetime format.
+---
+
+2.3 **Handling Inconsistent Date Formats**  
+Dates are stored in varying formats such as "2023-01-15", "15-01-2023", or "March 12, 2023."
+
+```python
+# Standardize 'Signup_Date'
+df['Signup_Date'] = pd.to_datetime(df['Signup_Date'], errors='coerce')
+
+# Check cleaned dates
+print(df[['Signup_Date']].head())
+```
+
+**Cleaned Dates**:
+```
+  Signup_Date
+0  2023-01-15
+1  2023-03-12
+2  2023-02-22
+```
 
 ---
 
-## **Step 3: Hands-On Activity**
-
-Follow these steps to practice the concepts:
-
-1. **Detect and Remove Duplicates**:
-   ```python
-   print("Duplicate rows:", df.duplicated().sum())
-   df = df.drop_duplicates()
-   print("Duplicates removed.")
-   ```
-
-2. **Clean Text Data**:
-   ```python
-   df['name'] = df['name'].str.strip().str.lower()
-   print("Standardized text data:\n", df['name'].head())
-   ```
-
-3. **Standardize Data Types**:
-   ```python
-   df['age'] = df['age'].astype(int)
-   print("Data types:\n", df.dtypes)
-   ```
-
-4. **Handle Dates**:
-   ```python
-   df['date'] = pd.to_datetime(df['date'])
-   print("Standardized dates:\n", df['date'].head())
-   ```
+### **Step 3: Hands-On Activity**  
+**Apply these steps to your dataset**:
+1. Identify and remove duplicates using `.duplicated()` and `.drop_duplicates()`.
+2. Standardize the `Name` column by removing spaces and normalizing case.
+3. Convert `Age` and `Purchases` to integers using custom cleaning functions.
+4. Standardize `Signup_Date` using `pd.to_datetime()`.
 
 ---
 
-## **Learning Outcomes**
-- **Detect duplicates**: You now know how to identify duplicate rows using `.duplicated()`.
-- **Remove duplicates**: You can clean your dataset by removing unnecessary duplicates with `.drop_duplicates()`.
-- **Clean text data**: You can standardize text formats for consistency using `.str` methods.
-- **Standardize data types**: You can ensure columns have the correct data types with `.astype()`.
-- **Handle dates**: You can parse and standardize inconsistent date formats using `pd.to_datetime()`.
+### **Real-World Outcome**:
+The cleaned dataset ensures:
+- Accurate customer counts and no redundant emails.
+- Consistent naming conventions for easier analysis.
+- Correct numerical data for accurate purchase trend analysis.
+- Standardized date formats for seamless time-series analysis.
 
----
-
-Feel free to experiment with the dataset and apply these techniques to clean and prepare your data for analysis!
+By following these steps, you’ve prepared a high-quality dataset ready for effective marketing and customer behavior insights!
