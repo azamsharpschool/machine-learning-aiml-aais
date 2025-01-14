@@ -22,6 +22,7 @@ Module 2:
 
 - [Day 1 - Introduction to Data Cleaning and Loading Data](resources/module2-day1.md)
 - [Day 2 - Handling Missing Data](resources/module2.day2.md)
+- [Day 2 - Source Code - Rental Car Pricing Prediction](https://gist.github.com/azamsharpschool/cb0e83549a4497545b3bb0409e4c7f82)
 - [Day 3 - Removing Duplicates and Cleaning Data Formats](resources/module2-day3.md)
 - [Day 4 - Combining and Reshaping Data](resources/module2-day4-md)
 
