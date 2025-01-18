@@ -1,0 +1,1 @@
+Train a word2vec model on the [Sports & Outdoors Reviews Dataset](http://snap.stanford.edu/data/amazon/productGraph/categoryFiles/reviews_Sports_and_Outdoors_5.json.gz) Once you train a model on this, find the words most similar to 'awful' and find similarities between the following word tuples: ('good', 'great'), ('slow','steady')
