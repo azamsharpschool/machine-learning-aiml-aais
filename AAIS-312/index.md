@@ -50,6 +50,9 @@
 - [Day 4 - Code: Restaurant Reviews](resources/res-reviews.ipynb)
 - [Day 4 - Understanding Word2Vec]
 - [Day 4 - Implementing Word2Vec]
+- [Day 4 - Sentiment Analysis](resources/sentiment.md) 
+- [Day 4 - Spam or Not](resources/spam.md)
+- [Day 4 - Language Translation](resources/language-translation.md)
 
 #### Code 
 
