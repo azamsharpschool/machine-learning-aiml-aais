@@ -72,6 +72,8 @@
 
 ### Module 5: Pre-Trained Models
 
+- [Day 1 - Introduction to Pre-Trained Models](/Slides/introduction-pre-trained-models.key)
+
 - [BERT]
 - [ResNet]
 - [Slides Understanding Pre-Trained Models](../Slides/Deep%20Learning/introduction-to-pre-trained-models.key)
