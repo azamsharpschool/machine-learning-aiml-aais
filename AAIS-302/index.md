@@ -30,12 +30,10 @@ Module 2:
 ### Module 3 
 
 - [Day 1 - Introduction to Data Visualization with Pandas](resources/module3-day1.md)
-
 - [Day 2 - Introduction to Matplotlib](resources/module3-day2.md)
 - [Day 2 - Source Code for Visualizing Carvana Car Prices](https://gist.github.com/azamsharpschool/3ee5bb004af43dac882f77c415578c6d)
-- [Day 3 - Advanced Visualizations with 
-Matplotlib](resources/module3-day3.md)
-- [Day 4 - Bringing It All Together](resources/module3-day4.md)
+- [Day 3 - Advanced Visualizations with Matplotlib](resources/advanced-visualization.md)
+- [Day 4 - Bringing It All Together](resources/bringing-together.md)
 
 ### Module 4 
 
