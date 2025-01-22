@@ -34,6 +34,7 @@ Module 2:
 - [Day 2 - Source Code for Visualizing Carvana Car Prices](https://gist.github.com/azamsharpschool/3ee5bb004af43dac882f77c415578c6d)
 - [Day 3 - Advanced Visualizations with Matplotlib](resources/advanced-visualization.md)
 - [Day 4 - Bringing It All Together](resources/bringing-together.md)
+- [Day 4 - Turkey Sales Data from Malls](https://gist.github.com/azamsharpschool/e87f0494968ed79b4e118f71751f4b06)
 
 ### Module 4 
 

@@ -207,3 +207,40 @@ plt.tight_layout()
 # Display the plot
 plt.show()
 ```
+
+
+``` py 
+import matplotlib.pyplot as plt
+
+# Create 3 subplots (1 column, 3 rows)
+fig, axs = plt.subplots(3, 1, figsize=(12, 18))  # Adjust figure size as needed
+
+# Plot 1: Monthly sales trends
+monthly_sales = sales_data.groupby(sales_data["date"].dt.to_period("M")).sum(numeric_only=True)
+axs[0].plot(monthly_sales.index.astype(str), monthly_sales['total_sales'], label='Monthly Sales', color='blue')
+axs[0].set_title('Monthly Sales Trends')
+axs[0].set_xlabel('Month')
+axs[0].set_ylabel('Total Sales ($)')
+axs[0].legend()
+axs[0].set_xticks(range(len(monthly_sales.index)))
+axs[0].set_xticklabels(monthly_sales.index.astype(str), rotation=45, ha='right')
+
+# Plot 2: Age vs Spending scatter plot
+axs[1].scatter(sales_data['age'], sales_data['total_sales'], color='red', alpha=0.6)
+axs[1].set_title('Age vs Spending')
+axs[1].set_xlabel('Age')
+axs[1].set_ylabel('Total Sales ($)')
+
+# Plot 3: Top product categories bar chart
+category_sales = sales_data.groupby('product_category')['total_sales'].sum()
+axs[2].bar(category_sales.index, category_sales.values, color='green')
+axs[2].set_title('Top Product Categories')
+axs[2].set_xlabel('Category')
+axs[2].set_ylabel('Total Sales ($)')
+axs[2].tick_params(axis='x', rotation=45)
+
+# Adjust layout and show the plots
+plt.tight_layout()
+plt.show()
+
+```
