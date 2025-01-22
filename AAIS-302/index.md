@@ -39,6 +39,7 @@ Module 2:
 ### Module 4 
 
 - [Day 1 - Introduction to Supervised Learning and Classification](resources/module4-day1.md)
+- [Day 1 - Spam or Not]()
 - [Day 2 - Decision Trees for Classification](resources/module4-day2.md)
 - [Day 3 - Regression Techniques](resources/module4-day3.md)
 - [Day 4 - Combining Techniques and Debugging](resources/module4-day4.md)
