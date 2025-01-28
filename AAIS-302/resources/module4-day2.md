@@ -2,6 +2,8 @@
 
 This walkthrough will guide you step-by-step through implementing a simple decision tree to decide whether a loan application should be approved or rejected based on a few factors.
 
+[Download Dataset](loan_decision_data.csv)
+
 ---
 
 ### **Scenario**
