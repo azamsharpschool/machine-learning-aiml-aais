@@ -1,156 +1,157 @@
-### **Walkthrough: Real-World Scenario for Decision Trees in Classification**
+### Walkthrough: Real-Life Example of Decision Trees – Loan Approval
+
+This walkthrough will guide you step-by-step through implementing a simple decision tree to decide whether a loan application should be approved or rejected based on a few factors.
 
 ---
 
-**Scenario:** **Classifying Loan Applicants Based on Creditworthiness**
+### **Scenario**
+
+You are a loan officer. Your task is to decide whether to approve or reject loan applications. The decision is based on the following criteria:
+
+1. **Applicant Income**: Greater than $50,000.  
+2. **Credit Score**: Greater than 700.  
+3. **Loan Amount**: Less than or equal to $100,000.
 
 ---
 
-### **Objective:**  
-Use a decision tree to classify loan applicants as "Approve" or "Reject" based on their financial information and other attributes.
+### **Step 1: Create the Decision Tree Structure**
 
----
+The decision tree for this scenario would look like this:
 
-### **Background:**
-Banks often need to decide whether to approve a loan application. A decision tree model can analyze past loan data to create a classification rule that predicts approval or rejection based on applicant attributes such as income, credit score, loan amount, and debt-to-income ratio.
-
----
-
-### **Dataset Description:**
-The dataset contains information about previous applicants:
-
-| **Applicant ID** | **Income ($)** | **Credit Score** | **Loan Amount ($)** | **Debt-to-Income Ratio (%)** | **Loan Status** |
-|-------------------|----------------|------------------|----------------------|-----------------------------|-----------------|
-| 1                 | 50,000         | 700              | 10,000              | 20                          | Approve         |
-| 2                 | 30,000         | 650              | 20,000              | 40                          | Reject          |
-| 3                 | 80,000         | 750              | 15,000              | 15                          | Approve         |
-| 4                 | 25,000         | 600              | 5,000               | 50                          | Reject          |
-
-**Features:**  
-- **Income:** Annual income of the applicant.  
-- **Credit Score:** A numerical representation of the applicant's credit history.  
-- **Loan Amount:** Amount requested by the applicant.  
-- **Debt-to-Income Ratio:** Percentage of monthly income used to pay debts.
-
-**Target:**  
-- **Loan Status:** Whether the loan application was "Approve" or "Reject."
-
----
-
-### **Step-by-Step Walkthrough**
-
----
-
-#### **Step 1: Load the Dataset**
-Start by loading the dataset into Python:
-
-```python
-import pandas as pd
-
-# Sample dataset
-data = {
-    'Income': [50000, 30000, 80000, 25000],
-    'Credit Score': [700, 650, 750, 600],
-    'Loan Amount': [10000, 20000, 15000, 5000],
-    'Debt-to-Income Ratio': [20, 40, 15, 50],
-    'Loan Status': ['Approve', 'Reject', 'Approve', 'Reject']
-}
-
-df = pd.DataFrame(data)
+```
+          [Income > 50k?]
+             /      \
+          Yes        No
+         /             \
+ [Credit Score > 700?]  Reject
+         /       \
+      Yes        No
+     /            \
+[Loan <= 100k?]  Reject
+    /     \
+ Approve  Reject
 ```
 
 ---
 
-#### **Step 2: Encode the Target Variable**
-Since "Loan Status" is categorical, encode it into numeric values:
+### **Step 2: Understand the Dataset**
 
-```python
-from sklearn.preprocessing import LabelEncoder
+Your dataset might look like this:
 
-encoder = LabelEncoder()
-df['Loan Status'] = encoder.fit_transform(df['Loan Status'])  # Approve: 1, Reject: 0
-```
-
----
-
-#### **Step 3: Train-Test Split**
-Split the dataset into training and testing sets:
-
-```python
-from sklearn.model_selection import train_test_split
-
-X = df[['Income', 'Credit Score', 'Loan Amount', 'Debt-to-Income Ratio']]  # Features
-y = df['Loan Status']  # Target
-
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25, random_state=42)
-```
+| Income  | Credit Score | Loan Amount | Decision  |
+|---------|--------------|-------------|-----------|
+| 60,000  | 750          | 90,000      | Approve   |
+| 40,000  | 710          | 50,000      | Reject    |
+| 55,000  | 680          | 80,000      | Reject    |
+| 70,000  | 720          | 120,000     | Reject    |
+| 65,000  | 800          | 95,000      | Approve   |
 
 ---
 
-#### **Step 4: Train a Decision Tree Classifier**
-Train a decision tree classifier using Scikit-learn:
+### **Step 3: Define the Decision Rules**
+
+Translate the decision tree logic into plain rules:
+
+1. If income <= $50,000 → Reject.  
+2. If income > $50,000:  
+   - If credit score <= 700 → Reject.  
+   - If credit score > 700:  
+     - If loan amount > $100,000 → Reject.  
+     - Otherwise → Approve.
+
+---
+
+### **Step 4: Build the Decision Tree in Python**
 
 ```python
 from sklearn.tree import DecisionTreeClassifier
+from sklearn import tree
+import pandas as pd
 
-# Create and train the decision tree
-classifier = DecisionTreeClassifier(max_depth=3, random_state=42)
-classifier.fit(X_train, y_train)
+# Step 4.1: Create the dataset
+data = {
+    "Income": [60000, 40000, 55000, 70000, 65000],
+    "CreditScore": [750, 710, 680, 720, 800],
+    "LoanAmount": [90000, 50000, 80000, 120000, 95000],
+    "Decision": [1, 0, 0, 0, 1]  # 1 = Approve, 0 = Reject
+}
+
+df = pd.DataFrame(data)
+
+# Step 4.2: Define features and target
+X = df[["Income", "CreditScore", "LoanAmount"]]
+y = df["Decision"]
+
+# Step 4.3: Create and train the model
+model = DecisionTreeClassifier(criterion="gini", max_depth=3, random_state=42)
+model.fit(X, y)
+
+# Step 4.4: Visualize the tree
+tree.plot_tree(model, feature_names=["Income", "CreditScore", "LoanAmount"], class_names=["Reject", "Approve"], filled=True)
 ```
 
 ---
 
-#### **Step 5: Visualize the Decision Tree**
-Visualize the decision tree to understand the classification rules:
+### **Step 5: Predict Loan Decisions**
+
+Test the decision tree with new data:
 
 ```python
-from sklearn.tree import plot_tree
-import matplotlib.pyplot as plt
+# New applicants
+new_applicants = pd.DataFrame({
+    "Income": [45000, 75000, 65000],
+    "CreditScore": [720, 650, 800],
+    "LoanAmount": [85000, 120000, 95000]
+})
 
-plt.figure(figsize=(10, 6))
-plot_tree(classifier, feature_names=X.columns, class_names=['Reject', 'Approve'], filled=True)
-plt.show()
+# Predict
+predictions = model.predict(new_applicants)
+print(predictions)  # Output: [0, 0, 1]
 ```
 
-The visualization will show rules like:  
-- If **Credit Score ≥ 700**, then "Approve."  
-- Else, if **Debt-to-Income Ratio < 30**, then "Approve."  
-- Otherwise, "Reject."
+**Interpretation**:  
+- Applicant 1: Reject (low income).  
+- Applicant 2: Reject (loan amount too high).  
+- Applicant 3: Approve (meets all criteria).
 
 ---
 
-#### **Step 6: Test the Model**
-Evaluate the model's performance on the test data:
+### **Step 6: Validate the Model**
+
+Check accuracy using the original dataset:
 
 ```python
 from sklearn.metrics import accuracy_score
 
-y_pred = classifier.predict(X_test)
-accuracy = accuracy_score(y_test, y_pred)
+# Predict on the training set
+y_pred = model.predict(X)
 
-print(f"Accuracy: {accuracy * 100:.2f}%")
+# Calculate accuracy
+accuracy = accuracy_score(y, y_pred)
+print(f"Model Accuracy: {accuracy * 100:.2f}%")
 ```
 
 ---
 
-### **Real-World Insights**
+### **Step 7: Explainability with Rules**
 
-1. **Interpretable Results:**  
-   Decision trees provide clear rules (e.g., "Approve if Credit Score ≥ 700"). These rules are easily explainable to stakeholders.
+Translate the model into human-readable rules:
 
-2. **Flexibility:**  
-   The tree can handle both numeric (Income, Credit Score) and categorical data.
-
-3. **Scalability:**  
-   The method can be applied to much larger datasets for real-world scenarios.
+- If Income ≤ 50,000 → Reject.  
+- If Income > 50,000 and Credit Score ≤ 700 → Reject.  
+- If Income > 50,000 and Credit Score > 700 and Loan Amount ≤ 100,000 → Approve.  
+- Otherwise → Reject.
 
 ---
 
-### **Extension:**
-- Try tuning hyperparameters like `max_depth` or `min_samples_split` to improve the model.  
-- Apply the model to predict the status of new loan applicants with unseen data.
+### **Real-Life Applications**
+
+1. **Banking**: Automating loan approvals.  
+2. **Healthcare**: Diagnosing diseases based on symptoms.  
+3. **E-commerce**: Personalizing product recommendations.
 
 ---
 
-### **Outcome:**  
-Students will learn how decision trees classify data, visualize decision-making rules, and evaluate the model's accuracy in a real-world problem.
+### **End of Walkthrough**
+
+This step-by-step process illustrates how decision trees can be applied in real-world scenarios. You’ve built and tested a decision tree, making it easy to understand and visualize decisions.

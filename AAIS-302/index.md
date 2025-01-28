@@ -44,7 +44,8 @@ Module 2:
 - [Day 1 - Introduction to Supervised Learning and Classification](resources/module4-day1.md)
 - [Day 3 - Spam or Not](resources/spam-or-not.md)
 - [Day 3 - Spam or Not Source Code](https://gist.github.com/azamsharpschool/383b96c835e9fcd3f421d52a7bb7c67e)
-- [Day 2 - Decision Trees for Classification](resources/module4-day2.md)
+- [Day 4 - Decision Trees for Classification Slides](../Slides/decision-trees.key)
+- [Day 4 - Decision Trees for Classification](resources/module4-day2.md)
 - [Day 3 - Regression Techniques](resources/module4-day3.md)
 - [Day 4 - Combining Techniques and Debugging](resources/module4-day4.md)
 
