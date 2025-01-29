@@ -1,170 +1,254 @@
-### **Walkthrough of K-Means Clustering with a Solution: Customer Segmentation in a Coffee Shop**
 
-[Download Dataset](KMeans_Realistic_CustomerData_20K.csv)
+# Step-by-Step Guide to K-Means Clustering with Python: Customer Segmentation & Elbow Method
 
-We will perform **K-Means Clustering** step by step using Python to analyze customer data for a coffee shop.
+[Download DataSet](income_data.csv)
 
----
-
-## **Step 1: Problem Definition**
-A coffee shop wants to segment its customers based on:
-- **Spending per visit ($)**
-- **Visit frequency per month**
-
-📌 **Objective:** Identify customer groups and optimize marketing strategies for each segment.
+## 🚀 **Step 1: Open in Google Colab**
+- If you're using **Google Colab**, open a new notebook.
+- Copy and paste the provided code into a cell.
+- If you're using **Jupyter Notebook**, you can also run the same code there.
 
 ---
 
-## **Step 2: Importing Required Libraries**
-We will use **Pandas, NumPy, Matplotlib, and Scikit-learn** for data handling, visualization, and clustering.
+## **🔹 Step 2: Import Required Libraries**
+First, we need to import the necessary libraries:
 
 ```python
-import numpy as np
+from sklearn.cluster import KMeans
+import pandas as pd
+from sklearn.preprocessing import MinMaxScaler
+from matplotlib import pyplot as plt
+%matplotlib inline
+```
+
+### **What Do These Libraries Do?**
+- `sklearn.cluster.KMeans`: Used for K-Means clustering.
+- `pandas`: Helps us work with structured data (CSV files).
+- `sklearn.preprocessing.MinMaxScaler`: Used to scale data for better clustering results.
+- `matplotlib.pyplot`: Helps us visualize data.
+- `%matplotlib inline`: Ensures that graphs appear in the notebook.
+
+---
+
+## **🔹 Step 3: Load and View Data**
+We will load a dataset containing people's **age** and **income**.
+
+```python
+df = pd.read_csv("income.csv")
+df.head()
+```
+
+### **Sample Data (income.csv)**
+| Name  | Age | Income($) |
+|-------|----:|---------:|
+| Rob   |  27 |   70000  |
+| Michael | 29 |   90000  |
+| Mohan |  29 |   61000  |
+| Ismail | 28 |   60000  |
+| Kory  |  42 |  150000  |
+
+---
+
+## **🔹 Step 4: Visualizing the Data**
+We can plot **Age vs Income** to see if any patterns exist.
+
+```python
+plt.scatter(df.Age, df['Income($)'])
+plt.xlabel('Age')
+plt.ylabel('Income($)')
+plt.show()
+```
+This scatter plot will show how people’s income varies with their age.
+
+---
+
+## **🔹 Step 5: Applying K-Means Clustering**
+Now, we apply **K-Means** to group the data into **3 clusters**.
+
+```python
+km = KMeans(n_clusters=3)
+y_predicted = km.fit_predict(df[['Age', 'Income($)']])
+df['cluster'] = y_predicted
+df.head()
+```
+
+### **How K-Means Works Here?**
+- It **chooses 3 centroids** randomly.
+- Each data point is **assigned to the nearest centroid**.
+- Centroids are **recalculated** based on the mean of assigned points.
+- This **repeats until no changes occur** in the clusters.
+
+---
+
+## **🔹 Step 6: Visualizing Clusters**
+Now, we separate the data by clusters and plot them.
+
+```python
+df1 = df[df.cluster == 0]
+df2 = df[df.cluster == 1]
+df3 = df[df.cluster == 2]
+
+plt.scatter(df1.Age, df1['Income($)'], color='green')
+plt.scatter(df2.Age, df2['Income($)'], color='red')
+plt.scatter(df3.Age, df3['Income($)'], color='black')
+
+plt.scatter(km.cluster_centers_[:, 0], km.cluster_centers_[:, 1], color='purple', marker='*', label='centroid')
+
+plt.xlabel('Age')
+plt.ylabel('Income ($)')
+plt.legend()
+plt.show()
+```
+
+### **What Does This Show?**
+- Points are **grouped into 3 clusters** (colors).
+- The **purple stars** represent the **centroids** of the clusters.
+
+---
+
+## **🔹 Step 7: Preprocessing with Min-Max Scaling**
+Since **income and age have different ranges**, we **scale them** for better clustering.
+
+```python
+scaler = MinMaxScaler()
+
+scaler.fit(df[['Income($)']])
+df['Income($)'] = scaler.transform(df[['Income($)']])
+
+scaler.fit(df[['Age']])
+df['Age'] = scaler.transform(df[['Age']])
+
+df.head()
+```
+
+### **Why Scale the Data?**
+- **Before scaling:**  
+  - Age: `27 - 50`  
+  - Income: `$60,000 - $150,000`  
+- **After scaling:**  
+  - Age: `0 - 1`
+  - Income: `0 - 1`
+  
+👉 This ensures that **both features contribute equally** in clustering.
+
+---
+
+## **🔹 Step 8: Reapply K-Means on Scaled Data**
+```python
+km = KMeans(n_clusters=3)
+y_predicted = km.fit_predict(df[['Age', 'Income($)']])
+df['cluster'] = y_predicted
+df.head()
+```
+
+Now, clustering will be **more accurate** since values are scaled.
+
+---
+
+## **🔹 Step 9: Visualizing Scaled Clusters**
+```python
+df1 = df[df.cluster == 0]
+df2 = df[df.cluster == 1]
+df3 = df[df.cluster == 2]
+
+plt.scatter(df1.Age, df1['Income($)'], color='green')
+plt.scatter(df2.Age, df2['Income($)'], color='red')
+plt.scatter(df3.Age, df3['Income($)'], color='black')
+
+plt.scatter(km.cluster_centers_[:, 0], km.cluster_centers_[:, 1], color='purple', marker='*', label='centroid')
+
+plt.legend()
+plt.show()
+```
+
+🎯 Now, the clustering is **more accurate** because **scaled data removes bias**.
+
+---
+
+## **🔹 Step 10: Finding the Optimal K Using the Elbow Method**
+The **Elbow Method** helps determine the best number of clusters.
+
+```python
+sse = []
+k_rng = range(1,10)
+
+for k in k_rng:
+    km = KMeans(n_clusters=k)
+    km.fit(df[['Age', 'Income($)']])
+    sse.append(km.inertia_)
+
+plt.xlabel('K')
+plt.ylabel('Sum of squared error')
+plt.plot(k_rng, sse)
+plt.show()
+```
+
+### **What’s Happening?**
+- **SSE (Sum of Squared Errors)** measures how well data fits into clusters.
+- The **elbow point** (where the curve bends) suggests the **optimal K value**.
+
+---
+
+## **🎯 Exercise: Clustering Iris Flowers**
+### **Your Task**
+1️⃣ Load the **Iris dataset** from `sklearn`.  
+2️⃣ Use **only Petal Width & Petal Length** for clustering.  
+3️⃣ Apply **K-Means** and visualize clusters.  
+4️⃣ Check if **scaling improves clustering**.  
+5️⃣ **Use the Elbow Method** to find the best `K`.
+
+### **Starter Code**
+```python
+from sklearn.datasets import load_iris
 import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.cluster import KMeans
-```
+from sklearn.preprocessing import MinMaxScaler
 
----
+# Load dataset
+iris = load_iris()
+df = pd.DataFrame(iris.data, columns=iris.feature_names)
 
-## **Step 3: Creating the Dataset**
-We simulate customer spending and visit frequency data.
+# Keep only Petal Length and Petal Width
+df = df[['petal length (cm)', 'petal width (cm)']]
 
-```python
-# Creating a sample dataset
-data = {
-    'Customer': ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'],
-    'Spending ($)': [5, 20, 7, 30, 25, 6, 50, 35, 10, 15],
-    'Frequency (visits/month)': [20, 5, 15, 3, 8, 18, 2, 6, 12, 10]
-}
+# Scale data
+scaler = MinMaxScaler()
+df[['petal length (cm)', 'petal width (cm)']] = scaler.fit_transform(df[['petal length (cm)', 'petal width (cm)']])
 
-# Converting to DataFrame
-df = pd.DataFrame(data)
+# Apply K-Means
+km = KMeans(n_clusters=3)
+df['cluster'] = km.fit_predict(df[['petal length (cm)', 'petal width (cm)']])
 
-# Extracting features for clustering
-X = df[['Spending ($)', 'Frequency (visits/month)']]
+# Plot clusters
+plt.scatter(df['petal length (cm)'], df['petal width (cm)'], c=df['cluster'])
+plt.xlabel('Petal Length')
+plt.ylabel('Petal Width')
+plt.show()
 
-# Display data
-import ace_tools as tools
-tools.display_dataframe_to_user(name="Customer Data", dataframe=df)
-```
+# Elbow Method
+sse = []
+k_rng = range(1,10)
+for k in k_rng:
+    km = KMeans(n_clusters=k)
+    km.fit(df[['petal length (cm)', 'petal width (cm)']])
+    sse.append(km.inertia_)
 
----
-
-## **Step 4: Visualizing the Data**
-Before applying K-Means, let's visualize customer spending vs. visit frequency.
-
-```python
-# Scatter plot
-plt.figure(figsize=(8, 6))
-plt.scatter(df['Frequency (visits/month)'], df['Spending ($)'], color='blue', s=100, edgecolors='black')
-plt.xlabel('Visit Frequency per Month')
-plt.ylabel('Spending per Visit ($)')
-plt.title('Customer Clusters (Before Clustering)')
-plt.grid()
+plt.xlabel('K')
+plt.ylabel('Sum of Squared Error')
+plt.plot(k_rng, sse)
 plt.show()
 ```
 
----
-
-## **Step 5: Applying the Elbow Method to Find Optimal K**
-We use the **Elbow Method** to determine the optimal number of clusters.
-
-```python
-# Finding the optimal K using the Elbow Method
-wcss = []
-for k in range(1, 11):
-    kmeans = KMeans(n_clusters=k, init='k-means++', random_state=42)
-    kmeans.fit(X)
-    wcss.append(kmeans.inertia_)  # Within-cluster sum of squares
-
-# Plotting the Elbow Method graph
-plt.figure(figsize=(8, 6))
-plt.plot(range(1, 11), wcss, marker='o', linestyle='--', color='red')
-plt.xlabel('Number of Clusters (K)')
-plt.ylabel('WCSS')
-plt.title('Elbow Method for Optimal K')
-plt.show()
-```
-
-🔎 **Observation:** The "elbow" appears around **K=3**, meaning **three clusters** is a good choice.
+👉 **Find the elbow point and choose the best K value!** 💡
 
 ---
 
-## **Step 6: Applying K-Means Clustering**
-Now we cluster customers into **3 groups** based on spending and visit frequency.
+## **✅ Summary**
+✔ We **applied K-Means** to customer income data.  
+✔ **Scaled the data** for better clustering.  
+✔ **Plotted clusters and centroids**.  
+✔ Used the **Elbow Method** to choose the best `K`.  
+✔ Gave you an **Iris dataset exercise** for practice! 🚀
 
-```python
-# Applying K-Means
-kmeans = KMeans(n_clusters=3, init='k-means++', random_state=42)
-df['Cluster'] = kmeans.fit_predict(X)
-
-# Extracting cluster centroids
-centroids = kmeans.cluster_centers_
-
-# Display updated DataFrame with clusters
-tools.display_dataframe_to_user(name="Segmented Customer Data", dataframe=df)
-```
-
----
-
-## **Step 7: Visualizing the Clusters**
-We now plot the clusters along with their centroids.
-
-```python
-# Plot clustered data
-plt.figure(figsize=(8, 6))
-for cluster in range(3):
-    plt.scatter(X[df['Cluster'] == cluster]['Frequency (visits/month)'], 
-                X[df['Cluster'] == cluster]['Spending ($)'], s=100, edgecolors='black', label=f'Cluster {cluster}')
-
-# Plot centroids
-plt.scatter(centroids[:, 1], centroids[:, 0], s=300, c='black', marker='X', label='Centroids')
-
-plt.xlabel('Visit Frequency per Month')
-plt.ylabel('Spending per Visit ($)')
-plt.title('Customer Clusters (After K-Means Clustering)')
-plt.legend()
-plt.grid()
-plt.show()
-```
-
----
-
-## **Step 8: Understanding the Clusters**
-Now, let's interpret the **three customer segments**:
-
-| Cluster | Description | Customers |
-|---------|------------|-----------|
-| **Cluster 0** | Frequent Visitors, Low Spending | Customers who visit often but spend little. |
-| **Cluster 1** | Premium Customers | Customers who visit regularly and spend a lot. |
-| **Cluster 2** | Occasional Big Spenders | Customers who visit rarely but make high-value purchases. |
-
----
-
-## **Step 9: Business Strategy Based on Clusters**
-Based on customer segments, we **implement marketing strategies**:
-
-- **Frequent Visitors, Low Spending (Cluster 0)**  
-  ✅ **Loyalty Programs**: Free coffee after 10 visits.  
-  ✅ **Discount Coupons** to encourage higher spending.
-
-- **Premium Customers (Cluster 1)**  
-  ✅ **VIP Benefits**: Exclusive offers on new drinks.  
-  ✅ **Personalized Recommendations** to enhance experience.
-
-- **Occasional Big Spenders (Cluster 2)**  
-  ✅ **Event Promotions**: Invite them to limited-time offers.  
-  ✅ **Bundle Offers**: Discount on buying multiple items.
-
----
-
-## **Final Thoughts**
-K-Means Clustering helped us:
-✅ **Segment customers effectively.**  
-✅ **Optimize marketing strategies.**  
-✅ **Boost customer satisfaction and revenue.**
-
----
-
-This real-world walkthrough provides an **end-to-end solution** using **Python and K-Means Clustering** for **customer segmentation**. Let me know if you have any questions! 🚀
+Would you like me to explain anything in more detail? 😊
