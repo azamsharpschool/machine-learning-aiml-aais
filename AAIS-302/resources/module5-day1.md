@@ -1,150 +1,170 @@
-### Walkthrough: Real-World Scenario for Day 1: Introduction to Unsupervised Learning
+### **Walkthrough of K-Means Clustering with a Solution: Customer Segmentation in a Coffee Shop**
+
+[Download Dataset](KMeans_Realistic_CustomerData_20K.csv)
+
+We will perform **K-Means Clustering** step by step using Python to analyze customer data for a coffee shop.
 
 ---
 
-**Title:** Exploring Unsupervised Learning Through Data Preparation and Visualization  
+## **Step 1: Problem Definition**
+A coffee shop wants to segment its customers based on:
+- **Spending per visit ($)**
+- **Visit frequency per month**
+
+📌 **Objective:** Identify customer groups and optimize marketing strategies for each segment.
 
 ---
 
-### **Activity Focus:**  
-Understand the foundational concepts of unsupervised learning by exploring a dataset, visualizing patterns, and preparing it for clustering.
+## **Step 2: Importing Required Libraries**
+We will use **Pandas, NumPy, Matplotlib, and Scikit-learn** for data handling, visualization, and clustering.
 
----
-
-### **Scenario: Retail Customer Behavior Analysis**
-
-**Objective:**  
-Help a retail store group customers based on spending habits to optimize marketing strategies. 
-
-**Dataset Description:**  
-A dataset containing customer details, such as:  
-- Age  
-- Annual Income (in thousands)  
-- Spending Score (1–100, a metric assigned by the store based on purchasing behavior).  
-
----
-
-### **Step-by-Step Walkthrough**
-
----
-
-#### **Step 1: Understand Supervised vs. Unsupervised Learning**
-
-1. **Task:** Compare labeled vs. unlabeled datasets.  
-   - **Labeled Data Example:** A dataset where customers are already grouped into categories (e.g., "High Spender," "Moderate Spender," "Low Spender").  
-   - **Unlabeled Data Example:** A dataset with raw features like age, income, and spending score, but no predefined labels.  
-
-2. **Discussion:**  
-   - Supervised learning uses labeled data to predict outcomes.  
-   - Unsupervised learning identifies patterns or groups in unlabeled data.
-
-**Code Example:**  
 ```python
+import numpy as np
 import pandas as pd
-
-# Sample labeled and unlabeled data
-labeled_data = pd.DataFrame({
-    'Age': [25, 40, 22],
-    'Annual Income': [30, 70, 25],
-    'Spending Score': [60, 40, 75],
-    'Category': ['Moderate Spender', 'Low Spender', 'High Spender']  # Labels
-})
-
-unlabeled_data = labeled_data.drop(columns=['Category'])  # No labels
-
-print("Labeled Data:\n", labeled_data)
-print("\nUnlabeled Data:\n", unlabeled_data)
+import matplotlib.pyplot as plt
+from sklearn.cluster import KMeans
 ```
 
 ---
 
-#### **Step 2: Data Exploration with Visualizations**
+## **Step 3: Creating the Dataset**
+We simulate customer spending and visit frequency data.
 
-1. **Task:** Create visualizations to identify patterns.  
-   - Plot a scatter plot of **Annual Income** vs. **Spending Score**.  
-
-2. **Code Example:**
-   ```python
-   import matplotlib.pyplot as plt
-   import seaborn as sns
-
-   # Load retail dataset (or sample data)
-   data = pd.DataFrame({
-       'Age': [25, 40, 22, 35, 50],
-       'Annual Income': [30, 70, 25, 60, 90],
-       'Spending Score': [60, 40, 75, 50, 30]
-   })
-
-   # Scatter plot
-   plt.scatter(data['Annual Income'], data['Spending Score'], c='blue', s=50)
-   plt.title('Customer Spending Behavior')
-   plt.xlabel('Annual Income (in thousands)')
-   plt.ylabel('Spending Score (1-100)')
-   plt.show()
-   ```
-
-3. **Discussion:**  
-   - Ask students to observe if there are natural groupings (e.g., customers with high income but low spending scores).  
-   - Highlight how unsupervised learning algorithms like K-Means will group these points.
-
----
-
-#### **Step 3: Feature Selection**
-
-1. **Task:** Choose features for clustering.  
-   - Features to use: **Annual Income** and **Spending Score**.  
-   - Exclude unrelated features like **Age** to simplify analysis.  
-
-2. **Discussion:**  
-   - Explain the importance of feature selection in clustering.  
-   - Unnecessary features can confuse the model or increase computational complexity.
-
-**Code Example:**  
 ```python
-# Selecting relevant features
-selected_features = data[['Annual Income', 'Spending Score']]
-print("Selected Features:\n", selected_features.head())
+# Creating a sample dataset
+data = {
+    'Customer': ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'],
+    'Spending ($)': [5, 20, 7, 30, 25, 6, 50, 35, 10, 15],
+    'Frequency (visits/month)': [20, 5, 15, 3, 8, 18, 2, 6, 12, 10]
+}
+
+# Converting to DataFrame
+df = pd.DataFrame(data)
+
+# Extracting features for clustering
+X = df[['Spending ($)', 'Frequency (visits/month)']]
+
+# Display data
+import ace_tools as tools
+tools.display_dataframe_to_user(name="Customer Data", dataframe=df)
 ```
 
 ---
 
-#### **Step 4: Preprocess the Data**
+## **Step 4: Visualizing the Data**
+Before applying K-Means, let's visualize customer spending vs. visit frequency.
 
-1. **Task:** Normalize or scale the data to ensure all features are on a similar scale.  
-   - **Why?** Clustering algorithms like K-Means are sensitive to scale, as they rely on distance calculations.  
-
-2. **Code Example:**
-   ```python
-   from sklearn.preprocessing import StandardScaler
-
-   # Scale the features
-   scaler = StandardScaler()
-   scaled_data = scaler.fit_transform(selected_features)
-
-   print("Scaled Data:\n", scaled_data[:5])
-   ```
-
-3. **Discussion:**  
-   - Show how preprocessing ensures features like **Annual Income** (thousands) don’t dominate **Spending Score** (1–100).  
+```python
+# Scatter plot
+plt.figure(figsize=(8, 6))
+plt.scatter(df['Frequency (visits/month)'], df['Spending ($)'], color='blue', s=100, edgecolors='black')
+plt.xlabel('Visit Frequency per Month')
+plt.ylabel('Spending per Visit ($)')
+plt.title('Customer Clusters (Before Clustering)')
+plt.grid()
+plt.show()
+```
 
 ---
 
-### **Summary Discussion**
+## **Step 5: Applying the Elbow Method to Find Optimal K**
+We use the **Elbow Method** to determine the optimal number of clusters.
 
-- **Reflection Questions:**  
-   - What patterns did you notice in the scatter plot?  
-   - Why is feature selection and preprocessing important for clustering?  
-   - How would you extend this dataset for deeper analysis (e.g., adding online shopping behavior)?
+```python
+# Finding the optimal K using the Elbow Method
+wcss = []
+for k in range(1, 11):
+    kmeans = KMeans(n_clusters=k, init='k-means++', random_state=42)
+    kmeans.fit(X)
+    wcss.append(kmeans.inertia_)  # Within-cluster sum of squares
 
-- **Key Takeaways:**  
-   - Unsupervised learning doesn’t rely on labels but finds patterns in raw data.  
-   - Data visualization is a powerful tool to identify potential clusters.  
-   - Preprocessing is a crucial step for accurate clustering.
+# Plotting the Elbow Method graph
+plt.figure(figsize=(8, 6))
+plt.plot(range(1, 11), wcss, marker='o', linestyle='--', color='red')
+plt.xlabel('Number of Clusters (K)')
+plt.ylabel('WCSS')
+plt.title('Elbow Method for Optimal K')
+plt.show()
+```
+
+🔎 **Observation:** The "elbow" appears around **K=3**, meaning **three clusters** is a good choice.
 
 ---
 
-### **Outcome:**  
-By the end of this exercise, students will:  
-- Understand the difference between supervised and unsupervised learning.  
-- Create visualizations to explore data patterns.  
-- Prepare data through feature selection and preprocessing, ready for clustering.  
+## **Step 6: Applying K-Means Clustering**
+Now we cluster customers into **3 groups** based on spending and visit frequency.
+
+```python
+# Applying K-Means
+kmeans = KMeans(n_clusters=3, init='k-means++', random_state=42)
+df['Cluster'] = kmeans.fit_predict(X)
+
+# Extracting cluster centroids
+centroids = kmeans.cluster_centers_
+
+# Display updated DataFrame with clusters
+tools.display_dataframe_to_user(name="Segmented Customer Data", dataframe=df)
+```
+
+---
+
+## **Step 7: Visualizing the Clusters**
+We now plot the clusters along with their centroids.
+
+```python
+# Plot clustered data
+plt.figure(figsize=(8, 6))
+for cluster in range(3):
+    plt.scatter(X[df['Cluster'] == cluster]['Frequency (visits/month)'], 
+                X[df['Cluster'] == cluster]['Spending ($)'], s=100, edgecolors='black', label=f'Cluster {cluster}')
+
+# Plot centroids
+plt.scatter(centroids[:, 1], centroids[:, 0], s=300, c='black', marker='X', label='Centroids')
+
+plt.xlabel('Visit Frequency per Month')
+plt.ylabel('Spending per Visit ($)')
+plt.title('Customer Clusters (After K-Means Clustering)')
+plt.legend()
+plt.grid()
+plt.show()
+```
+
+---
+
+## **Step 8: Understanding the Clusters**
+Now, let's interpret the **three customer segments**:
+
+| Cluster | Description | Customers |
+|---------|------------|-----------|
+| **Cluster 0** | Frequent Visitors, Low Spending | Customers who visit often but spend little. |
+| **Cluster 1** | Premium Customers | Customers who visit regularly and spend a lot. |
+| **Cluster 2** | Occasional Big Spenders | Customers who visit rarely but make high-value purchases. |
+
+---
+
+## **Step 9: Business Strategy Based on Clusters**
+Based on customer segments, we **implement marketing strategies**:
+
+- **Frequent Visitors, Low Spending (Cluster 0)**  
+  ✅ **Loyalty Programs**: Free coffee after 10 visits.  
+  ✅ **Discount Coupons** to encourage higher spending.
+
+- **Premium Customers (Cluster 1)**  
+  ✅ **VIP Benefits**: Exclusive offers on new drinks.  
+  ✅ **Personalized Recommendations** to enhance experience.
+
+- **Occasional Big Spenders (Cluster 2)**  
+  ✅ **Event Promotions**: Invite them to limited-time offers.  
+  ✅ **Bundle Offers**: Discount on buying multiple items.
+
+---
+
+## **Final Thoughts**
+K-Means Clustering helped us:
+✅ **Segment customers effectively.**  
+✅ **Optimize marketing strategies.**  
+✅ **Boost customer satisfaction and revenue.**
+
+---
+
+This real-world walkthrough provides an **end-to-end solution** using **Python and K-Means Clustering** for **customer segmentation**. Let me know if you have any questions! 🚀
