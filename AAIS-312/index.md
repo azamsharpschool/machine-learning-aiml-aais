@@ -47,7 +47,7 @@
 - [Day 3 - Understanding LTSM](../Slides/Deep%20Learning/rnn-3-lstm.key)
 - [Day 3 - Converting Word to Numbers](../Slides/Deep%20Learning/rnn-4-converting-words-to-numbers.key)
 - [Day 3 - Converting Word to Numbers (Continued)](../Slides/Deep%20Learning/word-embedding-using-keras.key)
-- [Day 4 - Code: Restaurant Reviews](resources/res-reviews.ipynb)
+- [Day 4 - Restaurant Reviews Walkthrough Sentiment Analysis](resources/sentiment-restuarant.md)
 - [Day 4 - Understanding Word2Vec]
 - [Day 4 - Implementing Word2Vec]
 - [Day 4 - Sentiment Analysis](resources/sentiment.md) 
@@ -60,19 +60,19 @@
 
 ### Module 4: Deep Learning Libraries for Real-World AI
 
-#### Exercises 
+- [Day 1 - Overview of Deep Learning and Why Libraries Are Essential](resources/overview.md)
+- [Day 1 - Predicting Home Prices Using TensorFlow](resources/predicting-prices-tensor-flow.md)  
 
-- [Introduction to TensorFlow]
-- [Passport Requirements](resources/passport-requirements.md)
+- [Day 2 - Passport Requirements](resources/passport-requirements.md)
+- [Day 3 - Sentiment Analysis for Movie Reviews](resources/sentiment-movies.md) 
 - [Fashion DataSet](resources/fashion-dataset.md)
-
-#### Slides 
-
-- [Introduction to TensorFlow](../Slides/Deep%20Learning/intro-tensor-flow.key)
 
 ### Module 5: Pre-Trained Models
 
 - [Day 1 - Introduction to Pre-Trained Models](/Slides/introduction-pre-trained-models.key)
+- [Day 2 - Core ML Models in iOS](https://developer.apple.com/machine-learning/models/)
+- [Day 2 - Using Pre-Trained ResNet50 for Image Classification](resources/resnet-walkthrough.md)
+- [Day 3 - Using BERT for Text Classification with Keras](resources/bert.md)
 
 - [BERT]
 - [ResNet]

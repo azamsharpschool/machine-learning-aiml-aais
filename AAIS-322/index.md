@@ -12,7 +12,9 @@ https://www.youtube.com/playlist?list=PLDMXqpbtInQjc5-xa5B40Y1wZbIsxCIOk
 - [Day 2 - Regex101.com](https://regex101.com/)
 - [Day 2 - Activity: Regex to Extract Emails from Text](resources/regex-to-extract-words-from-text.md)
 - [Day 2 - Activity: Regex to Extract Order Number from an Email](resources/regex-extract-order-number.md)
-- [Day 3 - Entity Name Recognition Using Spacy](resources/introduction-to-spacy.ipynb)
+
+- [Day 3 - Entity Name Recognition Using Spacy](resources/spacy.md)
+
 - [Day 4 - Introduction to Computer Vision Slides](../Slides/NLPAndComputerVision/intro-computer-vision.key)
 - [Day 4 - Computer Vision Resources](https://builtin.com/machine-learning/computer-vision) 
 - [Day 4 - Cats vs Dogs DataSet](https://www.kaggle.com/datasets/samuelcortinhas/cats-and-dogs-image-classification)
