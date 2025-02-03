@@ -73,7 +73,7 @@
 - [Day 2 - Core ML Models in iOS](https://developer.apple.com/machine-learning/models/)
 - [Day 2 - Using Pre-Trained ResNet50 for Image Classification](resources/resnet-walkthrough.md)
 - [Day 2 - Source Code - Using Pre-Trained ResNet50 for Image Classification](https://gist.github.com/azamsharpschool/b9af92754c56de30dd74b0b8f5375ee4)
-- [Day 3 - Using BERT for Text Classification with Keras](resources/bert.md)
+- [Day 3 - Detailed Walkthrough of the BART Summarization Code](resources/bert.md)
 
 - [BERT]
 - [ResNet]

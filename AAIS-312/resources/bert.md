@@ -1,175 +1,242 @@
-# **Step-by-Step Walkthrough: Using BERT for Text Classification with Keras**
-In this walkthrough, we will use **BERT (Bidirectional Encoder Representations from Transformers)** from Hugging Face's Transformers library with **TensorFlow and Keras** to build a **sentiment classification model**.
+Sure! Below is a **PyTorch-based walkthrough** for **BERT-based sentiment classification** using a **small dataset**. This guide covers **loading BERT, preparing a dataset, training, evaluation, and inference** using Hugging Face's `transformers` and PyTorch.
 
 ---
+
+# **Step-by-Step Walkthrough: Using BERT for Sentiment Classification in PyTorch**
 
 ## **Step 1: Install Required Libraries**
-Ensure you have **TensorFlow**, **transformers**, and **Hugging Face datasets** installed.
+Before running the code, install the necessary libraries:
 
 ```bash
-pip install tensorflow transformers datasets
+pip install torch transformers datasets
 ```
+- **`torch`**: PyTorch, a deep learning framework for model training.
+- **`transformers`**: Hugging Face's library for pre-trained NLP models.
+- **`datasets`**: Provides NLP datasets (optional for this small dataset example).
 
 ---
 
-## **Step 2: Import Necessary Libraries**
+## **Step 2: Import Required Libraries**
 ```python
-import tensorflow as tf
+import torch
 import numpy as np
-from transformers import BertTokenizer, TFBertForSequenceClassification
-from tensorflow.keras.optimizers import Adam
-from tensorflow.keras.losses import SparseCategoricalCrossentropy
-from datasets import load_dataset
+from torch.utils.data import DataLoader, Dataset
+from transformers import BertTokenizer, BertForSequenceClassification
+from transformers import AdamW
+from torch.nn import functional as F
 ```
+
+### **What each import does:**
+- **`torch`**: Main PyTorch library for tensors and model training.
+- **`np` (NumPy)**: Handles numerical arrays.
+- **`DataLoader, Dataset`**: Helps manage and batch the dataset efficiently.
+- **`BertTokenizer`**: Tokenizes input text.
+- **`BertForSequenceClassification`**: A BERT model specifically for classification tasks.
+- **`AdamW`**: An improved version of the Adam optimizer for fine-tuning transformers.
+- **`functional as F`**: Provides functions like softmax, cross-entropy loss, etc.
 
 ---
 
 ## **Step 3: Load a Pre-Trained BERT Model**
-We will use **BERT base uncased** fine-tuned for sentiment classification.
-
 ```python
-# Load pre-trained tokenizer and model
 model_name = "bert-base-uncased"
 tokenizer = BertTokenizer.from_pretrained(model_name)
-model = TFBertForSequenceClassification.from_pretrained(model_name, num_labels=2)  # 2 labels (positive & negative)
+model = BertForSequenceClassification.from_pretrained(model_name, num_labels=2)
+```
+
+### **Explanation:**
+- **Loads the BERT tokenizer** to convert text into input tokens.
+- **Loads a pre-trained BERT model** with a classification head for **binary classification (`num_labels=2`)**.
+
+#### **Why use a pre-trained model?**
+BERT has been pre-trained on **massive text datasets**, so it already understands **language patterns**. Fine-tuning adapts it for sentiment classification.
+
+---
+
+## **Step 4: Prepare a Small Custom Dataset**
+Instead of a large dataset, we manually define a small dataset.
+
+```python
+train_texts = [
+    "I love this movie!", "This film was fantastic!", "Amazing experience!", 
+    "Worst movie ever.", "I hated the plot.", "Terrible acting!"
+]
+train_labels = [1, 1, 1, 0, 0, 0]  # 1 = Positive, 0 = Negative
+
+test_texts = ["This was a great movie!", "I did not enjoy this film."]
+test_labels = [1, 0]
+```
+
+### **Explanation:**
+- **train_texts**: Small set of positive and negative **movie reviews**.
+- **train_labels**: Sentiment labels (`1` = **Positive**, `0` = **Negative**).
+- **test_texts/test_labels**: A small test set for model evaluation.
+
+---
+
+## **Step 5: Tokenize the Data**
+We need to convert the text into **numerical input IDs and attention masks**.
+
+```python
+train_encodings = tokenizer(train_texts, truncation=True, padding=True, return_tensors="pt")
+test_encodings = tokenizer(test_texts, truncation=True, padding=True, return_tensors="pt")
+
+# Convert labels to PyTorch tensors
+train_labels = torch.tensor(train_labels)
+test_labels = torch.tensor(test_labels)
+```
+
+### **What happens here?**
+- **Tokenization**: Converts text into numerical representations.
+- **`truncation=True`**: Ensures that long texts are **truncated** to fit the model.
+- **`padding=True`**: Ensures all sentences are the **same length**.
+- **`return_tensors="pt"`**: Returns PyTorch tensors.
+- **Converts labels to tensors (`torch.tensor`)** for compatibility with PyTorch.
+
+---
+
+## **Step 6: Create a PyTorch Dataset**
+We define a custom dataset class that returns **input tensors and labels**.
+
+```python
+class SentimentDataset(Dataset):
+    def __init__(self, encodings, labels):
+        self.encodings = encodings
+        self.labels = labels
+
+    def __len__(self):
+        return len(self.labels)
+
+    def __getitem__(self, idx):
+        return {key: torch.tensor(val[idx]) for key, val in self.encodings.items()}, self.labels[idx]
+```
+
+### **What happens here?**
+- **Inherits from `Dataset`** to work with PyTorch `DataLoader`.
+- **`__getitem__`**: Returns tokenized inputs (`input_ids`, `attention_mask`) and labels.
+- **`__len__`**: Returns the dataset size.
+
+Now, we **create dataset objects**:
+
+```python
+train_dataset = SentimentDataset(train_encodings, train_labels)
+test_dataset = SentimentDataset(test_encodings, test_labels)
 ```
 
 ---
 
-## **Step 4: Load and Preprocess the Dataset**
-We will use the **IMDB movie reviews dataset**.
+## **Step 7: Load Data in Batches**
+We use a **DataLoader** to efficiently load data during training.
 
 ```python
-# Load dataset
-dataset = load_dataset("imdb")
-
-# Split into train and test
-train_texts, train_labels = dataset["train"]["text"], dataset["train"]["label"]
-test_texts, test_labels = dataset["test"]["text"], dataset["test"]["label"]
+train_loader = DataLoader(train_dataset, batch_size=2, shuffle=True)
+test_loader = DataLoader(test_dataset, batch_size=2, shuffle=False)
 ```
 
-### **Tokenize the Data**
-BERT requires tokenized input, so we **convert text to input IDs and attention masks**.
-
-```python
-# Tokenize training and test data
-train_encodings = tokenizer(train_texts, truncation=True, padding=True, max_length=512, return_tensors="tf")
-test_encodings = tokenizer(test_texts, truncation=True, padding=True, max_length=512, return_tensors="tf")
-
-# Convert labels to tensors
-train_labels = np.array(train_labels)
-test_labels = np.array(test_labels)
-```
+### **What happens here?**
+- **`batch_size=2`**: The model processes two samples per batch.
+- **`shuffle=True`**: Randomizes training data order.
 
 ---
 
-## **Step 5: Build the BERT Classifier Model**
-We will use **Keras Functional API** to integrate BERT with additional layers.
+## **Step 8: Fine-Tune BERT**
+Now, we **define an optimizer and loss function**:
 
 ```python
-# Define input layers
-input_ids = tf.keras.layers.Input(shape=(512,), dtype=tf.int32, name="input_ids")
-attention_mask = tf.keras.layers.Input(shape=(512,), dtype=tf.int32, name="attention_mask")
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+model.to(device)
 
-# Get BERT outputs
-bert_outputs = model.bert(input_ids, attention_mask=attention_mask)[1]  # Pooled output
-
-# Add a Dense layer for classification
-dense = tf.keras.layers.Dense(128, activation="relu")(bert_outputs)
-output = tf.keras.layers.Dense(2, activation="softmax")(dense)  # Binary classification (positive/negative)
-
-# Create the final model
-bert_classifier = tf.keras.Model(inputs=[input_ids, attention_mask], outputs=output)
-
-# Compile the model
-bert_classifier.compile(
-    optimizer=Adam(learning_rate=2e-5),
-    loss=SparseCategoricalCrossentropy(from_logits=True),
-    metrics=["accuracy"]
-)
-
-# Display model summary
-bert_classifier.summary()
+optimizer = AdamW(model.parameters(), lr=2e-5)
+loss_fn = torch.nn.CrossEntropyLoss()
 ```
+
+### **What happens here?**
+- **Moves the model to GPU (`cuda`) if available** for faster training.
+- **Uses AdamW** for optimized weight updates.
+- **Defines CrossEntropyLoss**, suitable for classification.
+
+### **Train the Model**
+```python
+model.train()
+
+for epoch in range(3):
+    total_loss = 0
+    for batch in train_loader:
+        inputs, labels = batch
+        inputs = {key: val.to(device) for key, val in inputs.items()}
+        labels = labels.to(device)
+
+        optimizer.zero_grad()
+        outputs = model(**inputs)
+        loss = loss_fn(outputs.logits, labels)
+        loss.backward()
+        optimizer.step()
+
+        total_loss += loss.item()
+
+    print(f"Epoch {epoch+1}: Loss = {total_loss:.4f}")
+```
+
+### **Explanation:**
+- **`model.train()`**: Sets the model to training mode.
+- **Iterates over batches**:
+  - Moves inputs & labels to **GPU (if available)**.
+  - **Zeroes gradients** before backpropagation.
+  - **Computes loss**, **backpropagates**, and updates weights.
+  - **Accumulates loss** to track training progress.
 
 ---
 
-## **Step 6: Train the Model**
-Train the **BERT sentiment classifier** using the IMDB dataset.
+## **Step 9: Evaluate the Model**
+Now, we check the model's accuracy.
 
 ```python
-# Train the model
-bert_classifier.fit(
-    x={"input_ids": train_encodings["input_ids"], "attention_mask": train_encodings["attention_mask"]},
-    y=train_labels,
-    validation_data=(
-        {"input_ids": test_encodings["input_ids"], "attention_mask": test_encodings["attention_mask"]},
-        test_labels
-    ),
-    epochs=3,
-    batch_size=8
-)
+model.eval()
+correct = 0
+total = 0
+
+with torch.no_grad():
+    for batch in test_loader:
+        inputs, labels = batch
+        inputs = {key: val.to(device) for key, val in inputs.items()}
+        labels = labels.to(device)
+
+        outputs = model(**inputs)
+        predictions = torch.argmax(outputs.logits, dim=1)
+        correct += (predictions == labels).sum().item()
+        total += labels.size(0)
+
+print(f"Test Accuracy: {100 * correct / total:.2f}%")
 ```
+
+### **Explanation:**
+- **`model.eval()`**: Sets the model to evaluation mode.
+- **No gradients are computed (`torch.no_grad()`)** to save memory.
+- **Predictions are compared to actual labels** to compute accuracy.
 
 ---
 
-## **Step 7: Evaluate the Model**
-Check model performance on the test set.
-
+## **Step 10: Make Predictions**
 ```python
-# Evaluate on test data
-loss, accuracy = bert_classifier.evaluate(
-    {"input_ids": test_encodings["input_ids"], "attention_mask": test_encodings["attention_mask"]},
-    test_labels
-)
-
-print(f"Test Accuracy: {accuracy * 100:.2f}%")
-```
-
----
-
-## **Step 8: Make Predictions**
-Now, let's predict the sentiment of a new text input.
-
-```python
-# Function to classify text
 def predict_sentiment(text):
-    tokens = tokenizer(text, truncation=True, padding="max_length", max_length=512, return_tensors="tf")
-    prediction = bert_classifier.predict({"input_ids": tokens["input_ids"], "attention_mask": tokens["attention_mask"]})
-    sentiment = "Positive" if np.argmax(prediction) == 1 else "Negative"
-    return sentiment
+    tokens = tokenizer(text, truncation=True, padding="max_length", max_length=512, return_tensors="pt")
+    tokens = {key: val.to(device) for key, val in tokens.items()}
 
-# Example predictions
-print(predict_sentiment("This movie was absolutely amazing!"))
-print(predict_sentiment("I hated this film. It was the worst."))
-```
+    with torch.no_grad():
+        outputs = model(**tokens)
+        prediction = torch.argmax(outputs.logits, dim=1).item()
 
-**Example Output:**
-```
-Positive
-Negative
-```
+    return "Positive" if prediction == 1 else "Negative"
 
----
-
-## **Step 9: Save and Load the Model**
-Save the trained model for future use.
-
-```python
-# Save the model
-bert_classifier.save("bert_sentiment_model.h5")
-
-# Load the model
-loaded_model = tf.keras.models.load_model("bert_sentiment_model.h5", custom_objects={"TFBertForSequenceClassification": TFBertForSequenceClassification})
-print("Model loaded successfully!")
+print(predict_sentiment("I absolutely loved this film!"))
+print(predict_sentiment("This was the worst experience ever."))
 ```
 
 ---
 
 ## **Next Steps**
-- **Fine-tune BERT** on your custom dataset.
-- **Use a different pre-trained model**, such as **DistilBERT** for faster inference.
-- **Deploy the model** using **FastAPI or Flask**.
-- **Convert the model** to TensorFlow Lite for mobile applications.
+- Train on a **larger dataset**.
+- Use **DistilBERT** for **faster inference**.
+- Deploy the model using **FastAPI or Flask**.
 
-This walkthrough provides a **complete guide** to **training and using BERT for sentiment analysis** with **TensorFlow and Keras**. 🚀 Let me know if you have any questions!
+This is a **complete PyTorch-based BERT text classifier**. 🚀 Let me know if you have questions!
