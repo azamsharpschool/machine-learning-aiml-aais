@@ -1,242 +1,118 @@
-Sure! Below is a **PyTorch-based walkthrough** for **BERT-based sentiment classification** using a **small dataset**. This guide covers **loading BERT, preparing a dataset, training, evaluation, and inference** using Hugging Face's `transformers` and PyTorch.
+### **Detailed Walkthrough of the BART Text Summarization Pipeline**
+
+In this guide, we'll go step by step through the implementation of a text summarization pipeline using the **BART model** from Hugging Face's `transformers` library.
 
 ---
-
-# **Step-by-Step Walkthrough: Using BERT for Sentiment Classification in PyTorch**
 
 ## **Step 1: Install Required Libraries**
-Before running the code, install the necessary libraries:
+Before running the script, ensure you have the necessary libraries installed.
 
-```bash
-pip install torch transformers datasets
-```
-- **`torch`**: PyTorch, a deep learning framework for model training.
-- **`transformers`**: Hugging Face's library for pre-trained NLP models.
-- **`datasets`**: Provides NLP datasets (optional for this small dataset example).
-
----
-
-## **Step 2: Import Required Libraries**
 ```python
-import torch
-import numpy as np
-from torch.utils.data import DataLoader, Dataset
-from transformers import BertTokenizer, BertForSequenceClassification
-from transformers import AdamW
-from torch.nn import functional as F
-```
-
-### **What each import does:**
-- **`torch`**: Main PyTorch library for tensors and model training.
-- **`np` (NumPy)**: Handles numerical arrays.
-- **`DataLoader, Dataset`**: Helps manage and batch the dataset efficiently.
-- **`BertTokenizer`**: Tokenizes input text.
-- **`BertForSequenceClassification`**: A BERT model specifically for classification tasks.
-- **`AdamW`**: An improved version of the Adam optimizer for fine-tuning transformers.
-- **`functional as F`**: Provides functions like softmax, cross-entropy loss, etc.
-
----
-
-## **Step 3: Load a Pre-Trained BERT Model**
-```python
-model_name = "bert-base-uncased"
-tokenizer = BertTokenizer.from_pretrained(model_name)
-model = BertForSequenceClassification.from_pretrained(model_name, num_labels=2)
+!pip install transformers torch
 ```
 
 ### **Explanation:**
-- **Loads the BERT tokenizer** to convert text into input tokens.
-- **Loads a pre-trained BERT model** with a classification head for **binary classification (`num_labels=2`)**.
+- `transformers`: This library provides pre-trained models from Hugging Face, including **BART**, which is a model designed for tasks like summarization.
+- `torch`: The PyTorch deep learning framework is required because BART is implemented in PyTorch.
 
-#### **Why use a pre-trained model?**
-BERT has been pre-trained on **massive text datasets**, so it already understands **language patterns**. Fine-tuning adapts it for sentiment classification.
+If you’re running this in **Google Colab**, these libraries may already be installed.
 
 ---
 
-## **Step 4: Prepare a Small Custom Dataset**
-Instead of a large dataset, we manually define a small dataset.
+## **Step 2: Import Necessary Libraries**
 
 ```python
-train_texts = [
-    "I love this movie!", "This film was fantastic!", "Amazing experience!", 
-    "Worst movie ever.", "I hated the plot.", "Terrible acting!"
-]
-train_labels = [1, 1, 1, 0, 0, 0]  # 1 = Positive, 0 = Negative
-
-test_texts = ["This was a great movie!", "I did not enjoy this film."]
-test_labels = [1, 0]
+from transformers import BartTokenizer, BartForConditionalGeneration
 ```
 
 ### **Explanation:**
-- **train_texts**: Small set of positive and negative **movie reviews**.
-- **train_labels**: Sentiment labels (`1` = **Positive**, `0` = **Negative**).
-- **test_texts/test_labels**: A small test set for model evaluation.
+- `BartTokenizer`: This is the tokenizer associated with the BART model. It processes raw text into token IDs that can be fed into the model.
+- `BartForConditionalGeneration`: This is the pre-trained **BART model** designed for text generation tasks, including summarization.
 
 ---
 
-## **Step 5: Tokenize the Data**
-We need to convert the text into **numerical input IDs and attention masks**.
+## **Step 3: Load the Smaller BART Model and Tokenizer**
 
 ```python
-train_encodings = tokenizer(train_texts, truncation=True, padding=True, return_tensors="pt")
-test_encodings = tokenizer(test_texts, truncation=True, padding=True, return_tensors="pt")
-
-# Convert labels to PyTorch tensors
-train_labels = torch.tensor(train_labels)
-test_labels = torch.tensor(test_labels)
-```
-
-### **What happens here?**
-- **Tokenization**: Converts text into numerical representations.
-- **`truncation=True`**: Ensures that long texts are **truncated** to fit the model.
-- **`padding=True`**: Ensures all sentences are the **same length**.
-- **`return_tensors="pt"`**: Returns PyTorch tensors.
-- **Converts labels to tensors (`torch.tensor`)** for compatibility with PyTorch.
-
----
-
-## **Step 6: Create a PyTorch Dataset**
-We define a custom dataset class that returns **input tensors and labels**.
-
-```python
-class SentimentDataset(Dataset):
-    def __init__(self, encodings, labels):
-        self.encodings = encodings
-        self.labels = labels
-
-    def __len__(self):
-        return len(self.labels)
-
-    def __getitem__(self, idx):
-        return {key: torch.tensor(val[idx]) for key, val in self.encodings.items()}, self.labels[idx]
-```
-
-### **What happens here?**
-- **Inherits from `Dataset`** to work with PyTorch `DataLoader`.
-- **`__getitem__`**: Returns tokenized inputs (`input_ids`, `attention_mask`) and labels.
-- **`__len__`**: Returns the dataset size.
-
-Now, we **create dataset objects**:
-
-```python
-train_dataset = SentimentDataset(train_encodings, train_labels)
-test_dataset = SentimentDataset(test_encodings, test_labels)
-```
-
----
-
-## **Step 7: Load Data in Batches**
-We use a **DataLoader** to efficiently load data during training.
-
-```python
-train_loader = DataLoader(train_dataset, batch_size=2, shuffle=True)
-test_loader = DataLoader(test_dataset, batch_size=2, shuffle=False)
-```
-
-### **What happens here?**
-- **`batch_size=2`**: The model processes two samples per batch.
-- **`shuffle=True`**: Randomizes training data order.
-
----
-
-## **Step 8: Fine-Tune BERT**
-Now, we **define an optimizer and loss function**:
-
-```python
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-model.to(device)
-
-optimizer = AdamW(model.parameters(), lr=2e-5)
-loss_fn = torch.nn.CrossEntropyLoss()
-```
-
-### **What happens here?**
-- **Moves the model to GPU (`cuda`) if available** for faster training.
-- **Uses AdamW** for optimized weight updates.
-- **Defines CrossEntropyLoss**, suitable for classification.
-
-### **Train the Model**
-```python
-model.train()
-
-for epoch in range(3):
-    total_loss = 0
-    for batch in train_loader:
-        inputs, labels = batch
-        inputs = {key: val.to(device) for key, val in inputs.items()}
-        labels = labels.to(device)
-
-        optimizer.zero_grad()
-        outputs = model(**inputs)
-        loss = loss_fn(outputs.logits, labels)
-        loss.backward()
-        optimizer.step()
-
-        total_loss += loss.item()
-
-    print(f"Epoch {epoch+1}: Loss = {total_loss:.4f}")
+model_name = "facebook/bart-large-cnn"
+tokenizer = BartTokenizer.from_pretrained(model_name)
+model = BartForConditionalGeneration.from_pretrained(model_name)
 ```
 
 ### **Explanation:**
-- **`model.train()`**: Sets the model to training mode.
-- **Iterates over batches**:
-  - Moves inputs & labels to **GPU (if available)**.
-  - **Zeroes gradients** before backpropagation.
-  - **Computes loss**, **backpropagates**, and updates weights.
-  - **Accumulates loss** to track training progress.
+- `"facebook/bart-large-cnn"` is a **fine-tuned** version of BART, specifically designed for summarization tasks.
+- `BartTokenizer.from_pretrained(model_name)`: Loads the tokenizer associated with the model.
+- `BartForConditionalGeneration.from_pretrained(model_name)`: Loads the **pre-trained BART model**, allowing us to use it for text summarization.
 
 ---
 
-## **Step 9: Evaluate the Model**
-Now, we check the model's accuracy.
+## **Step 4: Define a Function for Summarization**
 
 ```python
-model.eval()
-correct = 0
-total = 0
-
-with torch.no_grad():
-    for batch in test_loader:
-        inputs, labels = batch
-        inputs = {key: val.to(device) for key, val in inputs.items()}
-        labels = labels.to(device)
-
-        outputs = model(**inputs)
-        predictions = torch.argmax(outputs.logits, dim=1)
-        correct += (predictions == labels).sum().item()
-        total += labels.size(0)
-
-print(f"Test Accuracy: {100 * correct / total:.2f}%")
+def summarize_text(text, max_length=150):
+    inputs = tokenizer.encode("summarize: " + text, return_tensors="pt", max_length=1024, truncation=True)
+    summary_ids = model.generate(inputs, max_length=max_length, num_beams=4, early_stopping=True)
+    return tokenizer.decode(summary_ids[0], skip_special_tokens=True)
 ```
 
-### **Explanation:**
-- **`model.eval()`**: Sets the model to evaluation mode.
-- **No gradients are computed (`torch.no_grad()`)** to save memory.
-- **Predictions are compared to actual labels** to compute accuracy.
+### **Breaking Down the Function:**
+1. **Tokenization**:
+   - `tokenizer.encode(...)` converts the input text into token IDs.
+   - The `return_tensors="pt"` parameter ensures that the output is a **PyTorch tensor**, which is required for BART.
+   - The `max_length=1024` ensures that input sequences longer than **1024 tokens** are truncated.
+
+2. **Text Generation**:
+   - `model.generate(inputs, max_length=max_length, num_beams=4, early_stopping=True)`
+   - `max_length`: Controls the **maximum length** of the generated summary.
+   - `num_beams=4`: Uses **beam search decoding** with a beam width of 4, which improves the quality of generated summaries.
+   - `early_stopping=True`: Stops generation if the model detects that it has finished the summary.
+
+3. **Decoding**:
+   - `tokenizer.decode(summary_ids[0], skip_special_tokens=True)`
+   - Converts the generated token IDs back into human-readable text.
+   - `skip_special_tokens=True`: Removes special tokens like `[CLS]`, `[SEP]`, etc.
 
 ---
 
-## **Step 10: Make Predictions**
+## **Step 5: Example Text Summarization**
+
 ```python
-def predict_sentiment(text):
-    tokens = tokenizer(text, truncation=True, padding="max_length", max_length=512, return_tensors="pt")
-    tokens = {key: val.to(device) for key, val in tokens.items()}
+text = """The field of artificial intelligence has seen remarkable progress over the past decade.
+Deep learning models have revolutionized areas such as natural language processing,
+computer vision, and reinforcement learning. Companies like OpenAI, Meta, and Google are
+at the forefront of this research, pushing the boundaries of what AI can achieve. However,
+these advancements also raise ethical concerns regarding bias, transparency, and job displacement."""
 
-    with torch.no_grad():
-        outputs = model(**tokens)
-        prediction = torch.argmax(outputs.logits, dim=1).item()
-
-    return "Positive" if prediction == 1 else "Negative"
-
-print(predict_sentiment("I absolutely loved this film!"))
-print(predict_sentiment("This was the worst experience ever."))
+summary = summarize_text(text)
+print("Summary:\n", summary)
 ```
+
+### **Expected Output:**
+The generated summary should be a **concise version** of the input text while preserving the most critical information. The output might look like this:
+
+```
+Summary:
+AI has made significant progress in the past decade, with deep learning revolutionizing NLP, computer vision, and reinforcement learning. Companies like OpenAI, Meta, and Google are leading the research. However, ethical concerns such as bias, transparency, and job displacement remain.
+```
+
+---
+
+## **Recap of Key Concepts**
+1. **Installing dependencies** (`transformers`, `torch`).
+2. **Importing the required modules** (`BartTokenizer`, `BartForConditionalGeneration`).
+3. **Loading the pre-trained BART model and tokenizer**.
+4. **Defining a function to summarize text**:
+   - Tokenizing input text.
+   - Generating a summary using beam search.
+   - Decoding the output.
+5. **Running an example summarization**.
 
 ---
 
 ## **Next Steps**
-- Train on a **larger dataset**.
-- Use **DistilBERT** for **faster inference**.
-- Deploy the model using **FastAPI or Flask**.
+To further improve the summarization pipeline, consider:
+- Adjusting `max_length` for different summary sizes.
+- Using **temperature and top-k sampling** instead of beam search for more diverse summaries.
+- Experimenting with different models like `t5-small` or `google/pegasus-xsum` for comparison.
 
-This is a **complete PyTorch-based BERT text classifier**. 🚀 Let me know if you have questions!
+Would you like to see examples with different decoding strategies? 🚀
