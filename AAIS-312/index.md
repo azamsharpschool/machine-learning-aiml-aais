@@ -8,11 +8,15 @@
 
 ### Module 1: Deep Learning
 - [Day 1 - Slides](../Slides/Deep%20Learning/intro-deep-learning.key) 
+- [Day 2 - Introduction to TensorFlow](resources/hello-tensor-flow.md)
 - [Day 2 - Deep Learning Simplified: Building Your First Neural Network with TensorFlow](resources/Deep%20Learning%20Simplified:%20Building%20Your%20First%20Neural%20Network%20with%20TensorFlow.md) 
 - [Day 2 - Coffee and Sleep](resources/coffee-sleep.md)
 - [Day 3 - Employee Attribution](resources/employee-attribution.md)
 - [Day 3 - Iris Flower Recognition](resources/iris-flower.md)
 - [Day 4 - Loan Default](resources/loan-default.md)
+- [Slides - What are activation functions?](../Slides/activation-functions.key)
+- [Activation Functions Walkthrough](resources/activation-functions.md)
+
 #### Resources: 
 - [What is Deep Learning?](https://www.freecodecamp.org/news/deep-learning-neural-networks-explained-in-plain-english/)
 - [TensorFlow Playground](https://playground.tensorflow.org/)

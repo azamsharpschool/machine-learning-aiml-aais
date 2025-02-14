@@ -14,8 +14,8 @@ https://www.youtube.com/playlist?list=PLDMXqpbtInQjc5-xa5B40Y1wZbIsxCIOk
 - [Day 2 - Activity: Regex to Extract Order Number from an Email](resources/regex-extract-order-number.md)
 
 - [Day 3 - Entity Name Recognition Using Spacy](resources/spacy.md)
-
 - [Day 4 - Introduction to Computer Vision Slides](../Slides/NLPAndComputerVision/intro-computer-vision.key)
+- [Day 4 - Walkthrough Introduction to Computer Vision]() 
 - [Day 4 - Computer Vision Resources](https://builtin.com/machine-learning/computer-vision) 
 - [Day 4 - Cats vs Dogs DataSet](https://www.kaggle.com/datasets/samuelcortinhas/cats-and-dogs-image-classification)
 - [Day 4 - Computer Vision Dogs vs Cats](resources/cats-dogs-classification.ipynb)
