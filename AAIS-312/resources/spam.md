@@ -1,8 +1,4 @@
-### **Detailed Explanation of Spam Detection Using RNN**
 
-This example demonstrates how a **Recurrent Neural Network (RNN)** can be used to classify text messages as **spam** or **not spam**. Let's break down each step in detail.
-
----
 
 ## **Step 1: Install Required Libraries**
 To implement this, we need the following Python libraries:
