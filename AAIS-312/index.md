@@ -57,6 +57,7 @@
 - [Day 4 - Sentiment Analysis](resources/sentiment.md) 
 - [Day 4 - Spam or Not](resources/spam.md)
 - [Day 4 - Language Translation](resources/language-translation.md)
+- [Day 4 - Real Life Examples](../Slides/Deep%20Learning/rnn-real-life-examples.key)
 
 #### Code 
 
