@@ -7,7 +7,6 @@ https://www.youtube.com/playlist?list=PLDMXqpbtInQjc5-xa5B40Y1wZbIsxCIOk
 
 ### Module 1 (NLP and Computer Vision)
 
-
 - [Day 1 - Introduction to NLP Slides](../Slides/NLPAndComputerVision/intro-nlp.key)
 - [Day 2 - Regex101.com](https://regex101.com/)
 - [Day 2 - Activity: Regex to Extract Emails from Text](resources/regex-to-extract-words-from-text.md)

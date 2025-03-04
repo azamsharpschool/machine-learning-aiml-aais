@@ -71,8 +71,8 @@
 - [Day 2 - Passport Requirements](resources/passport-requirements.md)
 - [Day 3 - Sentiment Analysis for Movie Reviews](resources/sentiment-movies.md) 
 - [Day 3 - Understanding Optimizers and Loss Slides](../Slides/Understanding%20Optimizers%20and%20Loss%20Functions%20in%20AI.key)
-- [Day 3 - AI Predicting a Number](resources/ai-predict-number.md)
 - [Day 3 - Understanding Loss Functions and Optimizers with a Simple AI Model](resources/understanding-loss-functions-optimizers.md)
+- [Day 3 - AI Predicting a Number](resources/ai-predict-number.md)
 - [Day 4 - Fashion DataSet](resources/fashion-dataset.md)
 
 ### Module 5: Pre-Trained Models

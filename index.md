@@ -12,3 +12,6 @@
 - [AAIS-402: Architecting AI Systems: Design Strategies and Best Practices](module6/index.md)
 
 
+- [Machine Learning Portfolio Example](https://github.com/tushar2704/ML-Portfolio?tab=readme-ov-file) 
+
+
