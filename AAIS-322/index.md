@@ -17,7 +17,7 @@ https://www.youtube.com/playlist?list=PLDMXqpbtInQjc5-xa5B40Y1wZbIsxCIOk
 - [Day 4 - Walkthrough Introduction to Computer Vision]() 
 - [Day 4 - Computer Vision Resources](https://builtin.com/machine-learning/computer-vision) 
 - [Day 4 - Cats vs Dogs DataSet](https://www.kaggle.com/datasets/samuelcortinhas/cats-and-dogs-image-classification)
-- [Day 4 - Computer Vision Dogs vs Cats](resources/cats-dogs-classification.ipynb)
+- [Day 4 - Computer Vision Dogs vs Cats](resources/cats-dogs-classification.md)
 
 ### Module 2 - Exploring Sequence-to-Sequence Models in NLP 
 
