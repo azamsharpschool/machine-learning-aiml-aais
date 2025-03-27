@@ -32,7 +32,7 @@ https://www.youtube.com/playlist?list=PLDMXqpbtInQjc5-xa5B40Y1wZbIsxCIOk
 
 ### Module 3 -  Creating Domain-Specific Chatbots with NLP
 
--  Day 1 - What are Chatbots? Show Demo
+-  [Day 1 - Pizza Ordering App Using Python](https://gist.github.com/azamsharpschool/f6943cee5689c13e6797bff02011fc6e)
 -  Day 2 - Implementing Flow Based ChatBot in Python
 -  Day 3 - Building Chatbots Using DialogFlow
 -  Day 4 - Building Chatbots Using DialogFlow
