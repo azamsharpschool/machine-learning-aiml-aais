@@ -42,6 +42,7 @@ https://www.youtube.com/playlist?list=PLDMXqpbtInQjc5-xa5B40Y1wZbIsxCIOk
 ### Module 4 - Object Detection for Real-World Applications
 
 - [Day 1 - Object Detection: Concept and Significance](../Slides/introduction-to-object-detection.key)
+- [Day 1 - Object Detection Using Ultralytics & YOLO](resources/Object-Detection-ultra.ipynb)
 - [Resource: Region Proposal Network (RPN) : A Complete Guide]
 (https://www.listendata.com/2022/06/region-proposal-network.html)
 - [Resource: Going Deep into Object Detection](https://towardsdatascience.com/going-deep-into-object-detection-bed442d92b34)
