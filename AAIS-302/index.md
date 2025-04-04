@@ -38,10 +38,12 @@ Module 2:
 
 ### Module 4 
 
-- [Day 1 - Logistic Regression Slides](../Slides/what-is-logistic-regression.key)
-- [Day 1 - Logistic Regression Introduction Code](https://gist.github.com/azamsharpschool/ffdf72c628702d535e2c656e0796de30)
-- [Day 1 - Heart Disease](https://gist.github.com/azamsharpschool/1f830faaa7545ec094494394d9e76247)
-- [Day 1 - Introduction to Supervised Learning and Classification](resources/module4-day1.md)
+
+- [Day 1 - Linear Regression](resources/introduction-linear-regression.md)
+- [Day 2 - Logistic Regression Slides](../Slides/what-is-logistic-regression.key)
+- [Day 2 - Logistic Regression Introduction Code](https://gist.github.com/azamsharpschool/ffdf72c628702d535e2c656e0796de30)
+- [Day 2 - Heart Disease](https://gist.github.com/azamsharpschool/1f830faaa7545ec094494394d9e76247)
+- [Day 2 - Introduction to Supervised Learning and Classification](resources/module4-day1.md)
 - [Day 3 - Spam or Not](resources/spam-or-not.md)
 - [Day 3 - Spam or Not Source Code](https://gist.github.com/azamsharpschool/383b96c835e9fcd3f421d52a7bb7c67e)
 - [Day 4 - Decision Trees for Classification Slides](../Slides/decision-trees.key)
