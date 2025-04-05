@@ -38,8 +38,8 @@ Module 2:
 
 ### Module 4 
 
-
 - [Day 1 - Linear Regression](resources/introduction-linear-regression.md)
+- [Day 2 - Logistic Regression](resources/intro-logistic-regression.md)
 - [Day 2 - Logistic Regression Slides](../Slides/what-is-logistic-regression.key)
 - [Day 2 - Logistic Regression Introduction Code](https://gist.github.com/azamsharpschool/ffdf72c628702d535e2c656e0796de30)
 - [Day 2 - Heart Disease](https://gist.github.com/azamsharpschool/1f830faaa7545ec094494394d9e76247)
