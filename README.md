@@ -10,3 +10,15 @@
 
 - [AAIS-332: Reinforcement Learning](module5/index.md)
 - [AAIS-402: Architecting AI Systems: Design Strategies and Best Practices](module6/index.md)
+
+### Books 
+
+- [Machine Learning for Absolute Beginners by Oliver Theobald](https://a.co/d/dejHKYm)
+- [Data Analytics for Absolute Beginners by Oliver Theobald](https://a.co/d/grnH4iZ)
+- [Python for Absolute Beginners by Oliver Theobald](https://a.co/d/iIrJD1q)
+- [AI for Absolute Beginners by Oliver Theobald](https://a.co/d/eJPYkOP) 
+
+### DataSets, Models and more 
+
+- [Kaggle](https://www.kaggle.com/)
+- [Hugging Face](https://huggingface.co/)
