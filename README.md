@@ -11,6 +11,14 @@
 - [AAIS-332: Reinforcement Learning](module5/index.md)
 - [AAIS-402: Architecting AI Systems: Design Strategies and Best Practices](module6/index.md)
 
+--- 
+
+### Code Projects 
+
+- [Carvana Jupyter Notebook](resources/Carvana.ipynb) 
+    - [Carvana Dataset](https://www.kaggle.com/datasets/ravishah1/carvana-predict-car-prices)
+
+--- 
 ### Books 
 
 - [Machine Learning for Absolute Beginners by Oliver Theobald](https://a.co/d/dejHKYm)
