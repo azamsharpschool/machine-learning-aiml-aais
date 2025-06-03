@@ -80,6 +80,7 @@
 - [Day 1 - Introduction to Pre-Trained Models](/Slides/introduction-pre-trained-models.key)
 - [Day 2 - Core ML Models in iOS](https://developer.apple.com/machine-learning/models/)
 - [Day 2 - Using Pre-Trained ResNet50 for Image Classification](resources/resnet-walkthrough.md)
+- [Day 2 - Using Pre-Trained ResNet50 for Image Classification Walkthrough](resources/resnet-walkthrougha.md)
 - [Day 2 - Source Code - Using Pre-Trained ResNet50 for Image Classification](https://gist.github.com/azamsharpschool/b9af92754c56de30dd74b0b8f5375ee4)
 - [Day 3 - Summarization Steps](resources/summarization-steps.md) 
 - [Day 4 - Walkthrough: Basic Functionalities of spaCy in Python](resources/walkthrough-spacy.md)   
