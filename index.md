@@ -9,7 +9,7 @@
 - [AAIS-322: Natural Language Processing and Computer Vision](AAIS-322/index.md)
 
 - [AAIS-332: Reinforcement Learning](AAIS-332/index.md)
-- [AAIS-402: Architecting AI Systems: Design Strategies and Best Practices](module6/index.md)
+- [AAIS-402: Architecting AI Systems: Design Strategies and Best Practices](AAIS-402/index.md)
 
 
 
