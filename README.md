@@ -17,6 +17,8 @@
 
 - [Carvana Jupyter Notebook](resources/Carvana.ipynb) 
     - [Carvana Dataset](https://www.kaggle.com/datasets/ravishah1/carvana-predict-car-prices)
+- [Heart Disease](resources/Heart_Desease.ipynb)
+    - [Heart Disease Dataset](https://www.kaggle.com/datasets/sid321axn/heart-statlog-cleveland-hungary-final)
 
 --- 
 ### Books 
