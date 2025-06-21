@@ -18,6 +18,8 @@ conda activate [path to the environment]
 - [Day 3 - Source Code - Normalization, LinearRegression and Prediction](https://gist.github.com/azamsharpschool/3b8f6d66964fe81f392dec07c310cbf4) 
 - [Day 4 - Advanced Data Analysis and Case Study](resources/Activity:%20E-Commerce%20Sales%20Analysis.md)
 
+- [Pandas Beginner Activities](resources/pandas-activities.md) 
+
 Module 2: 
 
 - [Day 1 - Introduction to Data Cleaning and Loading Data](resources/module2-day1.md)
@@ -26,6 +28,8 @@ Module 2:
 - [Day 3 - Removing Duplicates and Cleaning Data Formats](resources/module2-day3.md)
 - [Day 3 - Source Code for Customer Campaign Database](https://gist.github.com/azamsharpschool/fd8e191a72dfcea63d10a95c5a54359c)
 - [Day 4 - Combining and Reshaping Data](resources/module2-day4-md)
+
+- [Activities](resources/module2-activities.md)
 
 ### Module 3 
 
@@ -51,6 +55,7 @@ Module 2:
 - [Day 4 - Decision Tree Loan Approval Source Code](https://gist.github.com/azamsharpschool/6b7a599aa210e9ce652814fd808567fc)
 - [Day 3 - Regression Techniques](resources/module4-day3.md)
 - [Day 4 - Combining Techniques and Debugging](resources/module4-day4.md)
+- [Day 4 - Include Score, Accuracy, Confusion Matrix Use sklearn.metrics](resources/model-eval.md)
 
 
 ### Module 5 

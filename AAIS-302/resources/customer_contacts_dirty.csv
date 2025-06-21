@@ -1,0 +1,9 @@
+name,email,phone,city,state,signup_date
+Alice  ,ALICE@example.com,(123) 456-7890,Austin,TX,2023-01-01
+BOB,bob@EXAMPLE.com,123.456.7890,Dallas,TX,01/02/2023
+Alice  ,alice@example.com,1234567890,Austin,TX,2023/01/01
+Charlie,charlie@sample.com,(321) 654-0987,Houston,TX,"March 3, 2023"
+diana,diana@SAMPLE.com,321-654-0987,Dallas,TX,2023.04.01
+Ethan,ethan@sample.com,3216540987,Dallas ,TX,04-05-2023
+  Fiona,FIONA@EXAMPLE.com,(456)789-0123, Houston,TX,2023-06-01
+George,george@sample.com,456 789 0123,austin,TX,06/07/2023

@@ -1,0 +1,9 @@
+name,age,grade,subject
+Alice,18,92.0,Math
+Bob,21,76.0,Science
+Charlie,19,85.0,English
+Diana,22,67.0,Math
+Ethan,20,90.0,Science
+Fiona,23,,English
+George,17,58.0,
+Hannah,20,88.0,Math

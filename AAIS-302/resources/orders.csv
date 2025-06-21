@@ -1,0 +1,6 @@
+order_id,customer_id,product,amount
+101,1,Laptop,1200
+102,2,Phone,800
+103,1,Tablet,300
+104,3,Laptop,1100
+105,4,Phone,700

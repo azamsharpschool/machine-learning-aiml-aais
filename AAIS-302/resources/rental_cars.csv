@@ -1,0 +1,9 @@
+car_id,car_type,mileage,price,location
+101,SUV,23000.0,55.0,Austin
+102,Sedan,18000.0,40.0,Dallas
+103,,,60.0,Austin
+104,Hatchback,15000.0,,Houston
+105,SUV,27000.0,52.0,
+106,Sedan,,45.0,Dallas
+107,SUV,20000.0,,Houston
+108,,25000.0,48.0,Austin
