@@ -55,9 +55,11 @@ Module 2:
 
 ### Module 5 
 
-- [Day 1 - Introduction to Unsupervised Learning](resources/module5-day1.md)
-- [Day 1 - Introduction to Unsupervised Learning Resource](https://www.datacamp.com/blog/introduction-to-unsupervised-learning)
-- [Day 1 - KMeans Clustering Source Code](https://gist.github.com/azamsharpschool/e9bee843ccc9bda3a7a165c475283d99) 
+- [Day 1 - Carvana Project](resources/Carvana-RandomForest.ipynb)  
+
+- [Day 2 - Introduction to Unsupervised Learning](resources/module5-day1.md)
+- [Day 2 - Introduction to Unsupervised Learning Resource](https://www.datacamp.com/blog/introduction-to-unsupervised-learning)
+- [Day 2 - KMeans Clustering Source Code](https://gist.github.com/azamsharpschool/e9bee843ccc9bda3a7a165c475283d99) 
 - [Day 2 - Clustering Techniques](resources/module5-day2.md)
 - [Day 3 - Outlier Detection](resources/module5-day3.md) 
 - [Day 4 -  Latent Variable Modeling and Real-World Application](resources/module5-day4.md)
