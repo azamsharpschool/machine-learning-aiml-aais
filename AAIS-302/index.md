@@ -10,13 +10,34 @@ conda activate [path to the environment]
 
 ### Module 1 
 
+<!-- 
 - [Day 1 - Introduction to Python and Data Analysis Tools](../slides/302-%20Introduction%20to%20Python%20and%20Data%20Analysis%20Tools.key)
 - [Day 2 - Getting Started with Pandas](../slides/302-%20Getting%20Started%20with%20Pandas.key)
-- [Day 2 - Getting Started Walkthrough: Pandas Basics](resources/getting-started-pandas.md) 
-- [Day 3 - Data Manipulation with Pandas](../slides/302-%20Data%20Manipulation%20with%20Pandas.key)
-- [Day 3 - Data Manipulation with Pandas Walkthrough](resources/data-manipulation-walkthrough.md)
+-->
+- [Day 1 - Getting Started Walkthrough: Pandas Basics](resources/getting-started-pandas.md) 
+
+<!-- 
+- [Day 2 - Data Manipulation with Pandas](../slides/302-%20Data%20Manipulation%20with%20Pandas.key)
+-->
+
+- [Day 2 - Getting Started with Pandas: Data Manipulation Walkthrough – House Prices](resources/data-manipulation-walkthrough.md)
+
+- [Day 3 - What is Linear Regression?](resources/what-is-linear-regression.md)
+
+- [Day 3 - What is Normalization](resources/what-is-normalization.md) 
+
+- [Day 3 - Data Normalization & Linear Regression – House Price Prediction](resources/data-norm.md) 
+
+
+- [Day 4 -Advanced Analysis + E-Commerce Sales Case Study](resources/Advanced%20Analysis%20+%20E-Commerce%20Sales%20Case%20Study.md)
+
+<!-- 
 - [Day 3 - Source Code - Normalization, LinearRegression and Prediction](https://gist.github.com/azamsharpschool/3b8f6d66964fe81f392dec07c310cbf4) 
+-->
+
+<!-- 
 - [Day 4 - Advanced Data Analysis and Case Study](resources/Activity:%20E-Commerce%20Sales%20Analysis.md)
+-->
 
 - [Pandas Beginner Activities](resources/pandas-activities.md) 
 
@@ -33,12 +54,18 @@ Module 2:
 
 ### Module 3 
 
-- [Day 1 - Introduction to Data Visualization with Pandas](resources/module3-day1.md)
-- [Day 2 - Introduction to Matplotlib](resources/module3-day2.md)
+- [Day 1 - Introduction to Matplotlib](resources/module3-day2.md)
+- [Day 2 - Introduction to Data Visualization with Pandas](resources/module3-day1.md)
+
+<!-- 
 - [Day 2 - Source Code for Visualizing Carvana Car Prices](https://gist.github.com/azamsharpschool/3ee5bb004af43dac882f77c415578c6d)
+--> 
+
 - [Day 3 - Advanced Visualizations with Matplotlib](resources/advanced-visualization.md)
 - [Day 4 - Bringing It All Together](resources/bringing-together.md)
+<!-- 
 - [Day 4 - Turkey Sales Data from Malls](https://gist.github.com/azamsharpschool/e87f0494968ed79b4e118f71751f4b06)
+--> 
 
 ### Module 4 
 
@@ -46,7 +73,7 @@ Module 2:
 - [Day 2 - Logistic Regression](resources/intro-logistic-regression.md)
 - [Day 2 - Logistic Regression Slides](../Slides/what-is-logistic-regression.key)
 - [Day 2 - Logistic Regression Introduction Code](https://gist.github.com/azamsharpschool/ffdf72c628702d535e2c656e0796de30)
-- [Day 2 - Heart Disease](https://gist.github.com/azamsharpschool/1f830faaa7545ec094494394d9e76247)
+- [Day 2 - Heart Disease Code](https://gist.github.com/azamsharpschool/1f830faaa7545ec094494394d9e76247)
 - [Day 2 - Introduction to Supervised Learning and Classification](resources/module4-day1.md)
 - [Day 3 - Spam or Not](resources/spam-or-not.md)
 - [Day 3 - Spam or Not Source Code](https://gist.github.com/azamsharpschool/383b96c835e9fcd3f421d52a7bb7c67e)
@@ -61,11 +88,15 @@ Module 2:
 ### Module 5 
 
 - [Day 1 - Carvana Project](resources/Carvana-RandomForest.ipynb)  
+- [Day 2 - What is Unsupervised Learning](resources/what-is-unsupervised-learning.md)
 
 - [Day 2 - Introduction to Unsupervised Learning](resources/module5-day1.md)
 - [Day 2 - Introduction to Unsupervised Learning Resource](https://www.datacamp.com/blog/introduction-to-unsupervised-learning)
 - [Day 2 - KMeans Clustering Source Code](https://gist.github.com/azamsharpschool/e9bee843ccc9bda3a7a165c475283d99) 
 - [Day 2 - Clustering Techniques](resources/module5-day2.md)
+
+- [Day 3 - What is PCA?](resources/what-is-pca.md)
+- [Day 3 - PCA Walkthrough](resources/pca-beginner.md)
 - [Day 3 - Outlier Detection](resources/module5-day3.md) 
 - [Day 4 -  Latent Variable Modeling and Real-World Application](resources/module5-day4.md)
 

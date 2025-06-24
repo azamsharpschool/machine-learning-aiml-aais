@@ -1,246 +1,160 @@
-### Real-Life Walkthrough: Day 4 - Bringing It All Together  
-**Objective:** Combine previous concepts to create meaningful visualizations and add interactivity for real-world use cases. Imagine you're a data analyst preparing a report on customer sales trends and marketing performance for a meeting.
 
-[Download Dataset](sales_data.csv)
+## 📅 **Real-Life Walkthrough: Day 4 – Bringing It All Together**
 
----
+**Objective:** Use real sales data to build meaningful insights through filtering, grouping, and visualizations. Ideal for beginners stepping into exploratory data analysis (EDA) using Python and pandas.
 
-### **Activity 1: Data Cleaning and Preparation**  
-**Scenario:** You receive a sales dataset from the marketing team and need to clean and prepare it for analysis.
+### 🔗 Dataset Used:
 
-#### **Steps**:
-1. **Load the Dataset**:
-   ```python
-   import pandas as pd
-   
-   # Load sales data
-   sales_data = pd.read_csv('sales_data.csv')
-   
-   # Preview the first few rows
-   print(sales_data.head())
-   ```
-
-2. **Clean the Data**:
-   - Remove rows with missing values:
-     ```python
-     sales_data = sales_data.dropna()
-     ```
-   - Filter to only include sales above $1000:
-     ```python
-     sales_data = sales_data[sales_data['total_sales'] > 1000]
-     ```
-
-3. **Prepare for Visualization**:
-   - Add a new column for sales in thousands:
-     ```python
-     sales_data['sales_in_thousands'] = sales_data['total_sales'] / 1000
-     ```
-   - Convert `date` column to a proper datetime format:
-     ```python
-     sales_data['date'] = pd.to_datetime(sales_data['date'])
-     ```
+`customer_shopping_data.csv`
 
 ---
 
-### **Activity 2: Combining Multiple Plots**  
-**Scenario:** You need to create a dashboard showcasing sales trends, customer demographics, and product performance.
+### 🔧 **Activity 1: Load and Explore the Dataset**
 
-#### **Steps**:
-1. **Set Up Subplots**:
-   ```python
-   import matplotlib.pyplot as plt
-   
-   fig, axs = plt.subplots(1, 3, figsize=(18, 6))  # 1 row, 3 columns
-   ```
+#### **Step 1: Import Pandas**
 
-2. **Add Plots**:
-   - **Line Chart**: Visualize monthly sales trends.
-     ```python
-     monthly_sales = sales_data.groupby(sales_data['date'].dt.to_period('M')).sum()
-     axs[0].plot(monthly_sales.index.astype(str), monthly_sales['total_sales'], label='Monthly Sales', color='blue')
-     axs[0].set_title('Monthly Sales Trends')
-     axs[0].set_xlabel('Month')
-     axs[0].set_ylabel('Total Sales ($)')
-     axs[0].legend()
-     ```
-
-   - **Scatterplot**: Compare age and spending habits.
-     ```python
-     axs[1].scatter(sales_data['age'], sales_data['total_sales'], color='red', alpha=0.6)
-     axs[1].set_title('Age vs Spending')
-     axs[1].set_xlabel('Age')
-     axs[1].set_ylabel('Total Sales ($)')
-     ```
-
-   - **Bar Chart**: Show top-performing product categories.
-     ```python
-     category_sales = sales_data.groupby('product_category')['total_sales'].sum()
-     axs[2].bar(category_sales.index, category_sales.values, color='green')
-     axs[2].set_title('Top Product Categories')
-     axs[2].set_xlabel('Category')
-     axs[2].set_ylabel('Total Sales ($)')
-     ```
-
-3. **Adjust Layout and Display**:
-   ```python
-   plt.tight_layout()
-   plt.show()
-   ```
-
----
-
-### **Activity 3: Interactive Legends**  
-**Scenario:** Your manager wants the ability to toggle between datasets in the monthly sales chart.
-
-#### **Steps**:
-1. **Create the Plot**:
-   ```python
-   fig, ax = plt.subplots()
-   online_sales, = ax.plot(monthly_sales.index.astype(str), monthly_sales['online_sales'], label='Online Sales')
-   offline_sales, = ax.plot(monthly_sales.index.astype(str), monthly_sales['offline_sales'], label='Offline Sales')
-   ax.set_title('Monthly Sales (Online vs Offline)')
-   ax.legend()
-   ```
-
-2. **Add Interactivity**:
-   ```python
-   def toggle_visibility(event):
-       online_sales.set_visible(not online_sales.get_visible())
-       offline_sales.set_visible(not offline_sales.get_visible())
-       fig.canvas.draw()
-   
-   fig.canvas.mpl_connect('key_press_event', toggle_visibility)
-   plt.show()
-   ```
-
-   **Tip**: Press any key to toggle visibility.
-
----
-
-### **Activity 4: Adding Interactivity with Widgets**  
-**Scenario:** Enable dynamic exploration of sales trends by adjusting the date range.
-
-#### **Steps**:
-1. **Set Up the Plot**:
-   ```python
-   from matplotlib.widgets import Slider
-   
-   fig, ax = plt.subplots()
-   sales_line, = ax.plot(monthly_sales.index.astype(str), monthly_sales['total_sales'])
-   ax.set_title('Sales Trends')
-   ax.set_xlabel('Month')
-   ax.set_ylabel('Total Sales ($)')
-   ```
-
-2. **Add a Slider**:
-   ```python
-   ax_slider = plt.axes([0.2, 0.01, 0.65, 0.03])  # Slider position
-   slider = Slider(ax_slider, 'Months', 1, len(monthly_sales), valinit=len(monthly_sales), valstep=1)
-
-   def update(val):
-       limit = int(slider.val)
-       sales_line.set_data(monthly_sales.index.astype(str)[:limit], monthly_sales['total_sales'][:limit])
-       ax.relim()
-       ax.autoscale_view()
-       fig.canvas.draw()
-   
-   slider.on_changed(update)
-   plt.show()
-   ```
-
----
-
-### **Activity 5: Final Project**  
-**Scenario:** Summarize customer behavior and product sales insights for a presentation.
-
-#### **Steps**:
-1. **Choose a Dataset**: Use your cleaned sales dataset.
-
-2. **Create Visualizations**:
-   - Combine a line chart for sales trends with a scatterplot for age vs spending.
-   - Add annotations for key milestones:
-     ```python
-     ax.annotate('Sales Spike', xy=('2024-07', 50000), xytext=('2024-05', 60000),
-                 arrowprops=dict(facecolor='black', arrowstyle='->'))
-     ```
-
-3. **Save the Visualization**:
-   ```python
-   plt.savefig('sales_insights_report.png', dpi=300)
-   ```
-
-4. **Present the Work**:
-   - Highlight insights such as the most profitable product categories and customer age groups with the highest spending.
-
----
-
-### **Key Takeaways**:
-- Real-world data often needs cleaning and preparation before visualization.
-- Combining multiple plots provides a comprehensive view of data.
-- Interactivity enhances the usability of visualizations for exploration.
-- Saving visualizations ensures they are ready for presentations and reports.
-
-This approach bridges the gap between theoretical learning and practical applications of data visualization!
-
-### Sales by Product Category
-
-``` py
+```python
 import pandas as pd
+```
+
+#### **Step 2: Load the CSV File**
+
+```python
+sales_data = pd.read_csv("/content/sample_data/customer_shopping_data.csv")
+sales_data.head()
+```
+
+#### **Step 3: Dataset Overview**
+
+Check the number of records and columns:
+
+```python
+len(sales_data)  # Number of rows
+sales_data.columns  # List of column names
+```
+
+#### **Step 4: Check for Missing Values**
+
+```python
+sales_data.isnull().sum()
+```
+
+✅ *Purpose:* Clean datasets are critical for accurate analysis. This step checks data quality.
+
+---
+
+### 🔧 **Activity 2: Filtering and Cleaning**
+
+#### **Step 1: Filter High-Value Transactions**
+
+```python
+large_sales = sales_data[sales_data["price"] > 4900]
+```
+
+✅ *Why?* Focus on sales that generate substantial revenue for insights.
+
+---
+
+### 📊 **Activity 3: Grouping and Aggregation**
+
+#### **Step 1: Total Sales by Product Category**
+
+```python
+sales_by_category = sales_data.groupby("product_category")["price"].sum().sort_values(ascending=False)
+print(sales_by_category)
+```
+
+#### **Step 2: Average Order Value by Gender**
+
+```python
+average_order_by_gender = sales_data.groupby("gender")["price"].mean()
+print(average_order_by_gender)
+```
+
+#### **Step 3: Revenue by Category and Gender**
+
+```python
+category_gender = sales_data.groupby(["product_category", "gender"])["price"].sum().unstack()
+print(category_gender)
+```
+
+---
+
+### 📈 **Activity 4: Visualization**
+
+#### **Step 1: Import Matplotlib**
+
+```python
 import matplotlib.pyplot as plt
+```
 
-# Load the dataset
-sales_data = pd.read_csv('sales_data.csv')
+#### **Step 2: Bar Chart – Sales by Category**
 
-# Group data by product category and sum the total sales
-category_sales = sales_data.groupby("product_category")["total_sales"].sum()
-
-# Plot the sales by product category
-plt.figure(figsize=(10, 6))
-category_sales.sort_values().plot(kind="bar", color="skyblue", edgecolor="black")
-plt.title("Total Sales by Product Category", fontsize=16)
-plt.xlabel("Product Category", fontsize=12)
-plt.ylabel("Total Sales ($)", fontsize=12)
-plt.xticks(rotation=45, fontsize=10)
-plt.grid(axis="y", linestyle="--", alpha=0.7)
+```python
+sales_by_category.plot(kind="bar", color="skyblue", edgecolor="black", figsize=(10,6))
+plt.title("Total Sales by Product Category")
+plt.xlabel("Product Category")
+plt.ylabel("Total Sales")
+plt.xticks(rotation=45)
+plt.grid(axis="y")
 plt.tight_layout()
-
-# Display the plot
 plt.show()
 ```
 
+#### **Step 3: Pie Chart – Gender Distribution**
 
-``` py 
-import matplotlib.pyplot as plt
-
-# Create 3 subplots (1 column, 3 rows)
-fig, axs = plt.subplots(3, 1, figsize=(12, 18))  # Adjust figure size as needed
-
-# Plot 1: Monthly sales trends
-monthly_sales = sales_data.groupby(sales_data["date"].dt.to_period("M")).sum(numeric_only=True)
-axs[0].plot(monthly_sales.index.astype(str), monthly_sales['total_sales'], label='Monthly Sales', color='blue')
-axs[0].set_title('Monthly Sales Trends')
-axs[0].set_xlabel('Month')
-axs[0].set_ylabel('Total Sales ($)')
-axs[0].legend()
-axs[0].set_xticks(range(len(monthly_sales.index)))
-axs[0].set_xticklabels(monthly_sales.index.astype(str), rotation=45, ha='right')
-
-# Plot 2: Age vs Spending scatter plot
-axs[1].scatter(sales_data['age'], sales_data['total_sales'], color='red', alpha=0.6)
-axs[1].set_title('Age vs Spending')
-axs[1].set_xlabel('Age')
-axs[1].set_ylabel('Total Sales ($)')
-
-# Plot 3: Top product categories bar chart
-category_sales = sales_data.groupby('product_category')['total_sales'].sum()
-axs[2].bar(category_sales.index, category_sales.values, color='green')
-axs[2].set_title('Top Product Categories')
-axs[2].set_xlabel('Category')
-axs[2].set_ylabel('Total Sales ($)')
-axs[2].tick_params(axis='x', rotation=45)
-
-# Adjust layout and show the plots
-plt.tight_layout()
+```python
+sales_data["gender"].value_counts().plot(kind="pie", autopct='%1.1f%%', startangle=90, figsize=(6, 6))
+plt.title("Customer Gender Distribution")
+plt.ylabel("")
 plt.show()
-
 ```
+
+#### **Step 4: Scatter Plot – Age vs Price**
+
+```python
+plt.scatter(sales_data["age"], sales_data["price"], alpha=0.5, c="purple")
+plt.title("Age vs Price")
+plt.xlabel("Age")
+plt.ylabel("Spending ($)")
+plt.grid(True)
+plt.show()
+```
+
+---
+
+### ✅ **Activity 5: Summary and Report Generation**
+
+1. **Top-Selling Product Category:** Use the highest value from `sales_by_category`.
+2. **Gender with Highest Average Spending:** Use `average_order_by_gender`.
+3. **Customer Age Insights:** Review scatterplot – are older customers spending more?
+
+---
+
+### 💡 **Final Mini Project for Learners**
+
+**Goal:** Apply what you’ve learned on the dataset.
+
+**Tasks:**
+
+* Load and clean the dataset.
+* Create a summary report:
+
+  * Highest revenue product category
+  * Customer demographics (age, gender) vs. spending
+  * Pie chart of gender or category split
+* Export a PNG chart using:
+
+  ```python
+  plt.savefig("final_report_chart.png", dpi=300)
+  ```
+
+---
+
+### 🧠 **Key Takeaways**
+
+* Data cleaning ensures reliable analysis.
+* Grouping helps summarize trends.
+* Visualizations reveal insights hidden in raw data.
+* Real datasets help connect theory to practice.
+
