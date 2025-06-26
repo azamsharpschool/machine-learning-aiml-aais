@@ -1,5 +1,7 @@
 ### **Getting Started Walkthrough: Pandas Basics**
 
+[Download the Dataset](practice_output_20k.csv)
+
 This walkthrough introduces you to **Pandas**, a powerful library for data manipulation and analysis in Python. Follow the steps to get hands-on experience with its core functionalities.
 
 ---
