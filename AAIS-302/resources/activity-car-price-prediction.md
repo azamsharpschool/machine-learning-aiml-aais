@@ -5,10 +5,6 @@
 
 [Example - House Price Prediction](https://colab.research.google.com/gist/azamsharp/bdef1cd77fc9edcd5abbdc5407384f55/houseprices2025.ipynb)
 
-### 📂 Dataset:
-
-Use the file:
-**[`car_price_predictor_numerical_20k.csv`](sandbox:/mnt/data/car_price_predictor_numerical_20k.csv)**
 
 ---
 
@@ -57,11 +53,6 @@ Build and evaluate a regression model that predicts the **price of a car** based
      * Mean Squared Error (MSE)
      * Root Mean Squared Error (RMSE)
      * R² Score
-
-7. **Bonus Challenge**
-
-   * Try using `RandomForestRegressor` and compare results with Linear Regression.
-   * Which model performs better? Why?
 
 ---
 
