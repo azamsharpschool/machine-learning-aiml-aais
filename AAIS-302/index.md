@@ -44,6 +44,7 @@ conda activate [path to the environment]
 Module 2: 
 
 - [Day 1 - Houston House Prices Using Linear Regression](resources/houston-housing-prices.md)
+- [Day 2 - Activity Car Price Prediction](resources/activity-car-price-prediction.md) 
 - [Day 1 - Introduction to Data Cleaning and Loading Data](resources/module2-day1.md)
 - [Day 2 - Handling Missing Data](resources/module2.day2.md)
 - [Day 2 - Source Code - Rental Car Pricing Prediction](https://gist.github.com/azamsharpschool/cb0e83549a4497545b3bb0409e4c7f82)
