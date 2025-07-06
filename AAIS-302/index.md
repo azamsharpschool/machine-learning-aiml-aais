@@ -51,10 +51,13 @@ Module 2:
 - [Day 3 - Removing Duplicates and Cleaning Data Formats](resources/module2-day3.md)
 - [Day 3 - Source Code for Customer Campaign Database](https://gist.github.com/azamsharpschool/fd8e191a72dfcea63d10a95c5a54359c)
 - [Day 4 - Combining and Reshaping Data](resources/module2-day4-md)
+- [Day4 - Activity: California House Prices](resources/cal-house-prices.md)
 
 - [Activities](resources/module2-activities.md)
 
 ### Module 3 
+
+- [Add SQL Integration]() 
 
 - [Day 1 - Introduction to Matplotlib](resources/module3-day2.md)
 - [Day 2 - Introduction to Data Visualization with Pandas](resources/module3-day1.md)
