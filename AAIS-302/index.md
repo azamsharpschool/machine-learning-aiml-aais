@@ -53,6 +53,8 @@ Module 2:
 - [Day 4 - Combining and Reshaping Data](resources/module2-day4-md)
 - [Day4 - Activity: California House Prices](resources/cal-house-prices.md)
 
+- [Day 3 - Car Prices with One-Hot Encoding](resources/car-prices-one-hot.md)  
+
 - [Activities](resources/module2-activities.md)
 
 ### Module 3 
