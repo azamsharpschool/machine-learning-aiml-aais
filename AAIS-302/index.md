@@ -54,6 +54,7 @@ Module 2:
 - [Day4 - Activity: California House Prices](resources/cal-house-prices.md)
 
 - [Day 3 - Car Prices with One-Hot Encoding](resources/car-prices-one-hot.md)  
+- [Day 3 - House Prices One-Hot Encoding and Label Encoding Source Code](resources/HousePricesOneHotEncoding.ipynb) 
 
 - [Activities](resources/module2-activities.md)
 
