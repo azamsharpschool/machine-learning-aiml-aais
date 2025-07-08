@@ -1,7 +1,7 @@
 
 ## 🚗 Exercise: Predict Car Prices Using Linear Regression
 
-[Download Dataset](car-prices-one-hot.md)
+[Download Dataset](car_prices_20k.csv)
 
 
 **Objective:**
