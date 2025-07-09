@@ -60,9 +60,8 @@ Module 2:
 
 ### Module 3 
 
-- [Add SQL Integration]() 
-
 - [Day 1 - Introduction to Matplotlib](resources/module3-day2.md)
+- [Day 1 - Graph Activities](resources/graph-activities.md)
 - [Day 2 - Introduction to Data Visualization with Pandas](resources/module3-day1.md)
 
 <!-- 
