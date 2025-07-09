@@ -50,7 +50,7 @@ Module 2:
 - [Day 2 - Source Code - Rental Car Pricing Prediction](https://gist.github.com/azamsharpschool/cb0e83549a4497545b3bb0409e4c7f82)
 - [Day 3 - Removing Duplicates and Cleaning Data Formats](resources/module2-day3.md)
 - [Day 3 - Source Code for Customer Campaign Database](https://gist.github.com/azamsharpschool/fd8e191a72dfcea63d10a95c5a54359c)
-- [Day 4 - Combining and Reshaping Data](resources/module2-day4-md)
+- [Day 4 - Combining and Reshaping Data](resources/module2-day4.md)
 - [Day4 - Activity: California House Prices](resources/cal-house-prices.md)
 
 - [Day 3 - Car Prices with One-Hot Encoding](resources/car-prices-one-hot.md)  
