@@ -76,6 +76,9 @@ Module 2:
 
 ### Module 4 
 
+- [Day 1 - Logistic Regression Walkthrough 1](resources/logistic-reg-activity1.md)
+- [Day 2 - Heart Disease Exercise](resources/heart-disease-exercise.md)
+
 - [Day 1 - Linear Regression](resources/introduction-linear-regression.md)
 - [Day 2 - Logistic Regression](resources/intro-logistic-regression.md)
 - [Day 2 - Logistic Regression Slides](../Slides/what-is-logistic-regression.key)
