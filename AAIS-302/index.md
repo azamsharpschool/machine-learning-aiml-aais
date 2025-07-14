@@ -63,6 +63,7 @@ Module 2:
 - [Day 1 - Introduction to Matplotlib](resources/module3-day2.md)
 - [Day 1 - Graph Activities](resources/graph-activities.md)
 - [Day 2 - Introduction to Data Visualization with Pandas](resources/module3-day1.md)
+- [Day 3 - Understanding Sigmoid Function and Introduction to Logistic Regression](resources/sigmoid-func.md)
 
 <!-- 
 - [Day 2 - Source Code for Visualizing Carvana Car Prices](https://gist.github.com/azamsharpschool/3ee5bb004af43dac882f77c415578c6d)
