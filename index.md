@@ -1,7 +1,7 @@
 # DigitalCrafts 
 
 
-- [AAIS-202: Introduction to Python Programming](/module1/index.md)
+- [AAIS-202: Introduction to Python Programming](/AAIS-202/index.md)
 
 - [AAIS-302: Artificial Intelligence, Machine Learning, and Data Science Programming with Python](AAIS-302/index.md)
 
