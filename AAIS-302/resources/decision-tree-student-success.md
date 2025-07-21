@@ -3,6 +3,8 @@
 
 ### Walkthrough: Will a Student Pass the Exam?
 
+[Download Dataset](student_exam_data_20k.csv)
+
 ---
 
 ## 🎯 Objective

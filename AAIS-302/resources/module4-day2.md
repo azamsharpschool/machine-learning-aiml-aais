@@ -5,6 +5,8 @@
 
 ---
 
+[Download Dataset](loan_data_20k.csv) 
+
 ## 🎯 Objective
 
 In this walkthrough, you’ll learn how to use **decision trees** to decide whether a loan should be **approved** or **rejected** based on:
