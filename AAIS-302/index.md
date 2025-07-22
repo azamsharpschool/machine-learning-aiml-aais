@@ -92,6 +92,8 @@ Module 2:
 - [Day 4 - Decision Trees for Classification](resources/module4-day2.md)
 - [Day 4 - Activity Decision Tree Classification Student Success](resources/decision-tree-student-success.md)
 - [Day 4 - Decision Tree Loan Approval Source Code](https://colab.research.google.com/gist/azamsharp/103b2d65d1823f7b17570ac0c063f718/introductiontodecisiontrees.ipynb) 
+- [Day 4 - Random Forest Walkthrough Activity for Students](resources/random-forest-activity.md)
+
 - [Day 3 - Regression Techniques](resources/module4-day3.md)
 - [Day 4 - Combining Techniques and Debugging](resources/module4-day4.md)
 - [Day 4 - Include Score, Accuracy, Confusion Matrix Use sklearn.metrics](resources/model-eval.md)
