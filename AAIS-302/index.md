@@ -111,6 +111,7 @@ Module 2:
 
 - [Day 3 - What is PCA?](resources/what-is-pca.md)
 - [Day 3 - PCA Walkthrough](resources/pca-beginner.md)
+- [Day 3 - Introduction to PCA MNIST Dataset](https://colab.research.google.com/gist/azamsharp/a10aa964774136c59c22da9721a524cc/hellopca.ipynb) 
 - [Day 3 - Outlier Detection](resources/module5-day3.md) 
 - [Day 4 -  Latent Variable Modeling and Real-World Application](resources/module5-day4.md)
 
