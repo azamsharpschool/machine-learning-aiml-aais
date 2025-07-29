@@ -16,6 +16,7 @@ conda activate [path to the environment]
 -->
 - [Day 1 - Getting Started Walkthrough: Pandas Basics](resources/getting-started-pandas.md) 
 
+- [Day 2 - Employee Salaries Activity](resources/employee-salaries-activity.md)
 <!-- 
 - [Day 2 - Data Manipulation with Pandas](../slides/302-%20Data%20Manipulation%20with%20Pandas.key)
 -->
