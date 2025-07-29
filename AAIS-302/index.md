@@ -115,6 +115,8 @@ Module 2:
 - [Day 3 - Introduction to PCA MNIST Dataset](https://colab.research.google.com/gist/azamsharp/a10aa964774136c59c22da9721a524cc/hellopca.ipynb) 
 - [Day 3 - Outlier Detection](resources/module5-day3.md) 
 - [Day 4 -  Latent Variable Modeling and Real-World Application](resources/module5-day4.md)
+- [Day 5 - Linear Regression Salary Dataset](https://www.kaggle.com/code/shubham47/linear-regression-salary-dataset/input)
+- [Day 5 - Logistic Regression Heart Disease](https://www.kaggle.com/datasets/dileep070/heart-disease-prediction-using-logistic-regression)
 
 <!-- 
 
