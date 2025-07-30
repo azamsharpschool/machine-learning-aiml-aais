@@ -10,6 +10,18 @@ conda activate [path to the environment]
 
 ### Module 1 
 
+- [Day 1 - Introduction to Linear Regression](https://colab.research.google.com/gist/azamsharp/3187da48c3762479674b95af50bae7e9/hellolinearregression.ipynb) 
+
+- [Day 2 - Linear Regression (Train Test Split & Score)](https://colab.research.google.com/gist/azamsharp/2655ee6561a93ba739c3afe53cf06d1b/houseprices2025.ipynb)
+
+- [Day 3 - Car Pricing Activity](https://colab.research.google.com/gist/azamsharp/e4d14432667175470e96594ed8471a08/carprices.ipynb)
+
+- [Day 4 - Houston House Prices Using Linear Regression](resources/houston-housing-prices.md)
+
+--- 
+
+##### Archived 
+
 <!-- 
 - [Day 1 - Introduction to Python and Data Analysis Tools](../slides/302-%20Introduction%20to%20Python%20and%20Data%20Analysis%20Tools.key)
 - [Day 2 - Getting Started with Pandas](../slides/302-%20Getting%20Started%20with%20Pandas.key)
@@ -29,6 +41,7 @@ conda activate [path to the environment]
 
 - [Day 3 - Data Normalization & Linear Regression – House Price Prediction](resources/data-norm.md) 
 
+- [Day 4 - Houston House Prices Using Linear Regression](resources/houston-housing-prices.md)
 
 - [Day 4 -Advanced Analysis + E-Commerce Sales Case Study](resources/Advanced%20Analysis%20+%20E-Commerce%20Sales%20Case%20Study.md)
 
@@ -43,6 +56,19 @@ conda activate [path to the environment]
 - [Pandas Beginner Activities](resources/pandas-activities.md) 
 
 Module 2: 
+
+- [Day 1 - One-Hot Encoding and Label Encoding](https://colab.research.google.com/gist/azamsharp/4048e9a03bfd36533acc457ecb848d6d/housepricesonehotencoding.ipynb)
+
+- [Day 2 - Linear Regression Carvana Dataset](https://colab.research.google.com/gist/azamsharp/8cfd85af45280db882e154a904c00b77/carvanajuly.ipynb)
+
+- [Day 3 - Introduction to MatplotLib](https://colab.research.google.com/gist/azamsharp/373f88871a57dd1191b1a54ab5840588/carvanajuly_with_plot.ipynb)
+
+- [Day 4 - Exercise One Hot Encoding with House Price Data](resources/one-hot-encoding-house-prices.md)
+
+--- 
+
+#### Archived
+
 
 - [Day 1 - Houston House Prices Using Linear Regression](resources/houston-housing-prices.md)
 - [Day 2 - Activity Car Price Prediction](resources/activity-car-price-prediction.md) 
@@ -61,6 +87,22 @@ Module 2:
 
 ### Module 3 
 
+- [Day 1 - Understanding Relational Database]
+
+- [Day 1 - Integrating Python with SQLite3 Database]
+
+- [Day 2 - Logistic Regression](https://colab.research.google.com/gist/azamsharp/1ad8644d1e2bb2f1e88f2bf901a1b59b/hellologisticregression.ipynb) 
+
+- Day 3 - Implementing Flask Frontend for your Machine Learning Model
+    - [Logistic Regression Model Code](https://colab.research.google.com/gist/azamsharp/1ad8644d1e2bb2f1e88f2bf901a1b59b/hellologisticregression.ipynb)
+    - [Flask App](resources/MyFlaskApp.zip)
+
+- [Day 4 - Exercise on Logistic Regression](resources/loan-approval.md)
+
+--- 
+
+#### Archived
+
 - [Day 1 - Introduction to Matplotlib](resources/module3-day2.md)
 - [Day 1 - Graph Activities](resources/graph-activities.md)
 - [Day 2 - Introduction to Data Visualization with Pandas](resources/module3-day1.md)
@@ -77,6 +119,20 @@ Module 2:
 --> 
 
 ### Module 4 
+
+- [Day 1 - Decision Tree](https://colab.research.google.com/gist/azamsharp/c3904e91728a2afb938035edf832c837/hellodecisiontrees.ipynb)
+
+- [Day 2 - Random Forest Classifier](https://colab.research.google.com/gist/azamsharp/bdac046c5b012b0824734bccf17f68d2/hellorandomforest.ipynb)
+
+- [Day 3 - Introduction to KMeans](https://colab.research.google.com/gist/azamsharp/0d9b0da89d4b9e43a3d4cd23b0fc13e5/introkmeans.ipynb)
+
+- [Day 4 - KMeans Continued](https://gist.github.com/azamsharp/f78fa4c1717fe33814337ae49ecee983#file-customersegmentation-ipynb)
+
+
+--- 
+
+#### Archived
+
 
 - [Day 1 - Logistic Regression Walkthrough 1](resources/logistic-reg-activity1.md)
 - [Day 2 - Heart Disease Exercise](resources/heart-disease-exercise.md)
@@ -102,6 +158,19 @@ Module 2:
 
 ### Module 5 
 
+- [Day 1 - Introduction to PCA](https://colab.research.google.com/gist/azamsharp/5397746af987b2f366ef737780758afa/pcamnist.ipynb) 
+
+- [Day 2 - Linear Regression Salary Dataset](https://www.kaggle.com/code/shubham47/linear-regression-salary-dataset/input)
+
+- [Day 3 - Logistic Regression Heart Disease](https://www.kaggle.com/datasets/dileep070/heart-disease-prediction-using-logistic-regression)
+
+- [Day 4 - KMeans Clustering Wine Dataset](https://www.kaggle.com/datasets/harrywang/wine-dataset-for-clustering)
+
+--- 
+
+#### Archived
+
+
 - [Day 1 - Carvana Project](resources/Carvana-RandomForest.ipynb)  
 - [Day 2 - What is Unsupervised Learning](resources/what-is-unsupervised-learning.md)
 
@@ -115,89 +184,6 @@ Module 2:
 - [Day 3 - Introduction to PCA MNIST Dataset](https://colab.research.google.com/gist/azamsharp/a10aa964774136c59c22da9721a524cc/hellopca.ipynb) 
 - [Day 3 - Outlier Detection](resources/module5-day3.md) 
 - [Day 4 -  Latent Variable Modeling and Real-World Application](resources/module5-day4.md)
-- [Day 5 - Linear Regression Salary Dataset](https://www.kaggle.com/code/shubham47/linear-regression-salary-dataset/input)
-- [Day 5 - Logistic Regression Heart Disease](https://www.kaggle.com/datasets/dileep070/heart-disease-prediction-using-logistic-regression)
-
-<!-- 
-
-## Machine Learning  
-
-- Machine Learning Categories 
-- Machine Learning Toolbox 
-- Pandas
-
-- [Download Class Code Pandas](resources/pandas-302.ipynb)
-- [Matplotlib Official Website](https://matplotlib.org/)
-
-### Types of Machine Learning 
-
-- [Machine Learning Slides](../Slides/types-of-machine-learning.key)
-
-### Getting Started with Pandas 
-
-- [Pandas Exercises](resources/pandas-exercises.md)
-- [Car Prices Activity](/module2/resources/car-prices-activity.md)
-- [Carvana Activity](/module2/resources/carvana-activity.md)
-- [Covid Cases](resources/covid-cases.md)
-- [DataFrame Missing Values Exercise](resources/dataframe-missing-values-exercises.md)
-- [Pandas Groupby Activity](resources/pandas-groupby-exercise.md)
-
-### Data Visualization 
-
-- [Matplotlib Exercises](resources/matplotlib-intro.md)
-- [Real-World Exercise: Analyzing Sales Data](resources/amazing-sales-data.md)
-
-### Linear Regression
-
-- [Slides](../Slides/intro-linear-regression.key)
-- [Linear Regression Math YouTube Video](https://youtu.be/NUXdtN1W1FE?si=D4DE1qo7j3qsFooG)
-- [Linear Regression Home Prices](resources/intro-linear-regression.md)
-- [House Prices (fillna) Activity](/module2/resources/house-prices-fillna.md)
-- [Coffee Sleep - Train and Test](resources/coffee-sleep-train-test.md)
-
-<!-- 
-- [House Prices Class Work](https://colab.research.google.com/drive/
-1KF9jFLm59cp_9ZNkFFuRXgsBYL5IVO6B?usp=sharing)
---> 
-
-<!-- 
-- [Activity - One Hot Encoding](resources/one-hot-encoding.md)
-- [Activity - Student Scores](resources/student-scores-graph.md)
-- [Activity - Monthly Sales](resources/monthly-sales.md)
-
-### Logistic Regression
-
-- [Slides](../Slides/logistic-regression.key)
-- [What is Sigmoid Function - Mohammad Azam](https://youtu.be/0BtMH3xzovg)
-- [Understanding Gradient Descent]
-- [Heart Disease Activity](/module2/resources/heart-disease-activity.md)
-- [Logistic Regression - Cancer Diagnostics](resources/cancer-diagnostics.md)
-- [Diabetes Prediction](resources/diabetes-prediction.md)
-
-### K-Nearest Neighbors 
-
-- [KNearest Neighbors Classification Article](https://www.freecodecamp.org/news/k-nearest-neighbors-algorithm-classifiers-and-model-example/)
-- [Predicting Customer Purchases](resources/predict-price-k-nearest.md)
-
-### Decision Tree
-- [Churn Rate](resources/dt-activity.md)
-- [Movie Genre](resources/dt-movie-genre.md)
-- [Applicant Job Acceptance](resources/job-acceptance.md)
-- [Predicting Disease Presence with Decision Tree](resources/decision-tree.md)
-
-### Practice Exercises 
-
-- [Practice Exercise Module 1A](resources/exercise-module1A.md)
-- [Practice Exercise Module 1B](resources/exercuse-module1B.md)
-- [Practice Exercise Module 2A](resources/exercise-module2A.md) 
-- [Practice Exercise Module 2B](resources/exercise-module2B.md) 
-- [Practice Exercise Module 3A](resources/exercise-module3A.md) 
-- [Practice Exercise Module 3B](resources/exercise-module3B.md) 
-- [Practice Exercise Module 4A](resources/exercise-module4A.md) 
-- [Practice Exercise Module 4B](resources/exercise-module4B.md) 
-- [Practice Exercise Module 5A](resources/exercise-module5A.md) 
-- [Practice Exercise Module 5B](resources/exercise-module5B.md) 
-
---> 
-
+- [Day 4 - Linear Regression Salary Dataset](https://www.kaggle.com/code/shubham47/linear-regression-salary-dataset/input)
+- [Day 4 - Logistic Regression Heart Disease](https://www.kaggle.com/datasets/dileep070/heart-disease-prediction-using-logistic-regression)
 
