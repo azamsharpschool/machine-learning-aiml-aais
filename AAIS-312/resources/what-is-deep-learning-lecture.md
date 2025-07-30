@@ -104,6 +104,38 @@ Here are practical use cases where deep learning is powering real systems today:
 
 ---
 
+🧮 How Many Neurons in Each Layer?
+
+There’s no fixed rule, but here are common guidelines:
+
+✅ Input Layer:
+
+Number of neurons = number of features in your data
+
+Example: 28×28 image = 784 neurons
+
+✅ Output Layer:
+
+Depends on the task
+
+Binary classification: 1 neuron
+
+Digit classification (0–9): 10 neurons
+
+✅ Hidden Layers:
+
+Can have dozens to thousands of neurons
+
+Common choices: 64, 128, 256, 512, 1024
+
+🎯 Tips:
+
+More neurons = more learning power, but also more risk of overfitting
+
+Start small and increase if needed
+
+Use ReLU activation and Dropout to avoid overfitting
+
 ## 🔽 Gradient Descent
 
 Used to help the model **learn by reducing error**
@@ -230,13 +262,135 @@ model.fit(x_train, y_train, epochs=5, validation_split=0.1)
 
 ---
 
-## 🎉 Summary
+---
 
-* Deep learning learns from examples using neural networks
-* Neurons + layers = pattern detectors
-* Activation functions add power
-* Gradient descent = learning engine
-* ReLU + Softmax = typical setup
-* Deep learning is a powerful subset of machine learning built for complex problems
+## 🐨 How Deep Learning Recognizes a Koala (Simple Version)
+
+### 🔍 Step 1: You Show the Computer an Image
+
+You give the computer a photo — maybe a cute koala sitting on a tree.
+
+The computer doesn’t “see” like we do. It just sees **numbers** — each pixel becomes a number (like brightness or color values).
+
+---
+
+### 🧠 Step 2: The Image Goes Through a Neural Network
+
+A **neural network** is made up of many **layers of “neurons”** — little math units that each do a tiny job.
+
+These neurons work in layers:
+
+#### ➤ Layer 1 (Detects basic stuff):
+
+Neurons here might look for:
+
+* Edges
+* Lines
+* Corners
+
+💡 For example, a neuron might say:
+
+> "I see a round black edge — maybe that’s an eye?"
+
+---
+
+#### ➤ Layer 2 (Detects parts):
+
+Now that edges and shapes are found, the next layer combines them to find **parts**:
+
+* One neuron might recognize **an eye**.
+* Another might recognize **a nose**.
+* Another sees **fuzzy ears** or **arms holding a tree**.
+
+💡 For example:
+
+> “Two dark circles here… those look like koala eyes!”
+> “Big round ears… hmm, could be a koala.”
+
+---
+
+#### ➤ Layer 3+ (Detects the whole object):
+
+Now it puts it all together:
+
+* Eyes + Nose + Fluffy Ears + Grey Body + Tree = **Koala!**
+
+A final neuron might say:
+
+> “Yes! All the koala parts are here. I’m 95% sure this is a koala.”
+
+---
+
+### ⚙️ Behind the Scenes: How Neurons Learn
+
+Each neuron has:
+
+* **Weights**: control how important each input is.
+* **Bias**: a kind of threshold.
+* **Activation function**: decides whether to "fire" (pass on the signal).
+
+Over time, the network **learns** which patterns belong to koalas by looking at **lots of images** — some with koalas, some without. It adjusts weights and biases to get better at guessing.
+
+---
+
+## ✅ In Short
+
+| Layer    | What It Sees               | Example Neuron Job            |
+| -------- | -------------------------- | ----------------------------- |
+| Layer 1  | Edges, colors, corners     | "I see a dark edge"           |
+| Layer 2  | Features like eyes or ears | "This looks like a koala ear" |
+| Layer 3+ | Whole object patterns      | "This is a koala!"            |
+
+---
+
+## ⚙️ What is a GPU?
+
+**GPU** stands for **Graphics Processing Unit**.
+
+### 🧠 Purpose:
+
+Originally designed to **render graphics** (like video games or 3D models), GPUs are now widely used in **deep learning** because they can do **lots of simple math really fast**.
+
+### ✅ Why GPUs for Deep Learning?
+
+* Neural networks involve **many matrix multiplications** and **parallel calculations**.
+* GPUs are built to **do thousands of operations at the same time** — perfect for training deep learning models.
+
+### 💡 Example:
+
+Training a model on CPU might take **10 hours** — on a GPU, it could take **30 minutes**.
+
+---
+
+## ⚙️ What is a TPU?
+
+**TPU** stands for **Tensor Processing Unit**.
+
+### 🔬 Purpose:
+
+A **TPU is a special chip** built by **Google** specifically for **machine learning tasks** — especially for TensorFlow.
+
+* It’s **optimized** for operations used in deep learning (like matrix multiplication and ReLU).
+* Even **faster** than GPUs for certain ML models.
+
+### 📦 Where are TPUs used?
+
+* Inside **Google Cloud** and **Google’s own AI services** (like Google Translate or Photos)
+* You can rent TPUs from **Google Colab** or **Google Cloud Platform**
+
+---
+
+## 🧠 Summary – GPU vs TPU
+
+| Feature      | GPU                      | TPU                               |
+| ------------ | ------------------------ | --------------------------------- |
+| Full Form    | Graphics Processing Unit | Tensor Processing Unit            |
+| Made By      | NVIDIA, AMD, etc.        | Google                            |
+| Original Use | Graphics rendering       | Built for machine learning        |
+| Used In      | Gaming, ML, data science | TensorFlow and Google ML services |
+| Speed        | Very fast for ML         | Even faster for TensorFlow models |
+| Access       | Laptops, Cloud, Colab    | Google Colab, GCP only            |
+
+---
 
 You're now ready to explore CNNs, RNNs, and Transformers!
