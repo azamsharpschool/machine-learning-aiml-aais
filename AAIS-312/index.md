@@ -8,14 +8,17 @@
 
 ### Module 1: Deep Learning
 
-
 - [Day 1 - What is Deep Learning Lecture ](resources/what-is-deep-learning-lecture.md) 
 - [Day 1 - Hello Keras - Learn a Simple Math Rule (y = 2x + 1)](resources/hello-keras.md) 
 - [Day 2 - What are activation functions and loss functions](resources/deep-learning-activation-and-loss-functions.md)
+- [Day 2 - Coffee and Sleep](resources/coffee-sleep.md)
+--- 
+
+#### Archived
+
 
 - [Day 2 - Introduction to TensorFlow](resources/hello-tensor-flow.md)
 - [Day 2 - Deep Learning Simplified: Building Your First Neural Network with TensorFlow](resources/Deep%20Learning%20Simplified:%20Building%20Your%20First%20Neural%20Network%20with%20TensorFlow.md) 
-- [Day 2 - Coffee and Sleep](resources/coffee-sleep.md)
 - [Day 3 - Employee Attribution](resources/employee-attribution.md)
 - [Day 3 - Iris Flower Recognition](resources/iris-flower.md)
 - [Day 4 - Loan Default](resources/loan-default.md)
