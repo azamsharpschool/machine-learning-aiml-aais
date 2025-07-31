@@ -11,6 +11,7 @@
 - [Day 1 - What is Deep Learning Lecture ](resources/what-is-deep-learning-lecture.md) 
 - [Day 1 - Hello Keras - Learn a Simple Math Rule (y = 2x + 1)](resources/hello-keras.md) 
 - [Day 2 - What are activation functions and loss functions](resources/deep-learning-activation-and-loss-functions.md)
+- [Day 2 - Math behind a Single Neuron](resources/math-behind.md)
 - [Day 2 - Coffee and Sleep](resources/coffee-sleep.md)
 --- 
 
