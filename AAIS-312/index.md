@@ -17,7 +17,6 @@
 
 #### Archived
 
-
 - [Day 2 - Introduction to TensorFlow](resources/hello-tensor-flow.md)
 - [Day 2 - Deep Learning Simplified: Building Your First Neural Network with TensorFlow](resources/Deep%20Learning%20Simplified:%20Building%20Your%20First%20Neural%20Network%20with%20TensorFlow.md) 
 - [Day 3 - Employee Attribution](resources/employee-attribution.md)
