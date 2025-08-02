@@ -14,6 +14,7 @@
 - [Day 2 - Math behind a Single Neuron](resources/math-behind.md)
 - [Day 2 - Coffee and Sleep](resources/coffee-sleep.md)
 - [Day 3 - Iris Flower Recognition](resources/iris-flower.md)
+- [Day 4 - Tip or Not](resources/tip-or-not.md)
 
 --- 
 
