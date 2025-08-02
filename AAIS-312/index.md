@@ -13,6 +13,8 @@
 - [Day 2 - What are activation functions and loss functions](resources/deep-learning-activation-and-loss-functions.md)
 - [Day 2 - Math behind a Single Neuron](resources/math-behind.md)
 - [Day 2 - Coffee and Sleep](resources/coffee-sleep.md)
+- [Day 3 - Iris Flower Recognition](resources/iris-flower.md)
+
 --- 
 
 #### Archived
