@@ -7,7 +7,7 @@
 
 ## 🧠 Objective
 
-Use linear regression to predict house prices based on square footage.
+Use linear regression to predict house prices. 
 
 ---
 
