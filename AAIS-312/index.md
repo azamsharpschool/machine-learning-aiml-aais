@@ -44,6 +44,10 @@
 ### Module 2: Convolutional Neural Networks
 
 - [Day 1 - What is CNN Slides?](../Slides/Deep%20Learning/intro-to-cnn.key) 
+- [Day 1 - Recognize handwritten Digits (0-9)](resources/hand-written-digits.md) 
+
+### Archived 
+
 - [Simple explanation of convolutional neural network | Deep Learning Tutorial 23 (Tensorflow & Python)](https://youtu.be/zfiSAzpy9NM?si=tY3RMyXA_BmmN8MN)
 - [Day 2 - Fashion Image Classification Using CNN](resources/fashion-cnn.md)
 - [Day 2 - Image Classification Using CNN on CIFAR-10 Dataset](resources/image-classification-using-cnn.md)
