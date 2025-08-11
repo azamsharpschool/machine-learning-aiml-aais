@@ -61,7 +61,7 @@ Module 2:
 
 - [Day 2 - Linear Regression Carvana Dataset](https://colab.research.google.com/gist/azamsharp/8cfd85af45280db882e154a904c00b77/carvanajuly.ipynb)
 
-- [Day 3 - Introduction to MatplotLib](https://colab.research.google.com/gist/azamsharp/373f88871a57dd1191b1a54ab5840588/carvanajuly_with_plot.ipynb)
+- [Day 3 - Introduction to MatplotLib](resources/matplotlib-walkthrough.md)
 
 - [Day 4 - Exercise One Hot Encoding with House Price Data](resources/one-hot-encoding-house-prices.md)
 
@@ -76,6 +76,8 @@ Module 2:
 - [Day 2 - Handling Missing Data](resources/module2.day2.md)
 - [Day 2 - Source Code - Rental Car Pricing Prediction](https://gist.github.com/azamsharpschool/cb0e83549a4497545b3bb0409e4c7f82)
 - [Day 3 - Removing Duplicates and Cleaning Data Formats](resources/module2-day3.md)
+- [Day 3 - Introduction to MatplotLib](https://colab.research.google.com/gist/azamsharp/373f88871a57dd1191b1a54ab5840588/carvanajuly_with_plot.ipynb)
+
 - [Day 3 - Source Code for Customer Campaign Database](https://gist.github.com/azamsharpschool/fd8e191a72dfcea63d10a95c5a54359c)
 - [Day 4 - Combining and Reshaping Data](resources/module2-day4.md)
 - [Day4 - Activity: California House Prices](resources/cal-house-prices.md)
