@@ -45,6 +45,8 @@
 
 - [Day 1 - What is CNN Slides?](../Slides/Deep%20Learning/intro-to-cnn.key) 
 - [Day 1 - Recognize handwritten Digits (0-9)](resources/hand-written-digits.md) 
+- [Day 2 - Fashion Image Classification Using CNN]()
+- [Day 3 - ResetNet50 Pre-trained Model for Image Classification](resources/resnet-image-recognition.md)
 
 ### Archived 
 
