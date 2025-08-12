@@ -47,6 +47,7 @@
 - [Day 1 - Recognize handwritten Digits (0-9)](resources/hand-written-digits.md) 
 - [Day 2 - Fashion Image Classification Using CNN]()
 - [Day 3 - ResetNet50 Pre-trained Model for Image Classification](resources/resnet-image-recognition.md)
+- [Day 4 - Model for Flask Frontend: House Prices](resources/SqFeetAndPriceHouse.ipynb)
 - [Day 4 - Building Flask Frontend for Model Backend](resources/HousePricesFlaskApp.zip)
 
 ### Archived 
