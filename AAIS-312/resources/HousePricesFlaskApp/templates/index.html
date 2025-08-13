@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Home Price Predictor</title>
+</head>
+<body>
+    <h1>Predict Home Price</h1>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <ul>
+        {% for category, message in messages %}
+          <li style="color: red;">{{ message }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+
+    <form method="post" action="{{ url_for('predict') }}">
+        <label for="sqft">Square Feet:</label>
+        <input type="number" id="sqft" name="sqft" min="1" step="1" required>
+        <button type="submit">Predict</button>
+    </form>
+</body>
+</html>

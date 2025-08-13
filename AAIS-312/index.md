@@ -63,6 +63,13 @@
 
 ### Module 3: Recurrent Neural Networks
 
+- [Day 1 - Introduction to Recurrent Neural Networks](resources/intro-rnn.md)
+- [Day 1 - Predicting Next Word](resources/rnn-next-word.md)
+- [Day 2 - Language Translation](resources/rnn-language-translation.md)
+- [Day 2 - Named Entity Translation](resources/rnn-named-entity.md)
+
+### Archived 
+
 #### Slides
 - [Day 1 - Understanding Recurrent Neural Networks Slides](../Slides/Deep%20Learning/rnn-1-understanding-rnn.key)
 - [Day 2 - Vanishing and Exploding Gradient Problem](../Slides/Deep%20Learning/rnn-2-vanishing-gradient-problem.key)
