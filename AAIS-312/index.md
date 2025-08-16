@@ -1,5 +1,5 @@
 
-# Module 3 - Deep Learning 
+# AAIS 312 - Deep Learning 
 
 ### Resources: 
 - [What is Sigmoid Function - Mohammad Azam](https://youtu.be/0BtMH3xzovg)
@@ -65,6 +65,8 @@
 
 - [Day 1 - Introduction to Recurrent Neural Networks](resources/intro-rnn.md)
 - [Day 1 - Predicting Next Word](resources/rnn-next-word.md)
+- [Day 2 - Backpropagation and Vanishing Gradients](resources/backpropagation-vanishing-gradient.md)
+- [Day 2 - Implementing Vanishing Gradient](resources/vanish-grad-impl.md) 
 - [Day 2 - Language Translation](resources/rnn-language-translation.md)
 - [Day 2 - Named Entity Translation](resources/rnn-named-entity.md)
 
