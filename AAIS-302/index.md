@@ -91,9 +91,9 @@ Module 2:
 
 - [Day 1 - Understanding Relational Database]
 
-- [Day 1 - Integrating Python with SQLite3 Database]
+- [Day 2 - Integrating Python with SQLite3 Database]
 
-- [Day 2 - Logistic Regression](https://colab.research.google.com/gist/azamsharp/1ad8644d1e2bb2f1e88f2bf901a1b59b/hellologisticregression.ipynb) 
+- [Day 3 - Logistic Regression](https://colab.research.google.com/gist/azamsharp/1ad8644d1e2bb2f1e88f2bf901a1b59b/hellologisticregression.ipynb) 
 
 - Day 3 - Implementing Flask Frontend for your Machine Learning Model
     - [Logistic Regression Model Code](https://colab.research.google.com/gist/azamsharp/1ad8644d1e2bb2f1e88f2bf901a1b59b/hellologisticregression.ipynb)

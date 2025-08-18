@@ -67,7 +67,8 @@
 - [Day 1 - Predicting Next Word](resources/rnn-next-word.md)
 - [Day 2 - Backpropagation and Vanishing Gradients](resources/backpropagation-vanishing-gradient.md)
 - [Day 2 - Implementing Vanishing Gradient](resources/vanish-grad-impl.md) 
-- [Day 2 - Language Translation](resources/rnn-language-translation.md)
+- [Day 3 - How Language Translation Works](resources/how-transl-works.md)
+- [Day 3 - Language Translation](resources/rnn-language-translation.md)
 - [Day 2 - Named Entity Translation](resources/rnn-named-entity.md)
 
 ### Archived 
