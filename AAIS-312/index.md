@@ -70,6 +70,7 @@
 - [Day 3 - How Language Translation Works](resources/how-transl-works.md)
 - [Day 3 - Language Translation](resources/rnn-language-translation.md)
 - [Day 2 - Named Entity Translation](resources/rnn-named-entity.md)
+- [Day 4 - Exercise for Language Translation and Flask](resources/translation-flask.md)
 
 ### Archived 
 
