@@ -160,11 +160,15 @@ Module 2:
 
 ### Module 5 
 
-- [Day 1 - Introduction to PCA](https://colab.research.google.com/gist/azamsharp/5397746af987b2f366ef737780758afa/pcamnist.ipynb) 
+- [Day 1 - Heart Disease Exercise](resources/heart-disease.md)
 
-- [Day 2 - Linear Regression Salary Dataset](https://www.kaggle.com/code/shubham47/linear-regression-salary-dataset/input)
+- [Day 1 - KMeans Clustering Wine Dataset](resources/kmeans-wine.md)  
 
-- [Day 3 - Logistic Regression Heart Disease](https://www.kaggle.com/datasets/dileep070/heart-disease-prediction-using-logistic-regression)
+- [Day 2 - Introduction to PCA](https://colab.research.google.com/gist/azamsharp/5397746af987b2f366ef737780758afa/pcamnist.ipynb) 
+
+- [Day 3 - Linear Regression Salary Dataset](https://www.kaggle.com/code/shubham47/linear-regression-salary-dataset/input)
+
+- [Day 4 - Logistic Regression Heart Disease](https://www.kaggle.com/datasets/dileep070/heart-disease-prediction-using-logistic-regression)
 
 - [Day 4 - KMeans Clustering Wine Dataset](https://www.kaggle.com/datasets/harrywang/wine-dataset-for-clustering)
 

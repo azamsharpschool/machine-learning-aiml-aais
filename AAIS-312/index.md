@@ -112,6 +112,7 @@
 - [Day 3 - Understanding Loss Functions and Optimizers with a Simple AI Model](resources/understanding-loss-functions-optimizers.md)
 - [Day 3 - AI Predicting a Number](resources/ai-predict-number.md)
 - [Day 4 - Fashion DataSet](resources/fashion-dataset.md)
+- [Day 4 - Spam or Not Walkthrough](resources/span-or-not.md)
 
 ### Module 5: Pre-Trained Models
 
