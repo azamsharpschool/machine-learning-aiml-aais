@@ -128,9 +128,6 @@
 - [Day 4 - BERT - Sentiment Analysis](resources/bert-sentiment-analysis.md)
 - [Day 4 - BERT - Summarization](resources/bert-summarization.md)
 - [Day 3 - Detailed Walkthrough of the Summarization Steps Using Spacy](resources/summary-steps-spacy.md)
-
-- [BERT]
-- [ResNet]
 - [Slides Understanding Pre-Trained Models](../Slides/Deep%20Learning/introduction-to-pre-trained-models.key)
 - [What Is a Pretained AI Model?](https://blogs.nvidia.com/blog/what-is-a-pretrained-ai-model/) 
 - [Code - ResNet: Identifying Images](resources/resnet.ipynb)
