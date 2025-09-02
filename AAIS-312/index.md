@@ -132,3 +132,4 @@
 - [What Is a Pretained AI Model?](https://blogs.nvidia.com/blog/what-is-a-pretrained-ai-model/) 
 - [Code - ResNet: Identifying Images](resources/resnet.ipynb)
 - [BERT Language Model](https://www.techtarget.com/searchenterpriseai/definition/BERT-language-model)
+- [Slides: Introduction to BERT](resources/introduction-to-bert.key)
