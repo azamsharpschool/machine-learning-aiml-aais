@@ -11,6 +11,7 @@ https://www.youtube.com/playlist?list=PLDMXqpbtInQjc5-xa5B40Y1wZbIsxCIOk
 - [Day 2 - Regex101.com](https://regex101.com/)
 - [Day 2 - Activity: Regex to Extract Emails from Text](resources/regex-to-extract-words-from-text.md)
 - [Day 2 - Activity: Regex to Extract Order Number from an Email](resources/regex-extract-order-number.md)
+- [Day 2 - Remove Duplicate Emails](resources/remove-duplicate-emails.md)
 
 - [Day 3 - Entity Name Recognition Using Spacy](resources/spacy.md)
 - [Day 4 - Introduction to Computer Vision Slides](../Slides/NLPAndComputerVision/intro-computer-vision.key)
