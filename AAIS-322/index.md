@@ -12,6 +12,7 @@ https://www.youtube.com/playlist?list=PLDMXqpbtInQjc5-xa5B40Y1wZbIsxCIOk
 - [Day 2 - Activity: Regex to Extract Emails from Text](resources/regex-to-extract-words-from-text.md)
 - [Day 2 - Activity: Regex to Extract Order Number from an Email](resources/regex-extract-order-number.md)
 - [Day 2 - Remove Duplicate Emails](resources/remove-duplicate-emails.md)
+- [Day 3 - Introduction to Computer Vision](resources/Intro-Computer-Vision.key)
 
 - [Day 3 - Entity Name Recognition Using Spacy](resources/spacy.md)
 - [Day 4 - Introduction to Computer Vision Slides](../Slides/NLPAndComputerVision/intro-computer-vision.key)
@@ -23,9 +24,11 @@ https://www.youtube.com/playlist?list=PLDMXqpbtInQjc5-xa5B40Y1wZbIsxCIOk
 ### Module 2 - Exploring Sequence-to-Sequence Models in NLP 
 
 - [Day 1 - Spacy vs NLTK](../Slides/spacy-vs-nltk.key)
+- [Day 1 - Entity Name Recognition Using Spacy](resources/spacy.md)
+- [Day 2 - Word Tokenization Exercise](resources/word-tokenization-using-spacy.md)
+
 - [Day 1 NLTK vs Spacy Code ](resources/nltk-vs-spacy.ipynb)
 - [Day 2 - Word Tokenization Using Spacy]
-- [Day 2 - Word Tokenization Exercise](resources/word-tokenization-using-spacy.md)
 - [Day 3 - Language Translation Text SlideShare](../Slides/language-translation.key) 
 - [Day 3 - Language Translation Using Python Code](resources/language-translation.ipynb)
 - [Day 4 Text Summarization Slides](../Slides/intro-text-summarization.key) 
