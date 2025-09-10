@@ -26,6 +26,7 @@ https://www.youtube.com/playlist?list=PLDMXqpbtInQjc5-xa5B40Y1wZbIsxCIOk
 
 ### Module 2 - Exploring Sequence-to-Sequence Models in NLP 
 
+- [Day 1 - Introduction to NLP](resources/intro-to-nlp.key)
 - [Day 1 - Spacy vs NLTK](../Slides/spacy-vs-nltk.key)
 - [Day 1 - Entity Name Recognition Using Spacy](resources/spacy.md)
 - [Day 2 - Word Tokenization Exercise](resources/word-tokenization-using-spacy.md)
