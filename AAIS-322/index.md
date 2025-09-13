@@ -30,13 +30,19 @@ https://www.youtube.com/playlist?list=PLDMXqpbtInQjc5-xa5B40Y1wZbIsxCIOk
 - [Day 1 - Spacy vs NLTK](../Slides/spacy-vs-nltk.key)
 - [Day 1 - Entity Name Recognition Using Spacy](resources/spacy.md)
 - [Day 2 - Word Tokenization Exercise](resources/word-tokenization-using-spacy.md)
+- [Day 3 - spaCy Phrase Matching](resources/spacy-phrase-matcher.md)
+- [Day 3 - spaCy EntityRuler](resources/spacy-entity-ruler.md)
+- [Day 4 - Sentiment Analysis Using Logistic Regression](resources/s-a-logistic-regression.md)
+- [Day 4 - Sentiment Analysis Using Pretrained Model](resources/sentiment-analysis-using-pre-trained-model.md)
 
+<!-- 
 - [Day 1 NLTK vs Spacy Code ](resources/nltk-vs-spacy.ipynb)
 - [Day 2 - Word Tokenization Using Spacy]
 - [Day 3 - Language Translation Text SlideShare](../Slides/language-translation.key) 
 - [Day 3 - Language Translation Using Python Code](resources/language-translation.ipynb)
 - [Day 4 Text Summarization Slides](../Slides/intro-text-summarization.key) 
 - [Day 4 Text Summarization Code in Swift](resources/SummarizationApp/)
+--> 
 
 ### Module 3 -  Creating Domain-Specific Chatbots with NLP
 
