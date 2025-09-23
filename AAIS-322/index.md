@@ -35,6 +35,7 @@ https://www.youtube.com/playlist?list=PLDMXqpbtInQjc5-xa5B40Y1wZbIsxCIOk
 - [Day 4 - Sentiment Analysis Using Logistic Regression](resources/s-a-logistic-regression.md)
 - [Day 4 - Sentiment Analysis Using Pretrained Model](resources/sentiment-analysis-using-pre-trained-model.md)
 
+
 <!-- 
 - [Day 1 NLTK vs Spacy Code ](resources/nltk-vs-spacy.ipynb)
 - [Day 2 - Word Tokenization Using Spacy]
@@ -55,15 +56,23 @@ https://www.youtube.com/playlist?list=PLDMXqpbtInQjc5-xa5B40Y1wZbIsxCIOk
 
 ### Module 4 - Object Detection for Real-World Applications
 
+- [Day 1 - Understanding Computer Vision Slides](../Slides/introduction-computer-vision.key) 
+- [Day 1 - 10+ Applications of Object Detection Technology in Various Industries](https://smarttek.solutions/blog/object-detection-technology/)
+- [Day 2 - Implementing Object Detection Using YOLO](resources/object-detection-yolo-impl.md)
+
+
+
+<!-- 
 - [Day 1 - Object Detection: Concept and Significance](../Slides/introduction-to-object-detection.key)
 - [Day 1 - Object Detection Using Ultralytics & YOLO](resources/Object-Detection-ultra.ipynb)
 - [Resource: Region Proposal Network (RPN) : A Complete Guide]
 (https://www.listendata.com/2022/06/region-proposal-network.html)
 - [Resource: Going Deep into Object Detection](https://towardsdatascience.com/going-deep-into-object-detection-bed442d92b34)
-- [Day 2 - Understanding Computer Vision Slides](../Slides/introduction-computer-vision.key) 
 - [Day 3 - 10+ Applications of Object Detection Technology in Various Industries](https://smarttek.solutions/blog/object-detection-technology/)
 - [Day 3 - How Autonomous Cars Work](../Slides/how-autonomous-cars-work.key)
 - [Day 4 - Object Detection Using YOLO](resources/object-detection.ipynb)
+--> 
+
 
 ### Module 5 - Solving Video Analysis Challenges: Strategies and Optimizations 
   
