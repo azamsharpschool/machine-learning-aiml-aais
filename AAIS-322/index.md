@@ -58,8 +58,7 @@ https://www.youtube.com/playlist?list=PLDMXqpbtInQjc5-xa5B40Y1wZbIsxCIOk
 
 - [Day 1 - Understanding Computer Vision Slides](../Slides/introduction-computer-vision.key) 
 - [Day 1 - 10+ Applications of Object Detection Technology in Various Industries](https://smarttek.solutions/blog/object-detection-technology/)
-- [Day 2 - Implementing Object Detection Using YOLO](resources/object-detection-yolo-impl.md)
-
+- [Day 2 - Implementing Object Detection Using YOLO](resources/ObjectDetectionYOLO.ipynb)
 
 
 <!-- 
