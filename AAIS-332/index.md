@@ -18,7 +18,7 @@
 - [Day 3 - Monte Carlo Methods](../Slides/module5-day3.key)
 - [Day 4 - Reinforcement Learning Real World Examples](../Slides/module5-%20Introduction%20to%20Real-World%20RL%20Applications.key)
 
-- [Frozen Lake Walkthrough](resources/frozen-lake.md)
+- [Frozen Lake Walkthrough](resources/frozen-lake.md)`
 - [Maze Navigator](resources/maze-nav.md)
 
 - [Resource - Introduction to Reinforcement Learning](https://medium.com/@cedric.vandelaer/reinforcement-learning-an-introduction-part-1-4-866695deb4d1)
@@ -35,12 +35,15 @@ https://www.youtube.com/watch?v=0MNVhXEX9to&list=PLMrJAkhIeNNQe1JXNvaFvURxGY4gE9
 
 - [Day 1 - Introduction to Q-Learning](https://docs.google.com/presentation/d/1dCgbuzJx7Gn820lrce6adOAATxj73pCSyUvUgLjd6LA/edit?usp=sharing)
 - [Day 2 - Diving Deeper into Q-Learning](../Slides/module5-day2-diving-deeper.key)
+- [Day 3 - CartPole Example](resources/cart-pole.md)
 - [Day3 - Introduction to Policy Gradient Methods](../Slides/rl-policy-gradient-methods.key)
+
 - [Day 4 - Introduction to Advanced Policy Gradient Techniques](../Slides/rl-advancement-policy-gradient.key)
 
 ### Module 3 Customizing Training Environments for Targeted Decision-Making Tasks
 
 - [Day 1 - What are Training Environments in Reinforcement Learning?](../Slides/rl-training-environments.key)
+[Day 2 - Turtle Maze Game](resources/turtle.md)
 - [Day 2 - Crafting Dynamic Learning Grounds for AI Agents](../Slides/Crafting%20Domain-Specific%20Training%20Environments.key) 
 - [Day 3 - Applying Entropy Methods and Exploring Multiple Policies](../Slides/%20Applying%20Entropy%20Methods%20and%20Exploring%20Multiple%20Policies.key)
 - [Day 4 - Evaluating and Optimizing Training Environments in Reinforcement Learning](../Slides/Evaluating%20and%20Optimizing%20Training%20Environments%20in%20Reinforcement%20Learning.key)

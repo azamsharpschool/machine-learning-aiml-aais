@@ -27,13 +27,14 @@ https://www.youtube.com/playlist?list=PLDMXqpbtInQjc5-xa5B40Y1wZbIsxCIOk
 ### Module 2 - Exploring Sequence-to-Sequence Models in NLP 
 
 - [Day 1 - Introduction to NLP](resources/intro-to-nlp.key)
+- [Day 1 - Introduction to Spacy Code](resources/IntroToSpacy.ipynb)
 - [Day 1 - Spacy vs NLTK](../Slides/spacy-vs-nltk.key)
 - [Day 1 - Entity Name Recognition Using Spacy](resources/spacy.md)
 - [Day 2 - Word Tokenization Exercise](resources/word-tokenization-using-spacy.md)
 - [Day 3 - spaCy Phrase Matching](resources/spacy-phrase-matcher.md)
 - [Day 3 - spaCy EntityRuler](resources/spacy-entity-ruler.md)
 - [Day 4 - Sentiment Analysis Using Logistic Regression](resources/s-a-logistic-regression.md)
-- [Day 4 - Sentiment Analysis Using Pretrained Model](resources/sentiment-analysis-using-pre-trained-model.md)
+- [Day 4 - Sentiment Analysis Using Pretrained Model + Flask Website](resources/sentiment-analysis-using-pre-trained-model.md)
 
 
 <!-- 
