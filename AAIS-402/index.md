@@ -6,6 +6,7 @@
 - [Day 1 - Introduction to Scalable System Design](../Slides/402-Introduction%20to%20Scalable%20AI%20System%20Design.key)
 - [Day 2 - Data Scalability Strategies](../Slides/402-Data-Scale-Strategies.key)
 - [Day 2 - Introduction to Flask](resources/intro-flask.md)
+- [Day 2 - Introduction to Flask (Code)](resources/IntroFlask.zip)
 - [Day 3 - Computational Scalability and Optimization](../slides/402-Computational-Scalability-Optimization.key)
 - [Day 4 - User Scalability and Integrating Scalable Systems](../slides/402-User%20Scalability%20and%20Integrating%20Scalable%20Systems.key)
 
@@ -40,3 +41,10 @@
 - [Day 2 - Containerization and Virtualization](../slides/402-Containerization%20and%20Virtualization.key)
 - [Day 3 - Continuous Integration and Continuous Deployment](../slides/402-Continuous%20Integration%20and%20Continuous.key)
 - [Day 4 - Support, Maintenance, and Monitoring of AI Systems](../slides/402-Support,%20Maintenance,%20and%20Monitoring%20of%20AI%20Systems.key)
+
+
+### Projects 
+
+- [Breast Cancer Image Recognition]() 
+- [Sentiment Analysis]() 
+- [Customer Clustering for Marketing]()

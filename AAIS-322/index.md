@@ -16,6 +16,7 @@ https://www.youtube.com/playlist?list=PLDMXqpbtInQjc5-xa5B40Y1wZbIsxCIOk
 
 - [Day 3 - Introduction to Computer Vision](resources/Intro-Computer-Vision.key) 
 - [Day 4 - Cats vs Dogs Source Code](resources/CatsAndDogsImageRecognition.ipynb)
+- [Day 4 - Cats vs Dogs Walkthrough](resources/catsvsdogswalk.md)
 
 <!-- 
 - [Day 3 - Entity Name Recognition Using Spacy](resources/spacy.md)
