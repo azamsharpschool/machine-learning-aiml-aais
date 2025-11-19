@@ -45,6 +45,7 @@
 
 ### Projects 
 
+- [House Price Prediction](resources/house-price-prediction.md)
 - [Breast Cancer Image Recognition]() 
 - [Sentiment Analysis]() 
 - [Customer Clustering for Marketing]()
