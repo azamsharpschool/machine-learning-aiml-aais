@@ -1,6 +1,7 @@
 # House Price Prediction Walkthrough 
 
-[Download DataSet](realistic_house_prices.csv)
+- [Download DataSet](realistic_house_prices.csv)
+- [Gist](https://colab.research.google.com/gist/azamsharpschool/a4e98861000f18ec12415844134ddd22/housepriceprediction402.ipynb)
 
 ## 0. Imports – bringing in the tools
 
