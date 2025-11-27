@@ -29,6 +29,7 @@
 - [Day 3 - Protecting AI Models from Adversarial Attacks](../Slides/402-Protecting%20AI%20Models%20from%20Adversarial%20Attacks.key)
 - [Day 4 - Comprehensive AI Security Practices](../slides/402-Comprehensive%20AI%20Security%20Practices.key)
 
+
 ### Module 4 
 - [Day 1 -  Introduction to AI Security Architectures](../Slides/402-Introduction%20to%20AI%20Security%20Architectures.key)
 - [Day 2 - Designing Secure AI Systems](../Slides/402-Designing%20Secure%20AI%20Systems.key)
@@ -46,6 +47,8 @@
 ### Projects 
 
 - [House Price Prediction](resources/house-price-prediction.md)
-- [Breast Cancer Image Recognition]() 
-- [Sentiment Analysis]() 
-- [Customer Clustering for Marketing]()
+- [Breast Cancer Website Project](resources/BreastCancerWebsite.zip)
+
+- [Breast Cancer Image Recognition]
+- [Sentiment Analysis]
+- [Customer Clustering for Marketing]
