@@ -48,6 +48,7 @@
 
 - [House Price Prediction](resources/house-price-prediction.md)
 - [Breast Cancer Website Project](resources/BreastCancerWebsite.zip)
+- [Fruits Image Classification](resources/fruits-classification.md)
 
 - [Breast Cancer Image Recognition]
 - [Sentiment Analysis]
