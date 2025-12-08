@@ -60,9 +60,11 @@ https://www.youtube.com/playlist?list=PLDMXqpbtInQjc5-xa5B40Y1wZbIsxCIOk
 
 - [Day 1 - Understanding Computer Vision Slides](../Slides/introduction-computer-vision.key) 
 - [Day 1 - 10+ Applications of Object Detection Technology in Various Industries](https://smarttek.solutions/blog/object-detection-technology/)
-- [Day 2 - Implementing Object Detection Using YOLO](resources/ObjectDetectionYOLO.ipynb)
-- [Day 3 - How Autonomous Cars Work](../Slides/how-autonomous-cars-work.key)
+- [Day 2 - How Autonomous Cars Work](../Slides/how-autonomous-cars-work.key)
+- [Day 3 - Implementing Object Detection Using YOLO](resources/ObjectDetectionYOLO.ipynb)
+- [Day 3 - YOLO Object Detection Walkthrough](resources/object-detection-cats-dogs.md)
 - [Day 4 - Ethics in Object Detection](resources/ethics-in-object-detection.key)
+
 
 <!-- 
 - [Day 1 - Object Detection: Concept and Significance](../Slides/introduction-to-object-detection.key)
