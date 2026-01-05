@@ -18,6 +18,8 @@ conda activate [path to the environment]
 
 - [Day 4 - Houston House Prices Using Linear Regression](resources/houston-housing-prices.md)
 
+- [Day 4 - House Prices 5000 Dataset]()
+
 --- 
 
 ##### Archived 
@@ -56,6 +58,8 @@ conda activate [path to the environment]
 - [Pandas Beginner Activities](resources/pandas-activities.md) 
 
 Module 2: 
+
+- [Day 1 - Carvana Linear Regression Using Pipeline](resources/carvana-pipeline.md)
 
 - [Day 1 - One-Hot Encoding and Label Encoding](https://colab.research.google.com/gist/azamsharp/4048e9a03bfd36533acc457ecb848d6d/housepricesonehotencoding.ipynb)
 
