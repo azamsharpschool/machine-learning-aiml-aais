@@ -1,0 +1,42 @@
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <h1>Movies</h1>
+<form action="{{ url_for('index') }}" method="get">
+  <label for="sort">Sort:</label>
+  <select id="sort" name="sort">
+    <option value="asc" {% if sort_order == 'asc' %}selected{% endif %}>
+      Ascending
+    </option>
+    <option value="desc" {% if sort_order == 'desc' %}selected{% endif %}>
+      Descending
+    </option>
+  </select>
+
+  <button type="submit">Apply</button>
+</form>
+
+
+
+    <ul>
+        {% for movie in movies %}
+        <li>{{ movie.title }} - {{ movie.genre }}</li>
+        {% endfor %}
+    </ul>
+
+    <h3>Add New Movie</h3>
+    <form action="/add-movie" method="POST">
+        <input type="text" name="title" placeholder="Movie Title">
+        <input type="text" name="genre" placeholder="Genre">
+        <input type="number" name="year" placeholder="Year">
+        <button type="submit">Add Movie</button>
+    </form>
+
+
+</body>
+
+</html>
