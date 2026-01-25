@@ -1,0 +1,19 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h1>Index</h1>
+        <p>List of Movies</p>
+
+        <ul>
+        {% for movie in all_movies %}
+
+        <li>{{ movie.title }} - {{ movie.year }}</li>
+
+        {% endfor %}
+        </ul>
+
+
+    </body>
+</html>

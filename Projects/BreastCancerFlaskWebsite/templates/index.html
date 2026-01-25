@@ -1,0 +1,50 @@
+
+<html>
+    <head>
+  <style>
+        table { border-collapse: collapse; width: 80%; margin: 20px auto; }
+        th, td { padding: 10px; border: 1px solid #333; text-align: left; }
+        th { background: #f4f4f4; }
+        .btn {
+            padding: 6px 12px;
+            border: none;
+            background: #007bff;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .btn:hover { opacity: 0.9; }
+    </style>
+
+    </head>
+    <body>
+        <h1>Patients</h1>
+
+        <table>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Age</th>
+                <th>Action</th>
+            </tr>
+
+        {% for patient in patients %}
+            <tr>
+                <td>{{ patient.first_name }}</td>
+                <td>{{ patient.last_name }}</td>
+                <td>{{ patient.age }}</td>
+                <td>
+                    <a href = "{{ url_for('patient_detail', patient_id=patient.patient_id) }}">
+                    Show Details
+                    </a>
+                </td>
+            </tr>
+
+        {% endfor %}
+
+        </table>
+
+       
+    </body>
+</html>
+

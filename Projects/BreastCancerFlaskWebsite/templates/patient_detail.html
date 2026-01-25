@@ -1,0 +1,105 @@
+
+<html>
+    <head>
+  <style>
+        table { border-collapse: collapse; width: 80%; margin: 20px auto; }
+        th, td { padding: 10px; border: 1px solid #333; text-align: left; }
+        th { background: #f4f4f4; }
+        .btn {
+            padding: 6px 12px;
+            border: none;
+            background: #007bff;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .btn:hover { opacity: 0.9; }
+    </style>
+
+    </head>
+    <body>
+        <h1>{{ patient.first_name }}, {{ patient.last_name }}</h1>
+
+        <h3 style="
+  display:inline-block;
+  padding:10px 14px;
+  border-radius:10px;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight: 700;
+  letter-spacing: .2px;
+  margin: 0;
+  border: 1px solid {{ '#fecaca' if prediction_label == 'Malignant' else '#bbf7d0' }};
+  background: {{ '#fee2e2' if prediction_label == 'Malignant' else '#dcfce7' }};
+  color: {{ '#991b1b' if prediction_label == 'Malignant' else '#166534' }};
+">
+  {{ prediction_label }}
+</h3>
+
+
+        <table>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Age</th>
+            </tr>
+
+        
+            <tr>
+                <td>{{ patient.first_name }}</td>
+                <td>{{ patient.last_name }}</td>
+                <td>{{ patient.age }}</td>
+            </tr>
+       
+
+        </table>
+
+    {% if measurement %}
+        <h3>Breast Cancer Measurements</h3>
+        <table>
+            <tr><th>Field</th><th>Value</th></tr>
+
+            <tr><td>patient_id</td><td>{{ measurement.patient_id }}</td></tr>
+
+            <tr><td>mean_radius</td><td>{{ measurement.mean_radius }}</td></tr>
+            <tr><td>mean_texture</td><td>{{ measurement.mean_texture }}</td></tr>
+            <tr><td>mean_perimeter</td><td>{{ measurement.mean_perimeter }}</td></tr>
+            <tr><td>mean_area</td><td>{{ measurement.mean_area }}</td></tr>
+            <tr><td>mean_smoothness</td><td>{{ measurement.mean_smoothness }}</td></tr>
+            <tr><td>mean_compactness</td><td>{{ measurement.mean_compactness }}</td></tr>
+            <tr><td>mean_concavity</td><td>{{ measurement.mean_concavity }}</td></tr>
+            <tr><td>mean_concave_points</td><td>{{ measurement.mean_concave_points }}</td></tr>
+            <tr><td>mean_symmetry</td><td>{{ measurement.mean_symmetry }}</td></tr>
+            <tr><td>mean_fractal_dimension</td><td>{{ measurement.mean_fractal_dimension }}</td></tr>
+
+            <tr><td>radius_error</td><td>{{ measurement.radius_error }}</td></tr>
+            <tr><td>texture_error</td><td>{{ measurement.texture_error }}</td></tr>
+            <tr><td>perimeter_error</td><td>{{ measurement.perimeter_error }}</td></tr>
+            <tr><td>area_error</td><td>{{ measurement.area_error }}</td></tr>
+            <tr><td>smoothness_error</td><td>{{ measurement.smoothness_error }}</td></tr>
+            <tr><td>compactness_error</td><td>{{ measurement.compactness_error }}</td></tr>
+            <tr><td>concavity_error</td><td>{{ measurement.concavity_error }}</td></tr>
+            <tr><td>concave_points_error</td><td>{{ measurement.concave_points_error }}</td></tr>
+            <tr><td>symmetry_error</td><td>{{ measurement.symmetry_error }}</td></tr>
+            <tr><td>fractal_dimension_error</td><td>{{ measurement.fractal_dimension_error }}</td></tr>
+
+            <tr><td>worst_radius</td><td>{{ measurement.worst_radius }}</td></tr>
+            <tr><td>worst_texture</td><td>{{ measurement.worst_texture }}</td></tr>
+            <tr><td>worst_perimeter</td><td>{{ measurement.worst_perimeter }}</td></tr>
+            <tr><td>worst_area</td><td>{{ measurement.worst_area }}</td></tr>
+            <tr><td>worst_smoothness</td><td>{{ measurement.worst_smoothness }}</td></tr>
+            <tr><td>worst_compactness</td><td>{{ measurement.worst_compactness }}</td></tr>
+            <tr><td>worst_concavity</td><td>{{ measurement.worst_concavity }}</td></tr>
+            <tr><td>worst_concave_points</td><td>{{ measurement.worst_concave_points }}</td></tr>
+            <tr><td>worst_symmetry</td><td>{{ measurement.worst_symmetry }}</td></tr>
+            <tr><td>worst_fractal_dimension</td><td>{{ measurement.worst_fractal_dimension }}</td></tr>
+
+            <tr><td>diagnosis (stored)</td><td>{{ measurement.diagnosis }}</td></tr>
+        </table>
+    {% else %}
+        <p>No measurement record found for this patient.</p>
+    {% endif %}
+
+       
+    </body>
+</html>
+

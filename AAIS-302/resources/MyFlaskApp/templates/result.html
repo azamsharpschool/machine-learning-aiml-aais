@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Result</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #667eea, #764ba2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #333;
+        }
+
+        .card {
+            background-color: white;
+            padding: 40px 50px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            width: 350px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 25px;
+            color: #4A4A4A;
+        }
+
+        .result {
+            font-size: 20px;
+            margin: 15px 0;
+        }
+
+        .success {
+            color: green;
+            font-weight: bold;
+        }
+
+        .fail {
+            color: crimson;
+            font-weight: bold;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 10px 20px;
+            background-color: #667eea;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #5a67d8;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Prediction Result</h1>
+
+        <p class="result">Age: <strong>{{ age }}</strong></p>
+        <p class="result">Estimated Salary: <strong>{{ salary }}</strong></p>
+
+        {% if purchased %}
+            <p class="result success">✅ This person is likely to make a purchase.</p>
+        {% else %}
+            <p class="result fail">❌ This person is not likely to make a purchase.</p>
+        {% endif %}
+
+        <a href="/" class="button">Try Again</a>
+    </div>
+</body>
+</html>
