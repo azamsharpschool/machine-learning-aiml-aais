@@ -5,7 +5,12 @@
 
 ## Conditionals and Working with Strings 
 
+<!-- 
 - [Class Code for Python Data Types and String Interopolation](https://gist.github.com/azamsharpschool/a170ed18266963e75ac3e2b35446915c)
+-->
+
+- [Source Code: Introduction to Python (Data Types & String Concatenation)](https://colab.research.google.com/gist/azamsharpschool/9c1e9de20fe6b45ebb425cd007bcfa7d/introductiontopython-module1.ipynb)
+
 - [Activity 1 - String Interpolation](/module1/resources/string-interop.md)
 - [Activity 2 - Vowel](/module1/resources/vowel.md)
 - [Activity 3 - Tip Calculator](/module1/resources/tip-calculator.md)
