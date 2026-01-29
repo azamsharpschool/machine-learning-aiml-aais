@@ -9,7 +9,9 @@
 - [Class Code for Python Data Types and String Interopolation](https://gist.github.com/azamsharpschool/a170ed18266963e75ac3e2b35446915c)
 -->
 
-- [Source Code: Introduction to Python (Data Types & String Concatenation)](https://colab.research.google.com/gist/azamsharpschool/9c1e9de20fe6b45ebb425cd007bcfa7d/introductiontopython-module1.ipynb)
+- [Day 1 - Source Code: Introduction to Python (Data Types & String Concatenation)](https://colab.research.google.com/gist/azamsharpschool/9c1e9de20fe6b45ebb425cd007bcfa7d/introductiontopython-module1.ipynb)
+- [Day 2 - Source Code: Conditions and Functions](https://gist.github.com/azamsharp/e1f48da3ab3c1cbfd453dbe407e53a16)
+- [Day 3 - Source Code: Loops](https://gist.github.com/azamsharp/741fcd6305446228d695ef02268f3d5e)
 
 - [Activity 1 - String Interpolation](/module1/resources/string-interop.md)
 - [Activity 2 - Vowel](/module1/resources/vowel.md)
