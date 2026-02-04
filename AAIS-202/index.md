@@ -3,7 +3,7 @@
 ## Resources 
 - [Repl](https://replit.com/~)
 
-## Conditionals and Working with Strings 
+## Module 1 - Conditionals and Working with Strings 
 
 <!-- 
 - [Class Code for Python Data Types and String Interopolation](https://gist.github.com/azamsharpschool/a170ed18266963e75ac3e2b35446915c)

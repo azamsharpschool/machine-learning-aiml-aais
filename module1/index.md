@@ -9,7 +9,7 @@
 - [Activity 1 - String Interpolation](/module1/resources/string-interop.md)
 - [Activity 2 - Vowel](/module1/resources/vowel.md)
 - [Activity 3 - Tip Calculator](/module1/resources/tip-calculator.md)
-- [Assignment - Calculator, Even/Odd, FizzBuz](/module1/resources/calc.md)
+- [Assignment - Calculator, Even/Odd, FizzBuz and Palindrome](/module1/resources/calc.md)
 - [Python Additional Exercises](https://learnpythonthehardway.org/book/)
 
 ---

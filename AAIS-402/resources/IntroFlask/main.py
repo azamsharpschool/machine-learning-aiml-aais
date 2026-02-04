@@ -1,3 +1,6 @@
+
+#  flask --app main --debug run 
+
 from flask import Flask, jsonify, render_template, request, redirect, url_for
 
 app = Flask(__name__)

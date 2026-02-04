@@ -28,3 +28,11 @@ Write an app which ask user for an input and then displays a message indicating 
 # Assignment 3: Write a Fizz Buzz application. 
 
 Take input from the user. If the input is divisible by 3 then print **"Fizz"**, if the input it divisible by 5 then print **"Buzz"**. If the input is divisible by 3 and 5 then print **"Fizz Buzz"**. 
+
+# Assignment 4 - Write a Palindrome application 
+
+Palindrome is a word that when read from left to right is same as right to left. 
+
+Examples are "mom", "dad", "madam". 
+
+How can you implement it? You are not allowed to use built-in reverse functions in Python. 
