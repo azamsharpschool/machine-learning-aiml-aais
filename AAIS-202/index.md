@@ -37,11 +37,15 @@
 - [Array and Loops Exercises](resources/arrays-loops.md)
 
 --- 
-## Dictionaries in Python  
+## Module 2  
 
-- [Activity 1 - Creating a Dictionary](/module1/resources/creating-a-dictionary.md) 
-- [Activity 2 - Nested Dictionaries](/module1/resources/nested-dictionaries.md) 
-- [Activity 3 - Multi Nested Dictionary Based on JSON Structure](/module1/resources/multi-nested-dict-json-structure.md) 
+- [Day 1 - Introduction to Dictionaries Class Code](https://gist.github.com/azamsharp/47e034509d8f5e701d65c4e0c80bb8ce) 
+- [Day 2 - Activity 1 - Creating a Dictionary](/module1/resources/creating-a-dictionary.md) 
+- [Day 2 - Activity 2 - Nested Dictionaries](/module1/resources/nested-dictionaries.md) 
+- [Day 2 - Activity 3 - Multi Nested Dictionary Based on JSON Structure](/module1/resources/multi-nested-dict-json-structure.md) 
+- [Day 3 - Tuples and Sets](resources/tuples-and-sets.md)
+- [Day 3 - Tuples Activity](resources/tuple-activity.md)
+- [Day 3 - Sets Activity](resources/sets-activity.md)
 - [Optional - Dictionary Exercises](/module1/resources/optional-dictionary.md) 
 - [Assignment - TODOList Using Dictionaries](/module1/resources/todolist-using-dictionaries.md)
 - [Activities - Dictionary](/module1/resources/dictionaries.md)
@@ -49,7 +53,7 @@
 - [Pool Table Project](/module1/resources/pool-table.md)
 - [Sets Activity](/module1/resources/sets-activity.md)
 
-## Classes and Objects 
+## Module 3 
 
 - [Day 1 - Understanding Object Oriented Programming](../Slides/python-intro-oop.key)
 - [Day 2 - Understanding Class Attributes and Methods](../Slides/python-understanding-class-attributes-methods.key)
