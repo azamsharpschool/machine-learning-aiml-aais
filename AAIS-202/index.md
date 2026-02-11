@@ -55,6 +55,17 @@
 
 ## Module 3 
 
+- [Activity 1 - Write name to a file](/module1/resources/write-name-file.md)
+- [Activity 2 - Appending to a file](/module1/resources/append-file.md)
+- [Activity 3 - Reading from a file](/module1/resources/read-file.md) 
+- [Activity 4 - Remove Duplicate Emails from Email List](/module1/resources/remove-dup-emails-from-list.md)
+- [Pool Table Project - Multi Day Project - Due 09/23/2022 @ 4:00 PM CST](day3/assignments/pool-table-app.md)
+- [Class Code](https://gist.github.com/azamsharp/daf604477d37fa62340f5169a29a6770)
+- [Activity - Aggregate Sales Data](/module1/resources/aggregate-sales-data.md)
+- [Activity - CSV Parser](/module1/resources/csv-parser.md)
+
+## Module 4 
+
 - [Day 1 - Understanding Object Oriented Programming](../Slides/python-intro-oop.key)
 - [Day 2 - Understanding Class Attributes and Methods](../Slides/python-understanding-class-attributes-methods.key)
 - [Day 3 - Inheritance and Method Overriding](../Slides/python-inheritience-and-method-overriding.key)
