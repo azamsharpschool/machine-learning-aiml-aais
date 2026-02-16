@@ -61,6 +61,7 @@
 - [Activity 4 - Remove Duplicate Emails from Email List](/module1/resources/remove-dup-emails-from-list.md)
 - [Pool Table Project - Multi Day Project - Due 09/23/2022 @ 4:00 PM CST](day3/assignments/pool-table-app.md)
 - [Class Code](https://gist.github.com/azamsharp/daf604477d37fa62340f5169a29a6770)
+- [Writing JSON](resources/writing-json.md)
 - [Activity - Aggregate Sales Data](/module1/resources/aggregate-sales-data.md)
 - [Activity - CSV Parser](/module1/resources/csv-parser.md)
 
