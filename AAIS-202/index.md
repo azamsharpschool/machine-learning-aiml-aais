@@ -64,6 +64,7 @@
 - [Writing JSON](resources/writing-json.md)
 - [Activity - Aggregate Sales Data](/module1/resources/aggregate-sales-data.md)
 - [Activity - CSV Parser](/module1/resources/csv-parser.md)
+- [Python File Exercises](resources/file-activities.md)
 
 ## Module 4 
 
