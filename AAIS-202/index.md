@@ -73,6 +73,7 @@
 - [Day 3 - Inheritance and Method Overriding](../Slides/python-inheritience-and-method-overriding.key)
 - [Day 4 - Encapsulation, Polymorphism, and Special Methods](../Slides/python-encapsulation-polymorphism-and-special-methods.key) 
 - [Resource - Understanding Classes and Objects](https://www.dummies.com/programming/java/understanding-classes-and-objects/)]
+- [Class Code](https://gist.github.com/azamsharp/e6d8ea8316e3898c44466f5d62ef7252)
 
 ## Python and Artificial Intelligence 
 
