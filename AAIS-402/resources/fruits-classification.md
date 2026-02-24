@@ -3,6 +3,8 @@
 
 Dataset: https://www.kaggle.com/datasets/alihasnainch/fruits-dataset-for-classification
 
+[Download Code](FruitsClassificationProject.zip)
+
 
 Your dataset contains 6 folders:
 

@@ -65,6 +65,8 @@ https://www.youtube.com/playlist?list=PLDMXqpbtInQjc5-xa5B40Y1wZbIsxCIOk
 - [Day 3 - YOLO Object Detection Walkthrough](resources/object-detection-cats-dogs.md)
 - [Day 4 - Ethics in Object Detection](resources/ethics-in-object-detection.key)
 
+- [YOLO Code Snippets](resources/yolo-code-snippets.md)
+
 
 <!-- 
 - [Day 1 - Object Detection: Concept and Significance](../Slides/introduction-to-object-detection.key)
