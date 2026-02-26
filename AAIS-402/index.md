@@ -38,6 +38,9 @@
 
 ### Module 5 
 
+- [Day 1 - Introduction to AI Agents](resources/intro-agentic-coding.key)
+- [Day 2 - Implementing AI Agents Using Gemini]()
+
 - [Day 1 - Introduction to AI System Deployment](../slides/402-%20Introduction%20to%20AI%20System%20Deployment.key)
 - [Day 2 - Containerization and Virtualization](../slides/402-Containerization%20and%20Virtualization.key)
 - [Day 3 - Continuous Integration and Continuous Deployment](../slides/402-Continuous%20Integration%20and%20Continuous.key)

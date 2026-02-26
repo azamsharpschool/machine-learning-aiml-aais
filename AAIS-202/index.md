@@ -77,12 +77,14 @@
 - [Grocery App Activity](resources/grocery-app.md)
 - [Python Inheritance](resources/inheritance.md)
 
-## Python and Artificial Intelligence 
+## Module 5 
 
 - [Day 1 - Introduction to AI in Python](../Slides/Introduction%20to%20AI%20in%20Python.key)
 - [Day 2 - Exploring Machine Learning Libraries in Python](../Slides/python-Exploring%20Machine%20Learning%20Libraries%20in%20Python.key)
 - [Day 3 - Introduction to Neural Networks and Deep Learning](../Slides/python-Introduction%20to%20Neural%20Networks%20and%20Deep%20Learning.key)
 - [Day 4 - AI Use Cases and Real-World Applications](../Slides/python-AI%20Use%20Cases%20and%20Real-World%20Applications.key)
+- [Day 2 - Carvana without using the Pipeline](resources/carvana-without-pipeline.md)
+- [Day 2 - Carvana without using the Pipeline Source Code](https://colab.research.google.com/gist/azamsharpschool/818e21fcd847c835a4f16aca054b0b89/carvanawithoutpipeline.ipynb)
 
 <!-- 
 - [Activity - Table Class](/module1/resources/table.md)
