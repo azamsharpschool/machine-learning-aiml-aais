@@ -14,11 +14,17 @@
 ### Module 1 (MDP Essentials: States, Actions, Rewards, Transitions)
 
 - [Day 1 - Introduction to Reinforcement Learning](../Slides/module5-day1-introduction-to-reinforcement-learning.key)
+- [Day 1 - Introduction to Reinforcement Learning Code Example](resources/rl-info.md)
 - [Day 2 - Markov Principle](../Slides/module5-day2-mdp.key)
-- [Day 3 - Monte Carlo Methods](../Slides/module5-day3.key)
-- [Day 4 - Reinforcement Learning Real World Examples](../Slides/module5-%20Introduction%20to%20Real-World%20RL%20Applications.key)
+- [Day 3 - Treasure Hunt (Markov Principle)](resources/treasure-hunt-markov.md)
+- [Day 4 - Monte Carlo Methods](../Slides/module5-day3.key)
+- [Day 4 - Monte Carlo Method Code Example](resources/monte-carlo-example.md)
 
-- [Frozen Lake Walkthrough](resources/frozen-lake.md)`
+<!-- 
+- [Day 4 - Reinforcement Learning Real World Examples](../Slides/module5-%20Introduction%20to%20Real-World%20RL%20Applications.key)
+--> 
+
+- [Frozen Lake Walkthrough](resources/frozen-lake.md)
 - [Maze Navigator](resources/maze-nav.md)
 
 - [Resource - Introduction to Reinforcement Learning](https://medium.com/@cedric.vandelaer/reinforcement-learning-an-introduction-part-1-4-866695deb4d1)
@@ -34,17 +40,23 @@ https://www.youtube.com/watch?v=0MNVhXEX9to&list=PLMrJAkhIeNNQe1JXNvaFvURxGY4gE9
 ### Module 2 Exploring Q-Learning and Policy Gradient Principles 
 
 - [Day 1 - Introduction to Q-Learning](https://docs.google.com/presentation/d/1dCgbuzJx7Gn820lrce6adOAATxj73pCSyUvUgLjd6LA/edit?usp=sharing)
-- [Day 2 - Diving Deeper into Q-Learning](../Slides/module5-day2-diving-deeper.key)
-- [Day 3 - CartPole Example](resources/cart-pole.md)
+- [Day 1 - Diving Deeper into Q-Learning](../Slides/module5-day2-diving-deeper.key)
+- [Day 2 - Q-Learning Code Example](resources/q-learning-fiind-candy.md)
 - [Day3 - Introduction to Policy Gradient Methods](../Slides/rl-policy-gradient-methods.key)
+- [Day 4 - Policy Gradient Code Example](resources/policy-gradient-example.md)
 
+<!-- - [Day 3 - CartPole Example](resources/cart-pole.md) --> 
+
+<!--  
 - [Day 4 - Introduction to Advanced Policy Gradient Techniques](../Slides/rl-advancement-policy-gradient.key)
+--> 
 
 ### Module 3 Customizing Training Environments for Targeted Decision-Making Tasks
 
 - [Day 1 - What are Training Environments in Reinforcement Learning?](../Slides/rl-training-environments.key)
-- [Day 2 - Turtle Maze Game](resources/turtle.md)
-- [Day 3 - Crafting Dynamic Learning Grounds for AI Agents](../Slides/Crafting%20Domain-Specific%20Training%20Environments.key) 
+- [Day 1 - Turtle Maze Game](resources/turtle.md)
+- [Day 2 - Crafting Domain Specific Training Environments](../Slides/Crafting%20Domain-Specific%20Training%20Environments.key) 
+- [Day 2 - Delivery Robot](resources/delivery-robot.md)
 - [Day 3 - Applying Entropy Methods and Exploring Multiple Policies](../Slides/%20Applying%20Entropy%20Methods%20and%20Exploring%20Multiple%20Policies.key)
 - [Day 4 - Evaluating and Optimizing Training Environments in Reinforcement Learning](../Slides/Evaluating%20and%20Optimizing%20Training%20Environments%20in%20Reinforcement%20Learning.key)
 

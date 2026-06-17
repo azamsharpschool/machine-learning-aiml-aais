@@ -3,124 +3,315 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>House Price Prediction</title>
     <style>
-        body {
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            max-width: 600px;
-            margin: 40px auto;
-            padding: 0 16px;
+        :root {
+            --bg: #f4f7fb;
+            --card: rgba(255, 255, 255, 0.92);
+            --text: #172033;
+            --muted: #6b7280;
+            --border: #dbe3ef;
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --shadow: 0 20px 60px rgba(15, 23, 42, 0.12);
+            --radius: 22px;
         }
 
-        h1 {
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background:
+                radial-gradient(circle at top left, rgba(37, 99, 235, 0.12), transparent 30%),
+                radial-gradient(circle at bottom right, rgba(59, 130, 246, 0.12), transparent 35%),
+                var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            padding: 40px 16px;
+        }
+
+        .container {
+            max-width: 920px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: var(--card);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .hero {
+            padding: 48px 40px 28px;
             text-align: center;
+            background: linear-gradient(135deg, #1d4ed8, #3b82f6);
+            color: white;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 8px 14px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.16);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.2px;
+            margin-bottom: 16px;
+        }
+
+        .hero h1 {
+            margin: 0;
+            font-size: clamp(2rem, 4vw, 3rem);
+            line-height: 1.1;
+        }
+
+        .hero p {
+            max-width: 620px;
+            margin: 14px auto 0;
+            font-size: 1rem;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.92);
+        }
+
+        .form-wrapper {
+            padding: 32px;
         }
 
         form {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px 16px;
-            margin-bottom: 24px;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 20px;
         }
 
-        label {
-            display: block;
-            font-size: 0.9rem;
-            margin-bottom: 4px;
-        }
-
-        input,
-        textarea {
-            width: 100%;
-            padding: 6px 8px;
-            box-sizing: border-box;
+        .field {
+            display: flex;
+            flex-direction: column;
         }
 
         .full-width {
             grid-column: 1 / -1;
         }
 
+        label {
+            font-size: 0.92rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text);
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            border: 1px solid var(--border);
+            background: #fff;
+            color: var(--text);
+            border-radius: 14px;
+            padding: 14px 14px;
+            font-size: 1rem;
+            outline: none;
+            transition: all 0.2s ease;
+            box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+        }
+
+        input::placeholder {
+            color: #9aa4b2;
+        }
+
+        input:focus,
+        textarea:focus,
+        select:focus {
+            border-color: rgba(37, 99, 235, 0.6);
+            box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+        }
+
+        .hint {
+            font-size: 0.82rem;
+            color: var(--muted);
+            margin-top: 6px;
+        }
+
+        .button-row {
+            grid-column: 1 / -1;
+            margin-top: 6px;
+        }
+
         button {
-            padding: 10px 16px;
+            width: 100%;
+            border: none;
+            border-radius: 16px;
+            padding: 16px 20px;
+            font-size: 1rem;
+            font-weight: 700;
+            color: white;
             cursor: pointer;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            box-shadow: 0 14px 28px rgba(37, 99, 235, 0.25);
+            transition: transform 0.18s ease, box-shadow 0.18s ease;
+        }
+
+        button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 18px 34px rgba(37, 99, 235, 0.3);
+        }
+
+        button:active {
+            transform: translateY(0);
         }
 
         .result {
+            margin: 28px 32px 32px;
+            padding: 24px;
+            border-radius: 18px;
+            background: linear-gradient(135deg, #eff6ff, #dbeafe);
+            border: 1px solid #bfdbfe;
             text-align: center;
-            font-size: 1.2rem;
+        }
+
+        .result-label {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #1e3a8a;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .result-price {
+            font-size: clamp(1.8rem, 4vw, 2.6rem);
+            font-weight: 800;
+            color: #0f172a;
+        }
+
+        .footer-note {
+            text-align: center;
             margin-top: 16px;
-            padding: 12px;
-            border-radius: 8px;
-            background: #f3f4f6;
+            color: var(--muted);
+            font-size: 0.88rem;
+        }
+
+        @media (max-width: 700px) {
+            .hero {
+                padding: 36px 24px 24px;
+            }
+
+            .form-wrapper {
+                padding: 24px;
+            }
+
+            form {
+                grid-template-columns: 1fr;
+            }
+
+            .full-width {
+                grid-column: auto;
+            }
+
+            .result {
+                margin: 20px 24px 24px;
+            }
         }
     </style>
 </head>
 
 <body>
-    <h1>House Price Predictor</h1>
+    <div class="container">
+        <div class="card">
+            <div class="hero">
+                <div class="hero-badge">AI Powered Real Estate Estimator</div>
+                <h1>House Price Predictor</h1>
+                <p>
+                    Enter the property details below and get an estimated market price based on your trained machine learning model.
+                </p>
+            </div>
 
-    <form method="POST">
-        <div>
-            <label for="area">Area (sq ft)</label>
-            <input type="number" step="1" min="200" name="area" id="area"
-                value="{{ form_data.area if form_data and form_data.area is not none else '' }}" required>
+            <div class="form-wrapper">
+                <form method="POST">
+                    <div class="field">
+                        <label for="area">Area (sq ft)</label>
+                        <input type="number" step="1" min="200" name="area" id="area"
+                            placeholder="e.g. 1800"
+                            value="{{ form_data.area if form_data and form_data.area is not none else '' }}" required>
+                        <div class="hint">Enter the total interior living area.</div>
+                    </div>
+
+                    <div class="field">
+                        <label for="year_built">Year Built</label>
+                        <input type="number" step="1" min="1900" max="2025" name="year_built" id="year_built"
+                            placeholder="e.g. 2005"
+                            value="{{ form_data.year_built if form_data and form_data.year_built is not none else '2000' }}"
+                            required>
+                        <div class="hint">Use the original construction year.</div>
+                    </div>
+
+                    <div class="field full-width">
+                        <label for="location">Location</label>
+                        <input type="text" name="location" id="location"
+                            placeholder="e.g. Downtown, Suburb, Northside"
+                            value="{{ form_data.location if form_data and form_data.location is not none else '' }}" required>
+                    </div>
+
+                    <div class="field full-width">
+                        <label for="condition">Condition</label>
+                        <input type="text" name="condition" id="condition"
+                            placeholder="e.g. Excellent, Good, Fair, Needs Work"
+                            value="{{ form_data.condition if form_data and form_data.condition is not none else '' }}" required>
+                    </div>
+
+                    <div class="field full-width">
+                        <label for="garage">Garage</label>
+                        <input type="text" name="garage" id="garage"
+                            placeholder="e.g. Yes, No, 2-car, 1-car"
+                            value="{{ form_data.garage if form_data and form_data.garage is not none else '' }}" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="bedrooms">Bedrooms</label>
+                        <input type="number" min="0" step="1" name="bedrooms" id="bedrooms"
+                            placeholder="e.g. 3"
+                            value="{{ form_data.bedrooms if form_data else '' }}" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="bathrooms">Bathrooms</label>
+                        <input type="number" min="0" step="1" name="bathrooms" id="bathrooms"
+                            placeholder="e.g. 2"
+                            value="{{ form_data.bathrooms if form_data else '' }}" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="floors">Floors</label>
+                        <input type="number" min="1" step="1" name="floors" id="floors"
+                            placeholder="e.g. 1"
+                            value="{{ form_data.floors if form_data else '' }}" required>
+                    </div>
+
+                    <div class="button-row">
+                        <button type="submit">Predict House Price</button>
+                    </div>
+                </form>
+            </div>
+
+            {% if prediction is not none %}
+            <div class="result">
+                <div class="result-label">Estimated House Price</div>
+                <div class="result-price">${{ "{:,.2f}".format(prediction) }}</div>
+            </div>
+            {% endif %}
         </div>
 
-        <div>
-            <label for="year_built">Year Built</label>
-            <input type="number" step="1" min="1900" max="2025" name="year_built" id="year_built"
-                value="{{ form_data.year_built if form_data and form_data.year_built is not none else '2000' }}"
-                required>
+        <div class="footer-note">
+            Built with Flask and machine learning
         </div>
-
-        <div class="full-width">
-            <label for="location">Location</label>
-            <input type="text" name="location" id="location" placeholder="e.g., Downtown, Suburb, Northside"
-                value="{{ form_data.location if form_data and form_data.location is not none else '' }}" required>
-        </div>
-
-        <div class="full-width">
-            <label for="condition">Condition</label>
-            <input type="text" name="condition" id="condition" placeholder="e.g., Excellent, Good, Fair, Needs Work"
-                value="{{ form_data.condition if form_data and form_data.condition is not none else '' }}" required>
-        </div>
-
-        <div class="full-width">
-            <label for="garage">Garage</label>
-            <input type="text" name="garage" id="garage" placeholder="e.g., Yes, No, 2-car, 1-car"
-                value="{{ form_data.garage if form_data and form_data.garage is not none else '' }}" required>
-        </div>
-
-        <div>
-            <label for="bedrooms">Bedrooms</label>
-            <input type="number" min="0" step="1" name="bedrooms" id="bedrooms"
-                value="{{ form_data.bedrooms if form_data else '' }}" required>
-        </div>
-
-        <div>
-            <label for="bathrooms">Bathrooms</label>
-            <input type="number" min="0" step="1" name="bathrooms" id="bathrooms"
-                value="{{ form_data.bathrooms if form_data else '' }}" required>
-        </div>
-
-        <div>
-            <label for="floors">Floors</label>
-            <input type="number" min="1" step="1" name="floors" id="floors"
-                value="{{ form_data.floors if form_data else '' }}" required>
-        </div>
-
-
-        <div class="full-width">
-            <button type="submit">Predict Price</button>
-        </div>
-    </form>
-
-    {% if prediction is not none %}
-    <div class="result">
-        Estimated House Price:
-        <strong>${{ "{:,.2f}".format(prediction) }}</strong>
     </div>
-    {% endif %}
 </body>
 
 </html>

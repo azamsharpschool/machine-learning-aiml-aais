@@ -9,6 +9,8 @@
 - [Day 2 - Introduction to Flask (Code)](resources/IntroFlask.zip)
 - [Day 3 - Computational Scalability and Optimization](../slides/402-Computational-Scalability-Optimization.key)
 - [Day 4 - User Scalability and Integrating Scalable Systems](../slides/402-User%20Scalability%20and%20Integrating%20Scalable%20Systems.key)
+- [Day 3 - Carvana Training the Model]()
+- [Day 4 - Carvana Flask Website]()
 
 ### Module 2 
 
@@ -49,8 +51,13 @@
 
 ### Projects 
 
+- [Carvana Car Prices](https://colab.research.google.com/gist/azamsharpschool/bd3000e04c6947511821779a79f4b724/carvanaproject05182026.ipynb) 
 - [House Price Prediction](resources/house-price-prediction.md)
+- [Lung Cancer Project](https://colab.research.google.com/gist/azamsharpschool/aabe2064e1396bc1f3ce845154990bd5/lungcancer-realprojects.ipynb)
+- [Customer Segmentation Using KMeans](https://colab.research.google.com/gist/azamsharpschool/5435ecb30a18ed3a9af0436ae41c3c68/clusteringsalesdata-realprojects.ipynb) 
+
 - [Breast Cancer Website Project](resources/BreastCancerWebsite.zip)
+- [Sentiment Analysis]()
 - [Fruits Image Classification](resources/fruits-classification.md)
 - [Integrating LLM](resources/integrating-llm.md) 
 
