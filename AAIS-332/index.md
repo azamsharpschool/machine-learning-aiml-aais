@@ -14,8 +14,9 @@
 ### Module 1 (MDP Essentials: States, Actions, Rewards, Transitions)
 
 - [Day 1 - Introduction to Reinforcement Learning](../Slides/module5-day1-introduction-to-reinforcement-learning.key)
-- [Day 1 - Introduction to Reinforcement Learning Code Example](resources/rl-info.md)
+- [Day 2 - Introduction to Reinforcement Learning Code Example](resources/rl-info.md)
 - [Day 2 - Markov Principle](../Slides/module5-day2-mdp.key)
+- [Day 2 - Markov Principle Code Example](resources/markov-principle-code.md) 
 - [Day 3 - Treasure Hunt (Markov Principle)](resources/treasure-hunt-markov.md)
 - [Day 4 - Monte Carlo Methods](../Slides/module5-day3.key)
 - [Day 4 - Monte Carlo Method Code Example](resources/monte-carlo-example.md)

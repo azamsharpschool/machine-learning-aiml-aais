@@ -1,4 +1,42 @@
 
+``` py
+import random
+
+# Positions: 0 1 2 3 4
+# Goal is position 4
+position = 0
+goal = 4
+
+# Possible actions
+actions = ["left", "right"]
+
+# One episode with a maximum of 10 steps
+for step in range(10):
+    # Agent randomly chooses an action
+    action = random.choice(actions)
+
+    # Update position based on action
+    if action == "right":
+        position += 1
+    else:
+        position -= 1
+
+    # Keep agent inside the environment
+    position = max(0, min(position, goal))
+
+    # Give reward
+    reward = 10 if position == goal else -1
+
+    # Show what happened
+    print(f"Step: {step}, Action: {action}, Position: {position}, Reward: {reward}")
+
+    # End episode if goal is reached
+    if position == goal:
+        print("Goal reached!")
+        break
+
+```
+
 # Step 1: Import the Random Module
 
 ```python
