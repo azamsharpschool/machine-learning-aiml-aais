@@ -40,7 +40,7 @@ https://www.youtube.com/watch?v=0MNVhXEX9to&list=PLMrJAkhIeNNQe1JXNvaFvURxGY4gE9
 
 ### Module 2 Exploring Q-Learning and Policy Gradient Principles 
 
-- [Day 1 - Introduction to Q-Learning](https://docs.google.com/presentation/d/1dCgbuzJx7Gn820lrce6adOAATxj73pCSyUvUgLjd6LA/edit?usp=sharing)
+- [Day 1 - Introduction to Q-Learning](resources/rl-module2-day1-q-learning.key)
 - [Day 1 - Diving Deeper into Q-Learning](../Slides/module5-day2-diving-deeper.key)
 - [Day 2 - Q-Learning Code Example](resources/q-learning-fiind-candy.md)
 - [Day3 - Introduction to Policy Gradient Methods](../Slides/rl-policy-gradient-methods.key)

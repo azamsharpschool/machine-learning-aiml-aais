@@ -1,239 +1,427 @@
-# Q-Learning Example: Teaching a Robot to Find Candy
-
-In this example, we will learn the basic idea behind Q-Learning using a very simple scenario.
-
-Imagine a robot is placed in a room. Somewhere in the room is a piece of candy. The robot has two choices:
-
-```text
-Left
-Right
-```
-
-The candy is located on the right side of the room.
-
-```text
-Left        Robot        Right (Candy)
-```
-
-The robot does not know where the candy is. It must learn through trial and error.
-
-## Full Code
 
 ```python
 import random
 
+goal = 4
+actions = ["left", "right"]
+
+# Q-table: each position has scores for each action
 q_table = {
-    "left": 0,
-    "right": 0
+    0: {"left": 0, "right": 0},
+    1: {"left": 0, "right": 0},
+    2: {"left": 0, "right": 0},
+    3: {"left": 0, "right": 0},
+    4: {"left": 0, "right": 0}
 }
 
-alpha = 0.1
+learning_rate = 0.1   # alpha
+discount = 0.9        # gamma
+epsilon = 0.3         # exploration chance
 
-for episode in range(100):
+for episode in range(10):
 
-    action = random.choice(["left", "right"])
+    print(f"\n=== Episode {episode + 1} ===")
 
-    if action == "right":
-        reward = 10
-    else:
-        reward = -1
+    position = 0
 
-    q_table[action] = q_table[action] + alpha * (
-        reward - q_table[action]
-    )
+    for step in range(10):
 
-print(q_table)
+        # Exploration vs exploitation
+        if random.random() < epsilon:
+            action = random.choice(actions)
+        else:
+            action = max(q_table[position], key=q_table[position].get)
+
+        old_position = position
+
+        if action == "right":
+            position += 1
+        else:
+            position -= 1
+
+        position = max(0, min(position, goal))
+
+        reward = 10 if position == goal else -1
+
+        old_q = q_table[old_position][action]
+
+        best_future_q = max(q_table[position].values())
+
+        new_q = old_q + learning_rate * (
+            reward + discount * best_future_q - old_q
+        )
+
+        q_table[old_position][action] = new_q
+
+        world = ["_"] * 5
+        world[goal] = "🧀"
+        world[position] = "🐭"
+
+        print(" ".join(world))
+        print(f"Step: {step}")
+        print(f"State: {old_position}")
+        print(f"Action: {action}")
+        print(f"Next State: {position}")
+        print(f"Reward: {reward}")
+        print(f"Old Q: {old_q:.2f}")
+        print(f"Best Future Q: {best_future_q:.2f}")
+        print(f"New Q: {new_q:.2f}")
+        print()
+
+        if position == goal:
+            print("Cheese was found.")
+            break
+
+print("\n=== Final Q-Table ===")
+for state, actions in q_table.items():
+    print(f"State {state}: {actions}")
 ```
 
-## What Is a Q-Value?
+Main change:
 
-A Q-value represents how good an action is.
+```python
+action_scores[action] += total_reward
+```
 
-At the beginning, the robot has no experience.
+became:
+
+```python
+q_table[old_position][action] = new_q
+```
+
+So now the agent is not just learning:
+
+```text
+left is good
+right is good
+```
+
+It is learning:
+
+```text
+At position 0, left/right has this value
+At position 1, left/right has this value
+At position 2, left/right has this value
+```
+
+That is the key difference.
+
+
+# Q-Learning Code Walkthrough
+
+## Step 1: Define the Environment
+
+```python
+goal = 4
+actions = ["left", "right"]
+```
+
+We create a simple one-dimensional world with five positions (0–4). The mouse starts at position 0 and tries to reach the cheese located at position 4.
+
+The mouse has only two possible actions:
+
+* Move left
+* Move right
+
+---
+
+## Step 2: Create the Q-Table
 
 ```python
 q_table = {
-    "left": 0,
-    "right": 0
+    0: {"left": 0, "right": 0},
+    1: {"left": 0, "right": 0},
+    2: {"left": 0, "right": 0},
+    3: {"left": 0, "right": 0},
+    4: {"left": 0, "right": 0}
 }
 ```
 
-This means the robot believes both actions are equally good.
+The Q-table is the agent's memory.
+
+Each row represents a state (position), and each column represents an action.
+
+Initially, every value is zero because the mouse has never explored the environment.
+
+For example,
 
 ```text
-Go Left  = 0
-Go Right = 0
+State 2
+
+Left  = 0
+Right = 0
 ```
 
-Since it has never tried either action, it has no information.
+means the mouse currently believes both actions are equally good because it has no experience.
 
-## Learning Through Experience
+---
 
-The robot randomly chooses an action.
+## Step 3: Learning Parameters
 
 ```python
-action = random.choice(["left", "right"])
+learning_rate = 0.1
+discount = 0.9
+epsilon = 0.3
 ```
 
-Sometimes it chooses:
+These values control how the agent learns.
+
+* **learning_rate (α)** determines how much new information influences the current Q-value.
+* **discount (γ)** determines how much future rewards are valued.
+* **epsilon (ε)** controls exploration. With a 30% probability, the mouse will randomly explore instead of choosing the best-known action.
+
+---
+
+## Step 4: Run Multiple Episodes
+
+```python
+for episode in range(10):
+```
+
+An episode is one complete attempt to find the cheese.
+
+At the beginning of every episode, the mouse starts from the beginning of the world.
+
+However, the Q-table is **not reset**.
+
+The mouse remembers everything it learned in previous episodes.
+
+---
+
+## Step 5: Start at the Beginning
+
+```python
+position = 0
+```
+
+Every episode begins with the mouse at position 0.
+
+Initially, it does not know the best path.
+
+---
+
+## Step 6: Exploration vs. Exploitation
+
+```python
+if random.random() < epsilon:
+    action = random.choice(actions)
+else:
+    action = max(q_table[position], key=q_table[position].get)
+```
+
+This is one of the most important parts of Q-Learning.
+
+The agent has two choices.
+
+**Exploration**
+
+The mouse tries a random action to discover new possibilities.
+
+**Exploitation**
+
+The mouse uses what it has already learned by selecting the action with the highest Q-value.
+
+For example, suppose the Q-table contains
 
 ```text
-Left
+State 2
+
+Left  = 3
+Right = 8
 ```
 
-Sometimes it chooses:
+The mouse will choose **Right** because 8 is greater than 3.
 
-```text
-Right
+---
+
+## Step 7: Save the Current State
+
+```python
+old_position = position
 ```
 
-This process is called exploration.
+Before moving, we save the current position.
 
-The robot is exploring the environment to learn which actions produce better results.
+This is important because we must update the Q-value associated with the state where the action started.
 
-## Receiving Rewards
+---
 
-If the robot goes right, it finds the candy.
+## Step 8: Move the Mouse
 
 ```python
 if action == "right":
-    reward = 10
-```
-
-The robot receives a reward of:
-
-```text
-+10
-```
-
-If the robot goes left, it does not find the candy.
-
-```python
+    position += 1
 else:
-    reward = -1
+    position -= 1
 ```
 
-The robot receives a reward of:
+The mouse performs the selected action.
 
-```text
--1
-```
+If it chooses Right, it moves one position to the right.
 
-The reward acts as feedback from the environment.
+If it chooses Left, it moves one position to the left.
 
-## Updating the Q-Value
+---
 
-The most important line of code is:
+## Step 9: Keep the Mouse Inside the World
 
 ```python
-q_table[action] = q_table[action] + alpha * (
-    reward - q_table[action]
+position = max(0, min(position, goal))
+```
+
+This prevents the mouse from moving outside the environment.
+
+If it attempts to move beyond either end of the world, it remains at the boundary.
+
+---
+
+## Step 10: Assign a Reward
+
+```python
+reward = 10 if position == goal else -1
+```
+
+The reward tells the mouse how well it performed.
+
+* Reaching the cheese gives a reward of +10.
+* Every other move gives a reward of -1.
+
+The negative reward encourages the mouse to find the shortest path instead of wandering around.
+
+---
+
+## Step 11: Read the Current Q-Value
+
+```python
+old_q = q_table[old_position][action]
+```
+
+Before updating, we retrieve the current Q-value.
+
+For example,
+
+```text
+Q(State 2, Right) = 4
+```
+
+This represents the mouse's current estimate of how valuable that action is.
+
+---
+
+## Step 12: Look Ahead
+
+```python
+best_future_q = max(q_table[position].values())
+```
+
+This is the Bellman idea.
+
+After arriving at the next state, the mouse asks:
+
+> "What is the best action I know from here?"
+
+Suppose the next state's Q-values are
+
+```text
+Left  = 2
+Right = 8
+```
+
+The best future value is
+
+```text
+max(2, 8) = 8
+```
+
+The agent assumes it will make the best possible decision from the next state onward.
+
+---
+
+## Step 13: Update the Q-Value
+
+```python
+new_q = old_q + learning_rate * (
+    reward + discount * best_future_q - old_q
 )
 ```
 
-This line updates the robot's knowledge.
+This is the Q-Learning update rule.
 
-You can think of it as:
+The agent combines:
 
-```text
-New Knowledge =
-Old Knowledge +
-Small Adjustment
-```
+* The reward it just received.
+* The best future reward it currently knows about.
+* Its previous estimate.
 
-The adjustment is based on the reward the robot just received.
+Instead of replacing the old value, the learning rate gradually adjusts it toward the new estimate.
 
-If an action consistently receives good rewards, its Q-value increases.
+Over many episodes, these values become more accurate.
 
-If an action consistently receives bad rewards, its Q-value decreases.
+---
 
-## What Happens After Many Attempts?
-
-The robot repeats this process 100 times.
-
-Each time it tries an action, receives a reward, and updates its knowledge.
-
-Eventually, the Q-table might look like:
+## Step 14: Store the Updated Value
 
 ```python
-{
-    "left": -1.0,
-    "right": 10.0
-}
+q_table[old_position][action] = new_q
 ```
 
-The robot has learned:
+The updated Q-value is written back into the Q-table.
+
+This is the learning step.
+
+Each time the mouse moves, it slightly improves its understanding of the environment.
+
+---
+
+## Step 15: Display the World
+
+```python
+world = ["_"] * 5
+world[goal] = "🧀"
+world[position] = "🐭"
+```
+
+This creates a simple visualization showing where the mouse and the cheese are located after each move.
+
+Students can watch the mouse explore the environment while the Q-table changes.
+
+---
+
+## Step 16: Stop When the Goal Is Reached
+
+```python
+if position == goal:
+    break
+```
+
+Once the mouse reaches the cheese, the episode ends.
+
+A new episode then begins, but the Q-table remains intact.
+
+The mouse continues learning from all previous experiences.
+
+---
+
+## Step 17: Print the Final Q-Table
+
+```python
+for state, actions in q_table.items():
+    print(f"State {state}: {actions}")
+```
+
+After several episodes, the Q-table contains the agent's learned knowledge.
+
+A typical result might look like:
 
 ```text
-Going Right is much better than Going Left.
+State 0: Left=-2.3  Right=4.6
+State 1: Left=0.5   Right=6.2
+State 2: Left=2.1   Right=8.0
+State 3: Left=5.4   Right=10.0
 ```
 
-## Why Is This Called Q-Learning?
+Notice that the values for moving right become larger as the mouse gets closer to the cheese.
 
-Q-Learning is a reinforcement learning algorithm that learns the value of actions.
+This happens because the reward gradually propagates backward through the Q-table over multiple episodes.
 
-The Q-table stores:
-
-```text
-How good is this action?
-```
-
-In our example:
-
-```text
-Q(Left)
-Q(Right)
-```
-
-represent how valuable each action is.
-
-Over time, the robot learns which action produces the highest reward.
-
-## Key Concepts
-
-### Agent
-
-The robot is the agent.
-
-The agent is responsible for making decisions.
-
-### Action
-
-The possible actions are:
-
-```text
-Left
-Right
-```
-
-### Reward
-
-The environment provides feedback.
-
-```text
-Right = +10
-Left  = -1
-```
-
-### Learning
-
-The robot improves its decisions by learning from rewards.
-
-### Q-Value
-
-A Q-value measures how good an action is based on past experience.
-
-## Summary
-
-This example demonstrates the core idea behind Q-Learning.
-
-The robot:
-
-1. Tries different actions.
-2. Receives rewards.
-3. Updates its knowledge.
-4. Learns which action produces the highest reward.
-
-Eventually, the robot learns that going right leads to candy and consistently chooses the action with the highest Q-value.
-
-This is the foundation of Q-Learning and many modern reinforcement learning systems.
+The agent does not memorize the path. Instead, it learns the quality of each action in every state, and the optimal path naturally emerges by repeatedly choosing the highest-valued action.
