@@ -58,15 +58,26 @@ https://www.youtube.com/watch?v=0MNVhXEX9to&list=PLMrJAkhIeNNQe1JXNvaFvURxGY4gE9
 - [Day 1 - Turtle Maze Game](resources/turtle.md)
 - [Day 2 - Crafting Domain Specific Training Environments](../Slides/Crafting%20Domain-Specific%20Training%20Environments.key) 
 - [Day 2 - Delivery Robot](resources/delivery-robot.md)
-- [Day 3 - Applying Entropy Methods and Exploring Multiple Policies](../Slides/%20Applying%20Entropy%20Methods%20and%20Exploring%20Multiple%20Policies.key)
-- [Day 4 - Evaluating and Optimizing Training Environments in Reinforcement Learning](../Slides/Evaluating%20and%20Optimizing%20Training%20Environments%20in%20Reinforcement%20Learning.key)
+- [Day 3 - Applying Entropy Methods and Exploring Multiple Policies](resources/Applying%20Entropy%20Methods.key)
+- [Day 4 - Evaluating and Optimizing Training Environments in Reinforcement Learning](resources/Evaluating%20and%20Optimizing%20RL%20Training%20Environments%20updated.key)
+
 
 ### Module 4 
+
+- [Day 1 - Introduction to Deep Reinforcement Learning](../slides/module5-%20Introduction%20to%20Deep%20Reinforcement%20Learning%20(DRL).key)
+- [Day 2 - Deep Q-Networks (DQNs)](../slides/Deep%20Q-Networks%20(DQNs).key)
+
 
 - [Day 1 - Introduction to Reinforcement Learning Frameworks](../Slides/module4-Introduction%20to%20Reinforcement%20Learning%20Frameworks%20and%20OpenAI%20Gym.key)
 - [Day 2 - Exploring OpenAI Gym for Agent Training](../Slides/module5Exploring%20OpenAI%20Gym%20for%20Agent%20Training.key)
 - [Day 2 - Coffee Robot Custom Environment](resources/coffee-robot.md) 
-- [Day 3 - Leveraging Ray Rllib for Scalable RL Solutions](../Slides/module5-%20Leveraging%20Ray%20Rllib%20for%20Scalable%20RL%20Solutions.key)
+- [Day 3 - Leveraging Ray Rllib for Scalable RL Solutions](resources/Scaling%20Reinforcement%20Learning%20with%20Ray%20RLlib.key)
+- [Day 3 - Introduction to Ray Rllib Code Example](resources/intro-rayliib.md)
+
+
+<!-- 
+- [Day 3 - Leveraging Ray Rllib for Scalable RL Solutions](../Slides/module5-%20Leveraging%20Ray%20Rllib%20for%20Scalable%20RL%20Solutions.key) -->
+
 - [Day 4 - Real-World Applications and Optimization Techniques](../Slides/module5-Real-World%20Applications%20and%20Optimization%20Techniques.key)
 
 ### Module 5 
