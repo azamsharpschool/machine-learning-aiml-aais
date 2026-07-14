@@ -72,13 +72,17 @@ https://www.youtube.com/watch?v=0MNVhXEX9to&list=PLMrJAkhIeNNQe1JXNvaFvURxGY4gE9
 - [Day 2 - Exploring OpenAI Gym for Agent Training](../Slides/module5Exploring%20OpenAI%20Gym%20for%20Agent%20Training.key)
 - [Day 2 - Coffee Robot Custom Environment](resources/coffee-robot.md) 
 - [Day 3 - Leveraging Ray Rllib for Scalable RL Solutions](resources/Scaling%20Reinforcement%20Learning%20with%20Ray%20RLlib.key)
-- [Day 3 - Introduction to Ray Rllib Code Example](resources/intro-rayliib.md)
+- [Day 4 - Introduction to Ray Rllib Code Example](resources/intro-rayliib.md)
+- [Day 4 - Advanced Topics and Real-World Applications](../Slides/Advanced%20DRL%20Techniques%20and%20Real-World%20Applications.key)
+
 
 
 <!-- 
-- [Day 3 - Leveraging Ray Rllib for Scalable RL Solutions](../Slides/module5-%20Leveraging%20Ray%20Rllib%20for%20Scalable%20RL%20Solutions.key) -->
-
+- [Day 3 - Leveraging Ray Rllib for Scalable RL Solutions](../Slides/module5-%20Leveraging%20Ray%20Rllib%20for%20Scalable%20RL%20Solutions.key) 
 - [Day 4 - Real-World Applications and Optimization Techniques](../Slides/module5-Real-World%20Applications%20and%20Optimization%20Techniques.key)
+
+-->
+
 
 ### Module 5 
 
